@@ -1,0 +1,91 @@
+html {
+    position        : relative;
+    margin          : 0;
+    padding         : 0;
+    overflow-x      : hidden;
+    scroll-behavior : smooth;
+} 
+
+* {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+}
+
+body {
+    width           : 100%;
+    margin          : 0;
+    padding         : 0;
+    font-family     : 'Faktum', sans-serif !important;
+    scroll-behavior : smooth;
+    overflow        : hidden;
+}
+
+.main {
+    position : relative;
+    height   : auto;
+    width    : 100%;
+    top      : 0;
+}
+
+ol, ul, li { 
+    list-style : none;
+}
+
+h1, h2, h3, h4{
+    color          : var(--color-dark);
+    font-family    : 'Faktum' !important;
+    letter-spacing : -1px;
+}
+
+h2{
+    &:before {
+        display    : inline-block;
+        margin     : 0 20px 8px 0;
+        height     : 3px;
+        content    : " ";
+        background : var(--color-primary-light);
+        width      : 17%;
+    }
+
+    &:after {
+        display    : inline-block;
+        margin     : 0 0 8px 20px;
+        height     : 3px;
+        content    : " ";
+        background : var(--color-primary-light);
+        width      : 17%;
+    }
+}
+
+h1 { 
+    font-weight : 700;
+    font-size   : 36px;
+}
+
+h2 {
+    font-weight : 600;
+    position    : relative;
+    font-size   : 34px;
+}
+
+h3 { 
+    font-weight : 400;
+    font-size   : 27px;
+}
+
+h4 { 
+    font-weight : 300;
+    font-size   : 22px;
+}
+
+p {
+    color       : var(--color-text);
+    line-height : 1.5rem;
+    font-size   : 16px;
+}
+
+a {
+    text-decoration : none;
+    font-size       : 16px;
+}

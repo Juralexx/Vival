@@ -4,49 +4,6 @@
 $(function(){
   new WOW().init();
 });
-/*=============================================*/
-/* ================ SWIPER.js ================*/
-/*===========================================*/
-$(function(){
-  var swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto", 
-      coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 3,
-          slideShadows: false,
-      },
-      loop:true,
-      pagination: {
-          el: ".swiper-pagination",
-      },
-  });
-});
-
-/*===========================================================*/
-/*================== MOBILE NAVBAR TOGGLE ================== */
-/*===========================================================*/
-
-const menu = document.querySelector("svg");
-menu.addEventListener("click", morph);
-
-function morph() { 
-  menu.classList.toggle("open");
-}
-
-$(document).ready(function(){
-  $('.topnav-toggle svg').click(function(){
-    $('nav ul').toggleClass('active')
-  })
-  $('ul li').click(function(){
-    $(this).siblings().removeClass('active');
-    $(this).toggleClass('active');
-  })
-})
 
 /*===========================================================*/
 /*===================== COUNT ANIMATION ==================== */

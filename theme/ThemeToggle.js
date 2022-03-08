@@ -18,38 +18,33 @@ const ThemeToggle = () => {
         handleTheme()
     }, [])
 
-    console.log(localStorageTheme)
-
-    const classes = {
-        svg: "w-9 h-9 p-2 rounded-full text-slate-500 dark:text-slate-300 bg-slate-100 dark:bg-background_primary_x_light group-hover:bg-white dark:group-hover:bg-background_primary_light",
-        p: "pl-[10px] font-xs text-slate-500 dark:text-slate-300"
-    }
-
     return (
         <>
             <div className="flex items-center h-full">
                 {checked ? (
                     <ThemeContext.Consumer>
                         {({ changeTheme }) => (
-                            <button className="switch" onClick={() => {
-                                setChecked(false)
-                                changeTheme(themes.dark);
-                            }}
-                            >
-                                <BsFillSunFill className={classes.svg} />
-                            </button>
+                            <div className="theme-toggle">
+                                <button onClick={() => {
+                                    setChecked(false)
+                                    changeTheme(themes.dark);
+                                }}>
+                                    <BsFillSunFill />
+                                </button>
+                            </div>
                         )}
                     </ThemeContext.Consumer>
                 ) : (
                     <ThemeContext.Consumer>
                         {({ changeTheme }) => (
-                            <button className="switch" onClick={() => {
-                                setChecked(true)
-                                changeTheme(themes.light);
-                            }}
-                            >
-                                <BsFillMoonStarsFill className={classes.svg} />
-                            </button>
+                            <div className="theme-toggle">
+                                <button onClick={() => {
+                                    setChecked(true)
+                                    changeTheme(themes.light);
+                                }}>
+                                    <BsFillMoonStarsFill />
+                                </button>
+                            </div>
                         )}
                     </ThemeContext.Consumer>
                 )}

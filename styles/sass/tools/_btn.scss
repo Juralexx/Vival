@@ -1,0 +1,52 @@
+.btn-primary {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    position        : relative;
+    width           : 240px;
+    padding         : 14px 30px;
+    font-size       : 20px;
+    text-align      : center;
+    border-radius   : $rounded-xl;
+    color           : white;
+    background      : var(--color-primary);
+    border          : 3px solid var(--color-primary);
+    cursor          : pointer;
+    outline         : none;
+    transition      : 0.4s ease-in-out;
+
+    svg {
+        position      : absolute;
+        right         : 10px;
+        height        : 40px;
+        width         : 40px;
+        color         : var(--color-primary);
+        padding       : 10px;
+        border-radius : $rounded-xl;
+        background    : white;
+        transition    : 0.4s ease-in-out;
+    }
+
+    &:hover, &:active, &:focus{
+        color           : var(--color-primary);
+        border          : 3px solid var(--color-primary);
+        background      : white;
+        box-shadow      : $box-shadow-x-smooth;
+        transform       : scale(1.05);
+        outline         : none;
+        text-decoration : none;
+        transition      : 0.4s ease-in-out;
+
+        svg {
+            background : var(--color-primary);
+            color      : white;
+            transition : 0.4s ease-in-out;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .btn-primary {
+        width : 100%;
+    }
+}

@@ -1,0 +1,39 @@
+:root {
+    --color-primary         : #65795c;
+    --color-primary-light   : #98ab90;
+    --color-primary-xlight  : #c2d1bb;
+    --color-primary-xxlight : #eef1ed;
+    --color-primary-dark    : #4d5c46;
+    --color-body            : #ffffff;
+    --color-dark            : #292929;
+    --color-title           : #292929;
+    --color-text            : #757c8f;
+    --color-grey            : #78807a;
+
+    --color-primary-rgb         : 101, 121, 92;
+    --color-primary-light-rgb   : 152, 171, 144;
+    --color-primary-xlight-rgb  : 194, 209, 187;
+    --color-primary-xxlight-rgb : 238, 241, 237;
+    --color-primary-dark-rgb    : 77,  92,  70;
+    --color-body-rgb            : 255, 255, 255;
+}
+
+.dark {
+    --color-primary         : #65795c;
+    --color-primary-light   : #98ab90;
+    --color-primary-xlight  : #c2d1bb;
+    --color-primary-xxlight : #eef1ed;
+    --color-primary-dark    : #4d5c46;
+    --color-body            : #1a2928;
+    --color-dark            : #b5b5b5;
+    --color-title           : #c6c6c6;
+    --color-text            : #aab5ad;
+    --color-grey            : #78807a;
+
+    --color-primary-rgb         : 101, 121, 92;
+    --color-primary-light-rgb   : 152, 171, 144;
+    --color-primary-xlight-rgb  : 194, 209, 187;
+    --color-primary-xxlight-rgb : 238, 241, 237
+    --color-primary-dark-rgb    : 77,  92,  70;
+    --color-body-rgb            : 26, 41, 40;
+}

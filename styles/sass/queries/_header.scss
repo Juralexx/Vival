@@ -1,0 +1,118 @@
+@media(min-width:1920px) {
+    .slider {
+        max-height : 1080px;
+    }
+}
+
+@media(max-width:1440px) {
+    .slider {
+        .slider-container {
+            .slider-encart {
+                max-width : 600;
+                position  : relative;
+                .slider-logo {
+                    max-width : 300px;
+                }
+                .info-first {
+                    p {
+                        font-size : 22px;
+                    }
+                }
+                .slogan {
+                    p {
+                        font-size : 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1024px) {
+    .slider {
+        .slider-container {
+            background : linear-gradient(to top, rgba(var(--color-primary-xxlight), 1) 10%, rgba(var(--color-primary-xxlight), 0) 100%),
+                        linear-gradient(to right, rgba(var(--color-primary-xxlight), 1) 10%, rgba(var(--color-primary-xxlight), 0) 100%);
+            
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .slider {
+        .slider-container {
+            .slider-encart {
+                max-width : 100%;
+                position  : relative;
+                .slider-logo {
+                    max-width : 300px;
+                }
+                .info-first {
+                    p {
+                        font-size : 22px;
+                    }
+                }
+                .slogan {
+                    p {
+                        font-size : 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    .slider {
+        .slider-container {
+            padding : 20px;
+            .slider-encart {
+                .slider-logo {
+                    margin : 0 auto 20px;
+                }
+                .info-first {
+                    margin    : 0 auto 30px;
+                    max-width : 350px;
+                    p {
+                        font-size      : 20px;
+                        letter-spacing : 2px;
+                        &:before {
+                            margin-left : 30px;
+                        }
+                    }
+                }
+                .slider-btn {
+                    flex-direction : column;
+                    .btn {
+                        margin-bottom : 5px !important;
+                    }
+                }
+                .slogan {
+                    p {
+                        text-align : center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    .modal-btn-container {
+        margin : 0 auto;
+    }
+}
+
+@media(max-width:440px) {
+    .slider {
+        .slider-container {
+            .slider-encart {
+                .slogan {
+                    p {
+                        font-size : 28px;
+                    }
+                }
+            }
+        }
+    }
+}

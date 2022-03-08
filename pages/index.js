@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Bricks from '../src/components/Bricks'
+import Checkerboard from '../src/components/Checkerboard'
+import Header from '../src/components/Header'
+import Intro from '../src/components/Intro'
+import Masonryboard from '../src/components/Masonryboard'
 
 export default function Home() {
     return (
@@ -11,19 +15,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="slider">
-                <div className="slider-container">
-                    <div className="slider-encart">
-                        <div className="slider-logo"><img src="./img/logo.png" alt="Vival - Meillonnas" className="max-w-[300px]" /></div>
-                        <div className="info-first"><p>10 ans d'expérience</p></div>
-                        <div className="slogan"><p>Épicerie | Tabac | Presse à&nbsp;<span>Meillonnas</span></p></div>
-                        <div className="slider-btn">
-                            <a href="#" className="btn btn-primary xs-mr-10">Contactez-nous</a>
-                            <a href="#" className="btn btn-primary">Localisez-nous</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Header />
+            <Bricks />
+            <Intro />
+            <Checkerboard />
+            <Masonryboard />
         </div>
     )
 }
