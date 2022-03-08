@@ -1,0 +1,212 @@
+.checkerboard-modern {
+    padding  : 100px 0;
+    width    : 100%;
+    position : relative;
+
+    .checkerboard-container {
+        position        : relative;
+        width           : auto;
+        max-width       : 1500px;
+        margin          : 0 auto;
+        display         : flex;
+        align-items     : flex-end;
+        justify-content : center;
+
+        .image {
+            position   : relative;
+            display    : flex;
+            height     : 500px;
+            width      : auto;
+            max-width  : 650px;
+            transition : 1s ease;
+            flex       : 0 0 100%;
+
+            &:after {
+                position : absolute;
+                content  : "";
+                display  : block;
+            }
+
+            &:before {
+                position : absolute;
+                content  : "";
+                display  : block;
+            }
+        }
+    
+        .text {
+            display         : flex;
+            flex-direction  : column;
+            position        : relative;
+            height          : 500px;
+            width           : 40%;
+            padding         : 60px;
+            align-items     : center;
+            justify-content : center;
+
+            h2 {
+                width        : 100%;
+                padding-left : 0;
+                font-size    : 36px;
+
+                &:before, &:after {
+                    content : none;
+                }
+            }
+    
+            p {
+                padding : 30px 0;
+            }
+
+            .btn {
+                width:260px;
+            }
+        }
+    }  
+}
+
+.checkerboard-modern-1 {
+    .checkerboard-container {
+        .image {
+            order : 2;
+            &:after {
+                width      : 570px;
+                height     : 417px;
+                right      : 10px;
+                bottom     : 10px;
+                background : rgba($primary-light, 0.5);
+                z-index    : -1;
+            }
+            &:before {
+                width      : 400px;
+                height     : 250px;
+                left       : -150px;
+                top        : -30px;
+                background : $primary-x-extra-light;
+                z-index    : -1;
+            }
+            .img-big {
+                position : relative;
+                display  : block;
+                width    : 570px;
+                height   : 417px;
+            }
+            .img-small {
+                position : absolute;
+                right    : -40px;
+                bottom   : -30px;
+                width    : 332px;
+                height   : 249px;
+                border   : 5px solid white;
+            }
+        }
+        .text {
+            order : 1;
+            h2 {
+                text-align : right;
+            }
+            p {
+                text-align : right;
+            }
+            .btn {
+                margin-left : auto;
+            }
+        }
+    }  
+}
+
+.checkerboard-modern-2 {
+    .checkerboard-container {
+        .image {
+            align-items     : center;
+            justify-content : flex-end;
+            &:after {
+                width      : 500px;
+                height     : 257px;
+                right      : -180px;
+                bottom     : -50px;
+                background : $primary-x-extra-light;
+                z-index    : -1;
+            }
+            &:before {
+                width      : 200px;
+                height     : 200px;
+                right      : -30px;
+                top        : -100px;
+                background : $primary-x-extra-light;
+                z-index    : 0;
+            }
+            .background {
+                position   : absolute;
+                display    : block;
+                width      : 470px;
+                height     : 500px;
+                right      : 100px;
+                bottom     : 00px;
+                background : rgba($primary-light, 0.5);
+                z-index    : 0;
+            }
+            img {
+                position : relative;
+                display  : block;
+                width    : 500px;
+                height   : 370px;
+            }
+        }
+        .text {
+            h2 {
+                text-align : left;
+            }
+            p {
+                text-align : left;
+            }
+            .btn {
+                margin-right : auto;
+            }
+        }
+    }  
+}
+
+.checkerboard-modern-3 {
+    .checkerboard-container {
+        .image {
+            order : 2;
+            &:after {
+                width      : 570px;
+                height     : 417px;
+                right      : 10px;
+                bottom     : 10px;
+                background : rgba($primary-light, 0.5);
+                z-index    : -1;
+            }
+
+            &:before {
+                width      : 650px;
+                height     : 300px;
+                left       : -300px;
+                bottom     : -70px;
+                background : $primary-x-extra-light;
+                z-index    : -1;
+            }
+
+            img {
+                position : relative;
+                display  : block;
+                width    : 570px;
+                height   : 417px;
+            }
+        }
+        .text {
+            order : 1;
+            h2 {
+                text-align : right;
+            }
+            p {
+                text-align : right;
+            }
+            .btn {
+                margin-left : auto;
+            }
+        }
+    }  
+}

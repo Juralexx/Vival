@@ -1,0 +1,17 @@
+// @media(min-width:1600px) {
+//     .brick{
+//         padding : 0;
+//         .brick-container{
+//             bottom : 50px;
+//         } 
+//     }
+// }
+
+@media(max-width:1920px) {
+    .brick{
+        .brick-container{
+            max-width : 1300px;
+        } 
+    }
+}
+

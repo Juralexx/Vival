@@ -1,0 +1,42 @@
+/************** ****** **************/
+/************** RADIUS **************/
+/************** ****** **************/
+$radius: 4px;
+$radius-navbar: 0px;
+$radius-flottant: $radius;
+$radius-form: $radius;
+$radius-btn: $radius;
+$radius-damier-cards: $radius;
+$bloc-reseaux-radius: $radius-btn;
+
+/************** *************************** **************/
+/************** CONTENU PRINCIPAL : PADDING **************/
+/************** *************************** **************/
+// Padding TOP
+$fr-xs-page-main-pt: 30px;
+$nfr-xs-page-main-pt: 30px;
+$fr-page-main-pt: 80px;
+$nfr-page-main-pt: 80px;
+
+// Padding BOTTOM (Si BG COLOR sur call-action rajouter padding bottom 30px par exemple au minimum)
+$fr-xs-page-main-pb: 0px;
+$nfr-xs-page-main-pb: 0px;
+$fr-page-main-pb: 0px;
+$nfr-page-main-pb: 0px;
+
+/************** ***************** **************/
+/************** CLASS : cw-pictos **************/
+/************** ***************** **************/
+//Si pictos utiliser sans mises en forme (Pas de fond, ni formes),
+//mettre $cw-pictos-style sur false.
+$cw-pictos-style: true;
+
+$cw-picto-height: 200px;
+$cw-picto-width: 220px;
+$cw-picto-padding: 0px;
+
+@if ($cw-pictos-style) {
+  $cw-picto-height: 220px;
+  $cw-picto-width: 220px;
+  $cw-picto-padding: 50px
+}

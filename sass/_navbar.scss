@@ -1,0 +1,241 @@
+header {
+    box-shadow : $box-shadow-x-smooth;
+    background : white;
+    width      : 100%;
+    z-index    : 100;
+    height     : 95px;
+    position        : fixed;
+    transition: 1s ease;
+
+    nav { 
+        display         : flex;
+        width           : 100%;
+        top             : 0;
+        left            : 0;
+        padding         : 20px 50px;
+        background      : white;
+        justify-content : space-around;
+        align-items     : center;
+        transition: 1s ease;
+
+        .navbar-logo {
+            width   : auto;
+            height  : 55px;
+            margin  : 0 auto 0 0;
+            padding : 5px;
+            
+            .logo {
+                display    : block;
+                max-height : 45px;
+                width      : auto;
+                transition : 0.5s ease-in-out;
+
+                &.active {
+                    display : none;
+                }
+            }
+            
+            .logo-white {
+                display : none;
+
+                &.active {
+                    display:block;
+                }
+            }
+        }
+
+        ul {
+            display : flex;
+            margin  : 0;
+            padding : 0;
+            z-index : 100;
+
+            li {
+                list-style : none;
+                position   : relative;
+
+                .sub-menu {
+
+                    &:before {
+                        content     : "\f0d7";
+                        position    : absolute;
+                        font-family : Fontawesome;
+                        color       : $primary-color;
+                        right       : 5px;
+                        transform   : rotate(0deg);
+                        transition  : 0.5 ease-in-out;
+                        
+                    }
+                }
+                
+
+                a {
+                    color           : #757c8f;
+                    font-size       : 16px;
+                    font-weight     : bold;
+                    text-decoration : none;
+                    padding         : 0 20px;
+                    height          : 45px;
+                    line-height     : 50px;
+                    display         : block;
+                    font-family     : 'Faktum', sans-serif;
+
+                    &:hover, &:focus, &.active {
+                        text-decoration : none;
+                        color           : $primary-color;
+                        
+                        &:after {
+                            transform : translate3d(0, 0, 0);
+                            opacity   : 1;
+                            overflow  : hidden;
+                        }
+                    }
+
+                    &:after {
+                        content          : '';
+                        position         : absolute;
+                        bottom           : 0;
+                        left             : 15%;
+                        width            : 70%;
+                        height           : 3px;
+                        border-radius    : 2px;
+                        background-color : $primary-color;
+                        opacity          : 0;
+                        transition       : opacity 300ms, transform 300ms;
+                        overflow         : hidden;
+                        transform        : translate3d(-50%, 0, 0);
+                    }
+                }
+
+                &.active {
+
+                    .sub-menu {
+
+                        &:before {
+                            content    : "\f0d7";
+                            transform  : rotate(90deg);
+                            transition : 0.5 ease-in-out;
+                        }
+                    }
+
+                    ul {
+                        display : block;
+                    }
+                }
+
+                ul {
+                    position      : absolute;
+                    left          : 0;
+                    background    : white;
+                    display       : none;
+                    border-radius : 0 0 5px 5px;
+                    box-shadow    : $box-shadow-x-smooth;
+
+                    li {
+                        display : block;
+                        width   : 200px;
+
+                        a {
+                            color       : #757c8f;
+                            text-align  : left;
+                            width       : 100%;
+                            font-weight : 600;
+                            border-left : 4px solid white;
+
+                            &:hover, &:focus, &.active {
+                                background  : #eef1f6;
+                                color       : $primary-color;
+                                border-left : 4px solid $primary-color;
+                            }
+
+                            &:after {
+                                content : none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        height : 75px;
+        transition: 1s ease;
+
+        nav {
+            padding:10px 50px;
+            transition: 1s ease;
+        }
+    }
+}
+
+.topnav-toggle {
+    display         : none;
+    width           : 60px;
+    background      : $white;
+    text-decoration : none;
+    right           : 0;
+    top             : 0;
+    
+    svg path{
+        stroke-width   : 40;
+        stroke-linecap : round;
+        stroke         : $primary-color;
+        fill           : none;
+        transition     : all .5s ease-in-out;
+    }
+    
+// MENU FORM
+    
+    .top_bar, .bottom_bar{
+        stroke-dasharray : 240px 910px;
+    }
+    
+    .middle_bar{
+        stroke-dasharray : 240px 240px;
+    }
+    
+// CROSS FORM
+    
+    .open .top_bar, .open .bottom_bar{
+        stroke-dashoffset : -650px;
+    }
+    
+    .open .middle_bar{
+        stroke-dasharray  : 0px 220px;
+        stroke-dashoffset : -120px;
+    } 
+}
+  
+
+/*============ ShareButtons ============*/
+
+.shareSocials{
+    height      : auto;
+    position    : relative;
+    margin-left : 30px;
+
+    ul{
+        display     : flex;
+        align-items : center;
+
+        a{
+            padding    : 4px 5px 5px;
+            color      : $primary-color;
+            transition : 0.3s ease-in-out;
+
+            &:hover{
+                background-color : transparent;
+                color            : $tertiary-color;
+
+                &:after, &:before{
+                content : none;
+                }
+            }
+
+            .fa, .fas, .fab{
+                font-size : 25px;
+            }
+        } 
+    }
+}

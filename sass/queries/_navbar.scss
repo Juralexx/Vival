@@ -1,0 +1,142 @@
+@media (max-width: 992px) {
+    .topnav-toggle {
+        display : block;
+    }
+
+    .shareSocials{
+        height       : auto;
+        width        : 100px;
+        right        : 50px;
+        position     : absolute;
+        margin-right : 30px;
+    } 
+
+    header {
+        box-shadow : $box-shadow-x-smooth;
+        height     : 50px;
+
+        nav {
+            padding  : 10px 10px;
+            position : relative;
+
+            .navbar-logo {
+                height  : auto;
+                padding : 10px;
+                
+                .logo {
+                    max-height : 30px;
+                }
+            }
+
+            > ul {
+                position   : absolute;
+                width      : 60%;
+                height     : calc(100vh - 50px);
+                background : white;
+                top        : 70px;
+                left       : -100%;
+                transition : 1s ease;
+                display    : block;
+                text-align : center;
+                box-shadow : $box-shadow-left;
+                z-index    : 100;
+
+                &.active {
+                    left : 0;
+                }
+
+                li {
+                    a {
+                        color       : #757c8f;
+                        text-align  : left;
+                        width       : 100%;
+                        font-weight : 600;
+                        border-left : 4px solid white;
+
+                        &:hover, &:focus, &.active {
+                            background  : #eef1f6;
+                            color       : $primary-color;
+                            border-left : 4px solid $primary-color;
+
+                            &:after {
+                                content : none;
+                            }
+                        }
+                    }
+
+                    .sub-menu {
+
+                        &:before {
+                            margin-right : 20px;
+                        }
+                    }
+
+                    ul {
+                        max-height : 0;
+                        overflow   : hidden;
+                        visibility : hidden;
+                        transition : 1s ease-in-out;
+                    }
+
+                    &.active {
+
+                        ul {
+                            position     : relative;
+                            top          : 0;
+                            box-shadow   : none;
+                            height       : auto;
+                            max-height   : 800px;
+                            overflow     : visible;
+                            visibility   : visible;
+                            transition   : 1s ease-in-out;
+                            width        : 100%;
+                            padding-left : 30px;
+                            margin       : 0 0 0 auto;
+                            right        : 0;
+                            left         : unset;
+
+                            li {
+                                width : 100%;
+
+                                a {
+                                    color       : #757c8f;
+                                    text-align  : left;
+                                    width       : 100%;
+                                    font-weight : 600;
+
+                                    &:hover, &:focus, &.active {
+                                        background  : #eef1f6;
+                                        color       : $primary-color;
+                                        border-left : 4px solid $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.active-mob {
+            nav {
+                padding : 0 10px;
+                > ul {
+                    top : 50px;
+                    transition: 1s ease;
+                }
+            }
+        }
+    } 
+}
+
+@media(min-width:993px) {
+
+    header {
+
+        nav {
+            position  : relative;
+            max-width : 1700px;
+            margin    : 0 auto;
+        }
+    }
+}

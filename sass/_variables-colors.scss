@@ -1,0 +1,141 @@
+/************** ****** **************/
+/************** COLORS **************/
+/************** ****** **************/
+$white      : #ffffff;
+$grey-light : #fafafa;
+$grey       : #a9a9a9;
+$grey-dark  : #757c8f;
+$dark       : #484848;
+$black      : #2e2b2b;
+
+$bg-body : #ffffff;
+$bg-one  : #f4f4f4;
+$bg-two  : #5978b8;
+
+$primary-color         : #65795c;
+$primary-dark          : darken($primary-color, 10%);
+$primary-light         : lighten($primary-color, 20%);
+$primary-extra-light   : lighten($primary-color, 40%);
+$primary-x-extra-light : lighten($primary-color, 52%);
+$secondary-color       : #758b6b;
+$secondary-dark        : darken($secondary-color, 10%);
+$secondary-light       : lighten($secondary-color, 20%);
+$tertiary-color        : #65795c;
+
+$fourth-color : #9d9d9d;
+
+$link-color       : $primary-color;
+$link-color-hover : lighten($link-color, 10%);
+
+$h1-color-after-color : $primary-color;
+
+/************** GLOBAL TXT **************/
+
+$h1-color    : $dark;
+$h2-color    : $h1-color;
+$text-color  : $grey-dark;
+$text-darken : darken($text-color, 10%);
+
+/************** DAMIER **************/
+$damier-h2-one-color         : $h2-color;
+$damier-h2-after-one-color   : $h1-color-after-color;
+$damier-txt-one-color        : $text-color;
+$damier-link-one-color       : $damier-txt-one-color;
+$damier-link-one-color-hover : $damier-link-one-color;
+$bg-gradient                 : $bg-one;
+
+$damier-h2-two-color         : $white;
+$damier-h2-after-two-color   : $h1-color-after-color;
+$damier-txt-two-color        : $white;
+$damier-link-two-color       : $damier-txt-two-color;
+$damier-link-two-color-hover : $damier-link-two-color;
+$bg-gradient-second          : $bg-two;
+
+/************** BTN **************/
+// tout paramétrage a faire dans btn.css
+
+/************** HEADER **************/
+// tout paramétrage a faire dans header.css
+
+/************** BLOC ACTU **************/
+$actu-bg         : $bg-one;
+$bloc-actu-titre : $h1-color;
+$bloc-actu-date  : $h1-color;
+$bloc-actu-texte : $text-color;
+
+/************** BLOC ACTION **************/
+$actions-title : $h1-color;
+$actions-color : $text-color;
+$actions-bg    : $white;
+
+$share-this-bg     : #f7f7f7;
+$share-this-border : #7a7a7a; //si $share-this-background = circle-thin;
+$share-this-color  : #7a7a7a;
+
+/************** BLOC SERVICES **************/
+$services-title : $h1-color;
+$services-color : $text-color;
+$services-bg    : $grey-light;
+
+/************** BLOC REFERENCES **************/
+$logos-references-title : $h1-color;
+$logos-references-color : $text-color;
+$logos-references-bg    : $grey-light;
+
+/************** FOOTER **************/
+$footer-top-color : $text-color;
+$footer-top-bg    : $grey-light; // Utilisé pour Nos références
+$footer-color     : $text-color;
+$footer-fa-color  : #cfcfcf;
+$footer-bg        : $white;      // Utilisé par cartouche-footer et block-webform
+$footer-map-width : 0.4;
+
+/************** RESEAUX SOCIAUX **************/
+$bloc-reseaux-bg           : $primary-color;
+$bloc-reseaux-color        : $white;
+$bloc-reseaux-bg-hover     : $grey-light;
+$bloc-reseaux-color-hover  : $primary-color;
+$bloc-reseaux-width-height : 50px;
+
+/************** FORM **************/
+$form-h2-color          : $h2-color;
+$form-h2-after-color    : $h1-color-after-color;
+$form-text-color        : $text-color;
+$form-label-color       : #343434;
+$form-placeholder-color : $form-label-color;
+
+$form-input-height : 47px;
+
+/************** BOTTOM **************/
+$bottom-bg    : #343434;
+$bottom-color : $white;
+
+/************** TABLEAU **************/
+$table-bg     : $white;
+$tr-even-bg   : $grey-light;
+$tr-even-dash : #e2e2e2;
+
+/************* BOXSHADOWS ************/
+$box-shadow-one   : 0 15px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.12);
+$box-shadow-two   : 0px 9px 28px 0px rgb(0 0 0 / 15%);
+$box-shadow-three : 0 10px 20px 0 rgb(0 0 0 / 5%);
+
+$box-shadow-smooth   : 0px 9px 26px 0px rgb(0 0 0 / 15%);
+$box-shadow-x-smooth : 0 20px 30px 0 rgb(28 9 80 / 5%);
+
+$box-shadow-top    : 0 -12px 20px -2px rgba(0, 0, 0, 0.10);
+$box-shadow-bottom : 0 12px 8px -5px rgba(0, 0, 0, 0.23);
+$box-shadow-left   : 8px 0 15px -5px rgb(0 0 0 / 15%);
+$box-shadow-right  : -8px 0 8px -3px rgba(0, 0, 0, 0.25);
+
+$box-shadow-inset-bottom : inset 0px -30px 33px -10px rgb(28 9 80 / 5%);
+
+
+/* === OVERLAYS === */
+$speed  : 0.6s;
+$delay  : ($speed * .5);
+$easing : cubic-bezier(.55,0,.1,1);
+     
+
+$animation : 0.6s;
+$scale     : 0.60;
