@@ -1,0 +1,259 @@
+@media(max-width:1200px) {
+    .checkerboard-unstructured {
+        padding : 50px 0;
+        .checkerboard-container {
+            .image {
+                transform: scale(0.88);
+                z-index: -1;
+            }
+            .text {
+                padding : 0 30px;
+            }
+        }  
+    }
+}
+
+@media(max-width:992px) {
+    .checkerboard-unstructured {
+        padding : 50px 0 0;
+        .checkerboard-container {
+            flex-direction : column;
+
+            .image {
+                margin          : 0 auto;
+                justify-content : center;
+            }
+
+            .text {
+                width     : unset;
+                max-width : 500px;
+                height    : auto;
+                margin    : 0 auto;
+            }
+        }
+    }
+
+    .checkerboard-unstructured-1 {
+        .checkerboard-container {
+            .image {
+                order : 1;
+                &:after {
+                    width  : 500px;
+                    bottom : -15px;
+                }
+                &:before {
+                    left : -10px;
+                    top  : -30px;
+                }
+            }
+
+            .text {
+                order   : 2;
+                padding : 20px 0;
+                h2 {
+                    text-align : left;
+                }
+                p {
+                    text-align : left;
+                }
+                .btn {
+                    margin-left  : unset;
+                    margin-right : auto;
+                }
+            }
+        }
+    }
+
+    .checkerboard-unstructured-2 {
+        .checkerboard-container {
+            .image {
+                &:after {
+                    width  : 300px;
+                    left   : 0px;
+                    right  : unset;
+                    bottom : -50px;
+                }
+            }
+            .text {
+                padding : 20px 0;
+                h2 {
+                    text-align : right;
+                }
+                p {
+                    text-align : right;
+                }
+                .btn {
+                    margin-left  : auto;
+                    margin-right : unset;
+                }
+            }
+        }
+    }
+
+    .checkerboard-unstructured-3 {
+        .checkerboard-container {
+            .image {
+                order : 1;
+                &:after {
+                    top  : -30px;
+                }
+    
+                &:before {
+                    left   : 0;
+                    bottom : -20px;
+                }
+            }
+            .text { 
+                order   : 2;
+                padding : 20px 0;
+                h2 {
+                    text-align : left;
+                }
+                p {
+                    text-align : left;
+                }
+                .btn {
+                    margin-left  : unset;
+                    margin-right : auto;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .checkerboard-unstructured {
+        .checkerboard-container {
+            .image {
+                transform: scale(1);
+            }
+        }  
+    }
+
+    .checkerboard-unstructured-1 {
+        .checkerboard-container {
+            .image {
+                order : 1;
+                &:after {
+                    bottom : -25px;
+                    right  : 10px;
+                }
+                &:before {
+                    left : -10px;
+                    top  : -30px;
+                }
+
+                .img-small {
+                    display : none;
+                }
+            }
+        }
+    }
+
+    .checkerboard-unstructured-2 {
+        .checkerboard-container {
+            .image {
+                &:after {
+                    width  : 300px;
+                    left   : 0px;
+                    right  : unset;
+                    bottom : -50px;
+                }
+            }
+        }
+    }
+
+    .checkerboard-unstructured-3 {
+        .checkerboard-container {
+            .image {
+                order : 1;
+                &:after {
+                    top  : -30px;
+                }
+    
+                &:before {
+                    left   : 0;
+                    bottom : -20px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    .checkerboard-unstructured {
+        .checkerboard-container {
+            .text {
+                padding : 15px;
+            }
+            .image {
+                width           : 100%;
+                height          : auto;
+                min-width       : 100%;
+                max-width       : unset;
+                justify-content : unset;
+                border-radius   : 0;
+
+                .img-big {
+                    width           : 100%;
+                    height          : auto;
+                    min-width       : 100%;
+                    max-width       : unset;
+                    justify-content : unset;
+                    border-radius   : 0;
+                }
+
+                img {
+                    width         : 100%;
+                    height        : auto;
+                    border-radius : 0;
+                }
+            }
+        }
+    }
+
+    .checkerboard-unstructured-1 {
+        .checkerboard-container {
+            .image {
+                order : 1;
+                &:after {
+                    width  : 130px;
+                    height : 130px;
+                    bottom : -20px;
+                    right  : -10px;
+                }
+                &:before {
+                    width  : 200px;
+                    height : 150px;
+                    left   : -10px;
+                    top    : -30px;
+                }
+
+                .img-small {
+                    display : none;
+                }
+            }
+        }
+    }
+
+    .checkerboard-unstructured-3 {
+        .checkerboard-container {
+            .image {
+                order : 1;
+                &:after {
+                    width  : 150px;
+                    height : 150px;
+                    right  : -20px;
+                    top    : -30px;
+                }
+    
+                &:before {
+                    width  : 150px;
+                    height : 150px;
+                    left   : -20px;
+                    bottom : -50px;
+                }
+            }
+        }
+    }
+}

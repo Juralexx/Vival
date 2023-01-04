@@ -1,20 +1,46 @@
 .scrolltotop {
-    display       : block;
-    position      : absolute;
-    background    : var(--color-primary);
-    width         : 45px;
-    height        : 45px;
-    top           : 90vh;
-    right         : 1%;
-    cursor        : pointer;
-    transition    : 0.7s ease;
-    border-radius : 30px;
-    padding       : 11px 13px;
-    box-shadow: $box-shadow-x-smooth;
+    visibility : hidden;
+    opacity    : 0;
+    transform  : scale(0);
+    transition : .3s;
+    cursor     : pointer;
+    width      : 0;
+    height     : 0;
 
-    i {
-        font-size  : 22px;
-        color      : white !important;
-        background : var(--color-primary);
+    &.active {
+        height     : 50px;
+        width      : 50px;
+        visibility : visible;
+        opacity    : 1;
+        transform  : scale(1);
+        transition : .3s;
+        margin-top : 10px;
+
+        svg {
+            width         : 50px;
+            height        : 50px;
+            padding       : 10px;
+            color         : white;
+            background    : var(--color-primary);
+            border-radius : var(--rounded-full);
+            box-shadow    : var(--shadow-tiny);
+            opacity       : 1;
+            visibility    : visible;
+            transition    : .3s;
+        }
     }
+
+    svg {
+        opacity    : 0;
+        visibility : hidden;
+        transition : .1s;
+    }
+}
+
+.call-to-action {
+    position : fixed;
+    bottom   : 2vh;
+    right    : 15px;
+    z-index  : 1000;
+    height   : auto;
 }

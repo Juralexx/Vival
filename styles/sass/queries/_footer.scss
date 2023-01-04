@@ -1,20 +1,28 @@
+@media(max-width:1200px) {
+    footer {
+        .container {
+            width : 100%;
+            .footer-logo {
+                max-width : 150px;
+            }
+        }
+    }
+}
+
 @media(max-width:768px) {
     footer {
         text-align : center;
-
-        .footer-contact-barre {
+        .footer-infos {
             ul {
                 li {
-                    margin : 0 auto;
+                    margin : 10px auto;
                 }
             }
         }
-
         .footer-logo {
             margin : 0 auto;
         }
     }
-
     .row {
         > div {
             margin : 15px auto;

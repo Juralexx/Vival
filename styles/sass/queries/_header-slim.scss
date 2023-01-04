@@ -1,0 +1,33 @@
+@media(max-width:992px) {
+    .slider-slim {
+        &:before {
+            background :
+                linear-gradient(to top, rgba(var(--color-body-rgb), 1) 0%, rgba(var(--color-body-rgb), 0) 100%),
+                linear-gradient(to right, rgba(var(--color-body-rgb), 1) 25%, rgba(var(--color-body-rgb), 0) 100%),
+                url('../../public/img/slider-not-main.jpg');
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .slider-slim {
+        .slider-slim-container {
+            .slider-slim-encart {
+                .slogan {
+                    p {
+                        font-size   : 30px;
+                        line-height : 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    .slider-slim {
+        .slider-slim-container {
+            padding : 50px 15px;
+        }
+    }
+}

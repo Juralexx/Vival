@@ -1,192 +1,371 @@
+/* ================================ */
+/* ============ FAKTUM ============ */
+
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-Thin.eot');
+    src: url('../font/Faktum/Faktum-Thin.eot');
     src: local('Faktum Thin'), local('Faktum-Thin'),
-        url('../font/Faktum-Thin.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-Thin.woff2') format('woff2'),
-        url('../font/Faktum-Thin.woff') format('woff'),
-        url('../font/Faktum-Thin.ttf') format('truetype');
+        url('../font/Faktum/Faktum-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-Thin.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-Thin.woff') format('woff'),
+        url('../font/Faktum/Faktum-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-ThinItalic.eot');
+    src: url('../font/Faktum/Faktum-ThinItalic.eot');
     src: local('Faktum Thin Italic'), local('Faktum-ThinItalic'),
-        url('../font/Faktum-ThinItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-ThinItalic.woff2') format('woff2'),
-        url('../font/Faktum-ThinItalic.woff') format('woff'),
-        url('../font/Faktum-ThinItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-ThinItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-ThinItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-ThinItalic.ttf') format('truetype');
     font-weight: 100;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-Light.eot');
+    src: url('../font/Faktum/Faktum-Light.eot');
     src: local('Faktum Light'), local('Faktum-Light'),
-        url('../font/Faktum-Light.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-Light.woff2') format('woff2'),
-        url('../font/Faktum-Light.woff') format('woff'),
-        url('../font/Faktum-Light.ttf') format('truetype');
+        url('../font/Faktum/Faktum-Light.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-Light.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-Light.woff') format('woff'),
+        url('../font/Faktum/Faktum-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-MediumItalic.eot');
+    src: url('../font/Faktum/Faktum-MediumItalic.eot');
     src: local('Faktum Medium Italic'), local('Faktum-MediumItalic'),
-        url('../font/Faktum-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-MediumItalic.woff2') format('woff2'),
-        url('../font/Faktum-MediumItalic.woff') format('woff'),
-        url('../font/Faktum-MediumItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-MediumItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-MediumItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-RegularItalic.eot');
+    src: url('../font/Faktum/Faktum-RegularItalic.eot');
     src: local('Faktum Regular Italic'), local('Faktum-RegularItalic'),
-        url('../font/Faktum-RegularItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-RegularItalic.woff2') format('woff2'),
-        url('../font/Faktum-RegularItalic.woff') format('woff'),
-        url('../font/Faktum-RegularItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-RegularItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-RegularItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-RegularItalic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-Regular.eot');
+    src: url('../font/Faktum/Faktum-Regular.eot');
     src: local('Faktum Regular'), local('Faktum-Regular'),
-        url('../font/Faktum-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-Regular.woff2') format('woff2'),
-        url('../font/Faktum-Regular.woff') format('woff'),
-        url('../font/Faktum-Regular.ttf') format('truetype');
+        url('../font/Faktum/Faktum-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-Regular.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-Regular.woff') format('woff'),
+        url('../font/Faktum/Faktum-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-BoldItalic.eot');
+    src: url('../font/Faktum/Faktum-BoldItalic.eot');
     src: local('Faktum Bold Italic'), local('Faktum-BoldItalic'),
-        url('../font/Faktum-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-BoldItalic.woff2') format('woff2'),
-        url('../font/Faktum-BoldItalic.woff') format('woff'),
-        url('../font/Faktum-BoldItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-BoldItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-BoldItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-ExtraBoldItalic.eot');
+    src: url('../font/Faktum/Faktum-ExtraBoldItalic.eot');
     src: local('Faktum ExtraBold Italic'), local('Faktum-ExtraBoldItalic'),
-        url('../font/Faktum-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-ExtraBoldItalic.woff2') format('woff2'),
-        url('../font/Faktum-ExtraBoldItalic.woff') format('woff'),
-        url('../font/Faktum-ExtraBoldItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-ExtraBoldItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-ExtraBoldItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-ExtraBoldItalic.ttf') format('truetype');
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-SemiBold.eot');
+    src: url('../font/Faktum/Faktum-SemiBold.eot');
     src: local('Faktum SemiBold'), local('Faktum-SemiBold'),
-        url('../font/Faktum-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-SemiBold.woff2') format('woff2'),
-        url('../font/Faktum-SemiBold.woff') format('woff'),
-        url('../font/Faktum-SemiBold.ttf') format('truetype');
+        url('../font/Faktum/Faktum-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-SemiBold.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-SemiBold.woff') format('woff'),
+        url('../font/Faktum/Faktum-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-ExtraLightItalic.eot');
+    src: url('../font/Faktum/Faktum-ExtraLightItalic.eot');
     src: local('Faktum ExtraLight Italic'), local('Faktum-ExtraLightItalic'),
-        url('../font/Faktum-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-ExtraLightItalic.woff2') format('woff2'),
-        url('../font/Faktum-ExtraLightItalic.woff') format('woff'),
-        url('../font/Faktum-ExtraLightItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-ExtraLightItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-ExtraLightItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-ExtraLightItalic.ttf') format('truetype');
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-ExtraBold.eot');
+    src: url('../font/Faktum/Faktum-ExtraBold.eot');
     src: local('Faktum ExtraBold'), local('Faktum-ExtraBold'),
-        url('../font/Faktum-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-ExtraBold.woff2') format('woff2'),
-        url('../font/Faktum-ExtraBold.woff') format('woff'),
-        url('../font/Faktum-ExtraBold.ttf') format('truetype');
+        url('../font/Faktum/Faktum-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-ExtraBold.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-ExtraBold.woff') format('woff'),
+        url('../font/Faktum/Faktum-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-ExtraLight.eot');
+    src: url('../font/Faktum/Faktum-ExtraLight.eot');
     src: local('Faktum ExtraLight'), local('Faktum-ExtraLight'),
-        url('../font/Faktum-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-ExtraLight.woff2') format('woff2'),
-        url('../font/Faktum-ExtraLight.woff') format('woff'),
-        url('../font/Faktum-ExtraLight.ttf') format('truetype');
+        url('../font/Faktum/Faktum-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-ExtraLight.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-ExtraLight.woff') format('woff'),
+        url('../font/Faktum/Faktum-ExtraLight.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-LightItalic.eot');
+    src: url('../font/Faktum/Faktum-LightItalic.eot');
     src: local('Faktum Light Italic'), local('Faktum-LightItalic'),
-        url('../font/Faktum-LightItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-LightItalic.woff2') format('woff2'),
-        url('../font/Faktum-LightItalic.woff') format('woff'),
-        url('../font/Faktum-LightItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-LightItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-LightItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-Bold.eot');
+    src: url('../font/Faktum/Faktum-Bold.eot');
     src: local('Faktum Bold'), local('Faktum-Bold'),
-        url('../font/Faktum-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-Bold.woff2') format('woff2'),
-        url('../font/Faktum-Bold.woff') format('woff'),
-        url('../font/Faktum-Bold.ttf') format('truetype');
+        url('../font/Faktum/Faktum-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-Bold.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-Bold.woff') format('woff'),
+        url('../font/Faktum/Faktum-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-SemiBoldItalic.eot');
+    src: url('../font/Faktum/Faktum-SemiBoldItalic.eot');
     src: local('Faktum SemiBold Italic'), local('Faktum-SemiBoldItalic'),
-        url('../font/Faktum-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-SemiBoldItalic.woff2') format('woff2'),
-        url('../font/Faktum-SemiBoldItalic.woff') format('woff'),
-        url('../font/Faktum-SemiBoldItalic.ttf') format('truetype');
+        url('../font/Faktum/Faktum-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-SemiBoldItalic.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-SemiBoldItalic.woff') format('woff'),
+        url('../font/Faktum/Faktum-SemiBoldItalic.ttf') format('truetype');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Faktum';
-    src: url('../font/Faktum-Medium.eot');
+    src: url('../font/Faktum/Faktum-Medium.eot');
     src: local('Faktum Medium'), local('Faktum-Medium'),
-        url('../font/Faktum-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../font/Faktum-Medium.woff2') format('woff2'),
-        url('../font/Faktum-Medium.woff') format('woff'),
-        url('../font/Faktum-Medium.ttf') format('truetype');
+        url('../font/Faktum/Faktum-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../font/Faktum/Faktum-Medium.woff2') format('woff2'),
+        url('../font/Faktum/Faktum-Medium.woff') format('woff'),
+        url('../font/Faktum/Faktum-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
+/* ================================ */
+/* ============ MULISH ============ */
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-ExtraLight.ttf');
+    src: local('Mulish ExtraLight'), local('Mulish-ExtraLight'),
+        url('../font/Mulish/Mulish-ExtraLight.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-ExtraLightItalic.ttf');
+    src: local('Mulish ExtraLightItalic'), local('Mulish-ExtraLightItalic'),
+        url('../font/Mulish/Mulish-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-Light.ttf');
+    src: local('Mulish Light'), local('Mulish-Light'),
+        url('../font/Mulish/Mulish-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-LightItalic.ttf');
+    src: local('Mulish LightItalic'), local('Mulish-LightItalic'),
+        url('../font/Mulish/Mulish-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-Regular.ttf');
+    src: local('Mulish Regular'), local('Mulish-Regular'),
+        url('../font/Mulish/Mulish-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-Italic.ttf');
+    src: local('Mulish Italic'), local('Mulish-Italic'),
+        url('../font/Mulish/Mulish-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-SemiBold.ttf');
+    src: local('Mulish SemiBold'), local('Mulish-Bold'),
+    url('../font/Mulish/Mulish-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-SemiBoldItalic.ttf');
+    src: local('Mulish SemiBoldItalic'), local('Mulish-SemiBoldItalic'),
+    url('../font/Mulish/Mulish-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-Bold.ttf');
+    src: local('Mulish Bold'), local('Mulish-Bold'),
+    url('../font/Mulish/Mulish-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-BoldItalic.ttf');
+    src: local('Mulish BoldItalic'), local('Mulish-BoldItalic'),
+    url('../font/Mulish/Mulish-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-ExtraBold.ttf');
+    src: local('Mulish ExtraBold'), local('Mulish-Bold'),
+    url('../font/Mulish/Mulish-ExtraBold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../font/Mulish/Mulish-ExtraBoldItalic.ttf');
+    src: local('Mulish ExtraBoldItalic'), local('Mulish-ExtraBoldItalic'),
+    url('../font/Mulish/Mulish-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* ================================ */
+/* ============ OSWALD ============ */
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-ExtraLight.ttf');
+    src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'),
+        url('../font/Oswald/Oswald-ExtraLight.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-Light.ttf');
+    src: local('Oswald Light'), local('Oswald-Light'),
+        url('../font/Oswald/Oswald-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-Medium.ttf');
+    src: local('Oswald Medium'), local('Oswald-Medium'),
+        url('../font/Oswald/Oswald-Medium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-Regular.ttf');
+    src: local('Oswald Regular'), local('Oswald-Regular'),
+        url('../font/Oswald/Oswald-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-DemiBold.ttf');
+    src: local('Oswald DemiBold'), local('Oswald-DemiBold'),
+    url('../font/Oswald/Oswald-DemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-Bold.ttf');
+    src: local('Oswald Bold'), local('Oswald-Bold'),
+    url('../font/Oswald/Oswald-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald/Oswald-Heavy.ttf');
+    src: local('Oswald Heavy'), local('Oswald-Heavy'),
+    url('../font/Oswald/Oswald-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}

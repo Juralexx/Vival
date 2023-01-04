@@ -1,41 +1,25 @@
 #scroll-percent {
-    position : fixed;
-    top      : 95px;
-    width    : 100vw;
-    color    : var(--color-primary);
-    margin   : 0;
-    padding  : 0;
-    z-index  : 10000000;
-    transition: 1s ease; 
+    position   : absolute;
+    bottom     : -4px;
+    width      : 100vw;
+    height     : 4px;
+    color      : var(--color-primary);
+    margin     : 0;
+    padding    : 0;
+    z-index    : 10000000;
+    transition : 1s ease;
 
     &.active {
-        top : 75px;
-        transition: 1s ease;
+        top        : 75px;
+        transition : 1s ease;
     }
 }
 
-#percentage-value {
-    position         : fixed;
-    top              : 75%;
-    left             : 95%;
-    transform        : translateX(-50%);
-    height           : 150px;
-    width            : 150px;
-    color            : #FB3C3F;
-    background-color : white;
-    text-align       : center;
-    line-height      : 150px;
-    border-radius    : 50%;
-    box-shadow       : 1px 1px 8px 2px #FB3C3F, -1px -1px 8px 2px #FB3C3F;
-    font-size        : 3em;
-    z-index          : 1;
-}
-
 [data-scrollPercentage] .percentage {
-    display          : inline-block;
     background-color : var(--color-primary);
     height           : 4px;
     width            : 0;
+    border-radius    : 5px;
 }
 
 @media(max-width: 992px) {
@@ -43,8 +27,8 @@
         top : 70px;
 
         &.active-mob {
-            top : 50px;
-            transition: 1s ease;
+            top        : 50px;
+            transition : 1s ease;
         }
     }
 }

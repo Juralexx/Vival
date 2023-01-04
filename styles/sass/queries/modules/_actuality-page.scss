@@ -1,0 +1,26 @@
+@media(max-width:768px) {
+    .actualites-page-container {
+        .actu-inner-container {
+            display        : flex;
+            flex-direction : column;
+        }
+
+        .actu-img {
+            float      : none;
+            margin     : 0 auto 40px;
+            width      : 100%;
+            max-width  : 300px;
+            max-height : auto;
+
+            img {
+                object-fit : contain;
+                width      : 100%;
+            }
+        }
+
+        .actu-txt {
+            max-width : 480px;
+            margin    : 0 auto;
+        }
+    }
+}

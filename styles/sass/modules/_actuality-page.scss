@@ -1,0 +1,47 @@
+.actualites-page-container {
+    max-width : 1170px;
+
+    .actu-inner-container {
+        padding  : 50px 0;
+        overflow : auto;
+    }
+
+    .title {
+        h1 {
+            margin : 0;
+        }
+
+        .date {
+            color      : var(--color-text);
+            text-align : center;
+        }
+    }
+
+    .actu-img {
+        float     : left;
+        max-width : 368px;
+        margin    : 0 35px 25px 0;
+        cursor    : pointer;
+        overflow  : hidden;
+        position  : relative;
+
+        img {
+            display       : block;
+            max-width     : 100%;
+            height        : auto;
+            border-radius : var(--rounded-sm);
+            transition    : .3s ease;
+        }
+
+        &:hover {
+            > img {
+                transform  : scale(1.1);
+                transition : .3s ease;
+            }
+        }
+    }
+}
+
+.actuality-gallery {
+    position : relative;
+}

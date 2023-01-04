@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Titre de l'actualité",
+        "date": "23-09-2021",
+        "date_full": "23 Septembre 2021",
+        "url": "titre-de-lactualite",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretiumquis sem. Nulla consequat massa quis enim ex. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+        "image": "actualites.jpg",
+        "gallery": [
+            {
+                "name": "gallery-1.jpg",
+                "alt": "",
+                "title": "Titre de l'image"
+            },
+            {
+                "name": "gallery-4.jpg",
+                "alt": "",
+                "title": ""
+            },
+            {
+                "name": "gallery-5.jpg",
+                "alt": "",
+                "title": ""
+            },
+            {
+                "name": "gallery-3.jpg",
+                "alt": "",
+                "title": ""
+            },
+            {
+                "name": "gallery-2.jpg",
+                "alt": "",
+                "title": "Titre de l'image"
+            },
+            {
+                "name": "gallery-6.jpg",
+                "alt": "",
+                "title": ""
+            }
+        ]
+    },
+    {
+        "title": "Titre de l'actualité 2",
+        "date": "24-09-2021",
+        "date_full": "24 Septembre 2021",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretiumquis sem. Nulla consequat massa quis enim ex. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+        "image": "actualites.jpg",
+        "url": "titre-de-lactualite-2"
+    },
+    {
+        "title": "Titre de l'actualité 3",
+        "date": "24-09-2021",
+        "date_full": "23 Septembre 2021",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretiumquis sem. Nulla consequat massa quis enim ex. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+        "image": "actualites.jpg",
+        "url": "titre-de-lactualite-3"
+    }
+]

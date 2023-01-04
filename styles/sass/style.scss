@@ -2,54 +2,67 @@
 //========= VARIABLES ========//
 
 @import '_variables-colors';
-@import '_variables-sizes';
+@import '_variables-config';
 @import '_font';
 
 //==========================//
 //========= TOOLS ==========//
 
 @import 'tools/_btn';
-@import 'tools/_settings';
 @import 'tools/_scrollbar';
-@import 'tools/_scrollpercent';
 @import 'tools/_scrolltop';
-@import 'tools/_toggle';
+@import 'tools/_share';
 @import 'tools/_theme-toggle';
 @import 'tools/_modal';
-
-//=============================//
-//========= GLABALES ==========//
-
-@import '_body';
-@import '_header';
-@import '_navbar';
-@import '_footer';
+@import 'tools/_cols';
+@import 'tools/_containers';
+@import 'tools/_lightbox';
+@import 'tools/_breadcrumb';
+@import 'tools/_toggle-navbar';
+@import 'tools/_toggle-btn';
+@import 'tools/_scrollpercent';
 
 //============================//
 //========= MODULES ==========//
 
+@import '_body';
+@import '_header';
+@import '_header-slim';
+@import '_navbar';
+@import '_footer';
+
 @import 'modules/_brick';
 @import 'modules/_presentation';
-@import 'modules/_numbers';
-@import 'modules/_brands';
+@import 'modules/_checkerboard-unstructured';
+@import 'modules/_contact-bar';
 @import 'modules/_parallax';
-@import 'modules/_webform';
+@import 'modules/_numbers';
 @import 'modules/_checkerboard';
-@import 'modules/_masonry-checkerboard';
-@import 'modules/_whychoose';
- 
+@import 'modules/_brands';
+@import 'modules/_map';
+@import 'modules/_contact-page';
+@import 'modules/_mentions-legales';
+@import 'modules/_404';
+@import 'modules/_actuality';
+@import 'modules/_actuality-page';
+@import 'modules/_actuality-carousel';
+@import 'modules/_masonry';
+@import 'modules/_tarteaucitron-card';
+@import 'modules/_tarteaucitron-panel';
+
 //============================//
 //========= QUERIES ==========//
 
-@import 'queries/_navbar';
 @import 'queries/_header';
+@import 'queries/_header-slim';
+@import 'queries/_navbar';
 @import 'queries/_footer';
 
-@import 'queries/modules/_brick';
-@import 'queries/modules/_presentation';
-@import 'queries/modules/_numbers';
+@import 'queries/modules/_actuality-carousel';
+@import 'queries/modules/_actuality-page';
+@import 'queries/modules/_actuality';
+@import 'queries/modules/_brands';
+@import 'queries/modules/_bricks';
+@import 'queries/modules/_checkerboard-unstructured';
 @import 'queries/modules/_checkerboard';
-@import 'queries/modules/_masonry-checkerboard';
-@import 'queries/modules/_whychoose';
-
-
+@import 'queries/modules/_presentation';

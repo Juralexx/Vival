@@ -1,0 +1,287 @@
+#tarteaucitronRoot {
+
+    * {
+        color : var(--color-text);
+    }
+
+    #tarteaucitronBack {
+        background : rgba(0, 0, 0, 0.8);
+    }
+
+    .tarteaucitronH1 {
+        font-weight   : 600;
+        color         : var(--color-title);
+        margin-bottom : 10px;
+        text-align    : left;
+    }
+
+    .tarteaucitronH2 {
+        color       : var(--color-title);
+    }
+
+    .tarteaucitronH3 {
+        font-size   : 14px;
+        margin      : 0;
+        font-weight : 400;
+    }
+
+    #tarteaucitron {
+        a {
+            color : var(--color-grey-md);
+        }
+        #tarteaucitronServices {
+            padding      : 30px;
+            background : white;
+            box-shadow    : var(--shadow-one);
+            border-radius : var(--rounded-md);
+            margin        : 0;
+
+            #tarteaucitronMainLineOffset {
+                background-color : var(--color-body);
+                border           : none;
+                padding-bottom   : 20px;
+
+                #tarteaucitronInfo {
+                    position    : relative;
+                    padding     : 0;
+                    font-size   : 16px;
+                    font-weight : 400;
+                    min-width   : 100%;
+                    color       : var(--color-text);
+
+                    #tarteaucitronPrivacyUrlDialog {
+                        padding     : 0 0 0 13px;
+                        margin      : 0;
+                        color       : var(--color-grey-light);
+                        position    : absolute;
+                        bottom      : 10px;
+                        white-space : nowrap;
+
+                        &:hover {
+                            &:after {
+                                content          : '';
+                                position         : absolute;
+                                bottom           : 0;
+                                right            : 0;
+                                width            : calc(100% - 13px);
+                                height           : 1px;
+                                background-color : var(--color-grey-light);
+                            }
+                        }
+
+                        &:before {
+                            content             : '';
+                            position            : absolute;
+                            bottom              : 50%;
+                            transform           : translateY(56%);
+                            left                : 0;
+                            width               : 10px;
+                            height              : 10px;
+                            background-image    : url("../../public/img/lock.png");
+                            background-position : center;
+                            background-size     : cover;
+                        }
+                    }
+                }
+
+                .tarteaucitronName {
+                    margin-top  : 10px;
+                    .tarteaucitronH2 {
+                        font-weight : 600;
+                    }
+                }
+
+                .tarteaucitronAsk {
+                    display : flex !important;
+                    margin  : 0 !important;
+                }
+
+                .tarteaucitronAllow,
+                .tarteaucitronDeny {
+                    background-color : var(--color-grey-light);
+                    width            : 100%;
+                    &:hover {
+                        background-color: var(--color-primary-light);
+                    }
+                    &.tarteaucitronIsSelected {
+                        background-color : var(--color-primary);
+                    }
+                }
+            }
+            
+            #tarteaucitronServices_mandatory {
+                .tarteaucitronAllow {
+                    background-color : var(--color-primary);
+                }
+            }
+
+            .tarteaucitronDetails {
+                color            : var(--color-text);
+                background-color : var(--color-grey-xlight);
+                box-shadow       : var(--shadow-tiny);
+                padding          : 10px;
+                border-radius    : var(--rounded-sm);
+                left             : .5px
+            }
+        }
+
+        .tarteaucitronLine {
+            &.tarteaucitronIsAllowed {
+                .tarteaucitronAllow {
+                    background-color : var(--color-primary);
+                }
+                .tarteaucitronDeny {
+                    background-color : var(--color-grey-light);
+                    &:hover {
+                        background-color: var(--color-primary-light);
+                    }
+                }
+            }
+            &.tarteaucitronIsDenied {
+                .tarteaucitronAllow {
+                    background-color : var(--color-grey-light);
+                    &:hover {
+                        background-color: var(--color-primary-light);
+                    }
+                }
+                .tarteaucitronDeny {
+                    background-color : var(--color-primary);
+                }
+            }
+        }
+    }
+
+    .tarteaucitronAllow,
+    .tarteaucitronDeny {
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        min-width       : 125px;
+        height          : 48px;
+        font-size       : 16px;
+        border-radius   : var(--rounded-md);
+        margin          : 0 5px;
+        padding         : 0 20px;
+        opacity         : 1;
+    }
+
+    .tarteaucitronCheck,
+    .tarteaucitronCross {
+        display : none;
+    }
+
+    .tarteaucitronBorder {
+        padding      : 0;
+        margin       : 0;
+        border-top   : 1px solid var(--color-grey-light);
+
+        .tarteaucitronLine  {
+            background : white;
+            padding    : 6px 0;
+
+            .tarteaucitronName {
+                margin    : 0 !important;
+                max-width : 46%;
+
+                .tarteaucitronListCookies {
+                    color      : var(--color-grey-md);
+                    font-style : italic;
+                }
+            }
+
+            .tarteaucitronAsk {
+                display         : flex !important;
+                justify-content : flex-end;
+                width           : 50%;
+                max-width       : 380px;
+                margin          : 0 !important;
+            }
+        }
+
+        .tarteaucitronTitle {
+            background : white;
+
+            button {
+                padding    : 0;
+                font-size  : 16px;
+                color      : var(--color-title);
+            }
+        }
+    }
+
+    .tarteaucitronPlus {
+        &:before {
+            color       : var(--color-title);
+            font-weight : 400;
+        }
+    }
+
+    #tarteaucitronClosePanel {
+        position      : relative;
+        top           : 7px;
+        right         : 5px;
+        padding       : 0;
+        width         : 36px;
+        height        : 36px;
+        font-size     : 0;
+        border-radius : var(--rounded-full);
+        z-index       : 1000;
+
+        &:before {
+            content  : '';
+            position : absolute;
+            left     : 0;
+            top      : 0;
+            width    : 20px;
+            height   : 20px;
+        }
+
+        &:before,
+        &:after {
+            content       : '';
+            position      : absolute;
+            top           : 22%;
+            left          : calc(50% - .0625em);
+            width         : 2px;
+            height        : 20px;
+            border-radius : .125em;
+            transform     : rotate(45deg);
+            background    : var(--color-grey);
+        }
+
+        &:after {
+            transform : rotate(-45deg);
+        }
+
+        &:hover {
+            background: var(--color-grey-xlight);
+        }
+    }
+}
+
+@media(max-width:768px) {
+    #tarteaucitronServices {
+        height : 100vh !important;
+    }
+
+    #tarteaucitronRoot {
+        #tarteaucitron {
+            #tarteaucitronServices {
+                #tarteaucitronMainLineOffset {
+                    #tarteaucitronInfo {
+                        font-size : 14px;
+                        min-width : 100%;
+                    }
+                    .tarteaucitronAsk {
+                        flex-direction : column !important;
+                        #tarteaucitronAllAllowed,
+                         #tarteaucitronAllDenied {
+                            box-sizing : border-box;
+                            margin     : 4px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

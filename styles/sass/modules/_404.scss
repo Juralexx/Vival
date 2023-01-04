@@ -1,0 +1,42 @@
+.error-container {
+    img {
+        max-width : 400px;
+        height    : auto;
+        margin    : 0 auto;
+    }
+
+    .title {
+        color         : var(--color-primary);
+        line-height   : 90px;
+        font-size     : 66px;
+        font-weight   : 700;
+        margin-bottom : 0;
+    }
+
+    p {
+        font-size     : 26px;
+        text-align    : left;
+        margin-bottom : 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .error-container {
+        .title {
+            text-align : center;
+        }
+
+        p {
+            font-size  : 26px;
+            text-align : center;
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .error-container {
+        img {
+            max-width : 300px;
+        }
+    }
+}

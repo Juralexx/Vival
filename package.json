@@ -2,12 +2,13 @@
   "name": "vival",
   "version": "0.1.0",
   "private": true,
+  "_comment": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tail": "npx tailwindcss -o ./styles/tail.css --watch",
+    "tail": "npx tailwindcss -o ./styles/css/tail.css --watch",
     "gulp": "run gulpfile.js"
   },
   "repository": {
@@ -15,12 +16,28 @@
     "url": "git+https://github.com/Juralexx/MERN-Project.git"
   },
   "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "animejs": "^3.2.1",
+    "countup.js": "^2.3.2",
+    "fslightbox-react": "^1.6.2-2",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "leaflet": "^1.9.2",
+    "next": "^13.0.3",
+    "react": "^18.2.0",
+    "react-18-image-lightbox": "^5.1.4",
+    "react-countup": "^6.3.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.3.1",
+    "react-leaflet": "^4.1.0",
+    "react-popper": "^2.3.0",
+    "react-share": "^4.4.1",
+    "scrollreveal": "^4.0.9",
+    "styled-components": "^5.3.6",
+    "swiper": "^8.4.4",
+    "tarteaucitronjs": "^1.9.9"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
     "gulp": "^4.0.2",

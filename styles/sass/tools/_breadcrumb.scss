@@ -1,0 +1,27 @@
+.breadcrumb {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    margin-bottom   : 20px;
+
+    a, p {
+        font-size   : 13px;
+        color       : var(--color-text-light);
+        display     : flex;
+        align-items : center;
+
+        span {
+            padding : 0 3px;
+
+            svg {
+                font-size : 17px;
+            }
+        }
+    }
+
+    a {
+        &:hover {
+            color : var(--color-primary);
+        }
+    }
+}

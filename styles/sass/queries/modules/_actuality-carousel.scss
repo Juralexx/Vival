@@ -1,0 +1,61 @@
+@media(min-width:577px) and (max-width:992px) {
+    .actuality-carousel {
+        padding : 50px;
+        .actuality-card-col {
+            margin  : 0 auto 30px;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .actuality-carousel {
+        padding : 50px 15px;
+        .row > div {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+@media(max-width:576px) {
+    .actuality-carousel {
+        .actuality-card-col { 
+            margin  : 0 auto 30px;
+        }
+        .actuality-card-row {
+            margin : 0 auto 30px;
+            .image {
+                max-height : 200px;
+                width      : 100%;
+    
+                img {
+                    max-height : 200px;
+                }
+            }
+    
+            .content {
+                padding : 15px 0 0;
+                .text {
+                    -webkit-line-clamp : 6;
+                }
+            }
+
+            &:nth-child(1) {
+                .content {
+                    padding : 15px 0 0;
+                    order   : 2;
+                }
+                .image {
+                    order : 1;
+                }
+            }
+
+            &:nth-child(odd) {
+                h3, .date, .text {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

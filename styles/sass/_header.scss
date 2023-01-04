@@ -19,24 +19,17 @@
         .slider-encart {
             position  : absolute;
             top       : 50%;
-            transform : translateY(-70%);
-            max-width : 750px;
+            transform : translateY(-50%);
             height    : auto;
             width     : auto;
 
-            .slider-logo {
-                position  : relative;
-                margin    : 0 0 20px;
-                max-width : 355px;
-            }
-
             .info-first {
-                margin-bottom : 30px;
+                margin-bottom : 15px;
                 
                 p {
                     font-size      : 26px;
                     font-weight    : 700;
-                    color          : var(--color-primary-light);
+                    color          : var(--color-primary);
                     letter-spacing : 4px;
                     position       : relative;
     
@@ -44,23 +37,60 @@
                         float      : left;
                         display    : block;
                         content    : "";
-                        height     : 3px;
+                        height     : 2px;
                         width      : 60px;
-                        background : var(--color-primary-light);
+                        background : var(--color-primary);
                         margin     : 12px 15px 0 0;
                     }
                 }
             }
 
             .slogan {
-
                 p {
-                    font-size   : 60px;
-                    line-height : 70px;
+                    font-size   : 50px;
+                    line-height : 60px;
                     font-weight : 900;
+                    color       : var(--color-title);
 
                     span {
-                        color : var(--color-primary-light);
+                        color : var(--color-primary);
+                    }
+                }
+            }
+
+            .sub-slogan {
+                position : relative;
+                display  : inline-block;
+                margin   : 5px 0 10px;
+
+                p {
+                    font-size   : 36px;
+                    line-height : 40px;
+                    font-weight : 500;
+
+                    span {
+                        color : var(--color-primary);
+                    }
+                }
+            }
+
+            .slider-infos {
+                padding : 2px 0;
+                
+                a {
+                    display     : flex;
+                    align-items : center;
+                    font-size   : 20px;
+                    color       : var(--color-text);
+            
+                    &:hover {
+                        color : var(--color-primary);
+                    }
+            
+                    svg {
+                        margin-right : 5px;
+                        color        : var(--color-grey);
+                        font-size    : 18px;
                     }
                 }
             }
@@ -86,41 +116,44 @@
                       color               : white;
                       background-position : 0;
                       transition          : 0.4s ease-in-out;
-                      box-shadow          : $box-shadow-x-smooth;
+                      box-shadow          : var(--shadow-x-smooth);
                       transform           : scale(1.05);
                     }
                 }
             }
-            
-            .modal-btn-container {
-                display         : flex;
-                justify-content : space-between;
-                max-width       : 320px;
-                margin-top      : 30px;
+        }
+    }
+}
 
-                .modal-btn {
-                    height        : auto;
-                    width         : auto;
-                    padding       : 10px;
-                    z-index       : 100;
-                    border-radius : $rounded-xl;
-                    background    : var(--color-primary-xxlight);
-                    box-shadow    : $box-shadow-x-smooth;
-                    cursor        : pointer;
-                
-                    svg {
-                        color       : var(--color-primary);
-                        width       : 30px;
-                        height      : 30px;
-                    }
+.modal-btn-container {
+    display    : flex;
+    max-width  : 320px;
+    margin-top : 10px;
 
-                    &:hover {
-                        background : rgba(var(--color-primary-light-rgb), 1);
-                        svg {
-                            color : white;
-                        }
-                    }
-                }
+    .modal-btn {
+        height          : 50px;
+        width           : 50px;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        margin          : 0 10px 0 0;
+        z-index         : 100;
+        border-radius   : var(--rounded-md);
+        background      : var(--color-primary-light);
+        cursor          : pointer;
+        transition      : .2s ease;
+    
+        svg {
+            color      : white;
+            font-size  : 24px;
+            transition : .2s ease;
+        }
+
+        &:hover {
+            background : rgba(var(--color-primary-rgb), 1);
+            svg {
+                color      : white;
+                transition : .2s ease;
             }
         }
     }

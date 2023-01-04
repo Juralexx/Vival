@@ -7,20 +7,20 @@
 
     button {
         margin-left   : 8px;
-        border-radius : $rounded-lg;
+        border-radius : var(--rounded-lg);
 
         svg {
             width         : 36px;
             height        : 36px;
             padding       : 8px;
-            border-radius : $rounded-lg;
+            border-radius : var(--rounded-lg);
             color         : var(--color-body);
             background    : var(--color-primary-dark);
         }
     }
 }
 
-@media(max-width:$screen-lg) {
+@media(max-width:var(--screen-lg)) {
     .theme-toggle {
         margin-left  : auto;
         border-left  : none;

@@ -5,10 +5,14 @@
     --color-primary-xxlight : #eef1ed;
     --color-primary-dark    : #4d5c46;
     --color-body            : #ffffff;
-    --color-dark            : #292929;
+    --color-dark            : #343434;
     --color-title           : #292929;
-    --color-text            : #757c8f;
+    --color-text            : #545454;
+    --color-text-light      : #a0a0a0;
     --color-grey            : #78807a;
+    --color-grey-md         : #9D9D9D;
+    --color-grey-light      : #b9b9b9;
+    --color-grey-xlight     : #eeeeee;
 
     --color-primary-rgb         : 101, 121, 92;
     --color-primary-light-rgb   : 152, 171, 144;
@@ -16,6 +20,17 @@
     --color-primary-xxlight-rgb : 238, 241, 237;
     --color-primary-dark-rgb    : 77,  92,  70;
     --color-body-rgb            : 255, 255, 255;
+
+    --facebook  : #1a478a;
+    --instagram : #c72a9d;
+    --twitter   : #55acef;
+    --snapchat  : #fffc00;
+    --youtube   : #e91e00;
+    --twitch    : #9147ff;
+    --pinterest : #cb2229;
+    --linkedin  : #007bb6;
+    --whatsapp  : #25D366;
+    --messenger : #00B2FF;
 }
 
 .dark {
@@ -33,7 +48,6 @@
     --color-primary-rgb         : 101, 121, 92;
     --color-primary-light-rgb   : 152, 171, 144;
     --color-primary-xlight-rgb  : 194, 209, 187;
-    --color-primary-xxlight-rgb : 238, 241, 237
-    --color-primary-dark-rgb    : 77,  92,  70;
-    --color-body-rgb            : 26, 41, 40;
+    --color-primary-xxlight-rgb : 238, 241, 237 --color-primary-dark-rgb : 77, 92, 70;
+    --color-body-rgb            : 26,  41,  40;
 }

@@ -1,0 +1,22 @@
+.mentions-container {
+    padding-top    : 20px;
+    padding-bottom : 70px;
+    h3 {
+        margin      : 25px 0 15px;
+        font-weight : 500;
+    }
+    a {
+        color : var(--color-primary);
+    }
+    p {
+        text-align : justify;
+    }
+    ul {
+        text-align : justify;
+    }
+    #informations-légales {
+        p {
+            text-align : left;
+        }
+    }
+}

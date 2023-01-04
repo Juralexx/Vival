@@ -1,11 +1,26 @@
 @media (max-width: 992px) {
     header {
-        box-shadow : $box-shadow-x-smooth;
-        height     : 50px;
+        box-shadow : var(--shadow-x-smooth);
+        height     : 70px;
+        background : var(--color-body);
+
+        &.active {
+            &:before {
+                content          : '';
+                position         : absolute;
+                top              : 70px;
+                left             : 0;
+                right            : 0;
+                width            : 100vw;
+                height           : calc(100vh - 50px);
+                background-color : rgba(0, 0, 0, 0.5);
+                transition       : .7s ease;
+            }
+        }
 
         nav {
-            padding  : 10px 10px;
-            position : relative;
+            padding    : 10px 10px;
+            position   : relative;
 
             .navbar-logo {
                 height  : auto;
@@ -22,11 +37,11 @@
                 height     : calc(100vh - 50px);
                 top        : 69px;
                 left       : -100%;
-                transition : 1s ease;
+                transition : .7s ease;
                 display    : block;
                 text-align : center;
-                box-shadow : $box-shadow-left;
-                z-index    : 100;
+                background : var(--color-body);
+                overflow   : hidden;
 
                 &.active {
                     left : 0;
@@ -34,12 +49,21 @@
 
                 li {
                     padding: 0 10px;
-                    a {
-                        color       : #757c8f;
+
+                    a, button {
+                        height      : 46px;
+                        font-size   : 20px;
+                        font-weight : 600;
                         text-align  : left;
                         width       : 100%;
-                        font-weight : 600;
+                        margin      : 0;
                         border-left : 4px solid white;
+
+                        svg {
+                            position    : absolute;
+                            right       : 10px;
+                            margin-left : 0;
+                        }
                     }
 
                     ul {
@@ -76,7 +100,6 @@
                                     font-weight : 600;
 
                                     &:hover, &:focus, &.active {
-                                        background  : #eef1f6;
                                         color       : var(--color-primary);
                                         border-left : 4px solid var(--color-primary);
                                     }
@@ -105,24 +128,87 @@
         justify-content : center;
         margin-bottom   : 3px;
     }
-
-    .shareSocials{
-        height       : auto;
-        width        : 100px;
-        right        : 50px;
-        position     : absolute;
-        margin-right : 30px;
-    } 
 }
 
 @media(min-width:993px) {
-
     header {
-
         nav {
             position  : relative;
             max-width : 1700px;
             margin    : 0 auto;
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .menu-small-displayer {
+        position : unset;
+    }
+
+    .menu-small {
+        visibility : visible;
+        position   : absolute;
+        top        : 0;
+        left       : 100%;
+        transform  : none;
+        width      : 100%;
+        height     : calc(100vh - 50px);
+        max-height : unset;
+        transition : 0.5s ease;
+        box-shadow : none;
+        opacity    : 1;
+        z-index    : 1;
+    
+        &.open {
+            left : 0;
+            top  : 0;
+        }
+
+        .menu-small-title {
+            display         : flex;
+            align-items     : center;
+            font-size       : 22px;
+            font-weight     : 700;
+            padding         : 10px;
+
+            svg {
+                font-size    : 35px;
+                margin-right : 10px;
+                cursor       : pointer;
+            }
+        }
+
+        a {
+            height       : 46px;
+            font-size    : 20px;
+            padding-left : 20px;
+
+            &:hover, &.active {
+                padding    : 10px 15px 10px 30px;
+                color      : var(--color-primary);
+                transition : .3s ease;
+
+                &:before {
+                    width      : 20px;
+                    left       : 5px;
+                    background : var(--color-primary);
+                    transition : .3s ease;
+                }
+
+                &:after {
+                    content : none;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    header {
+        nav {
+            ul {
+                width : 100%;
+            }
         }
     }
 }
