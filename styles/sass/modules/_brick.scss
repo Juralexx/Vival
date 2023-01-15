@@ -89,7 +89,7 @@
                 background    : var(--color-body);
                 border-radius : var(--rounded-lg);
                 transition    : 0.7s ease;
-                box-shadow    : var(--shadow-one);
+                box-shadow    : var(--shadow-tiny);
 
                 &:hover {
                     transform  : scale(1.05);

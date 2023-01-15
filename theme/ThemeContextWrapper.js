@@ -26,10 +26,12 @@ export default function ThemeContextWrapper(props) {
     function checkTheme() {
         const localStorageTheme = localStorage.getItem("theme")
 
-        if (localStorageTheme !== null && localStorageTheme === "light") {
-            document.body.classList.remove('dark');
-        } else {
+        if (localStorageTheme !== null && localStorageTheme === "dark") {
+            document.body.classList.remove('light');
             document.body.classList.add('dark');
+        } else {
+            document.body.classList.add('light');
+            document.body.classList.remove('dark');
         }
     }
     
