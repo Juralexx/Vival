@@ -1,7 +1,7 @@
 #tarteaucitronRoot {
 
     * {
-        color : var(--color-text);
+        color : var(--text);
     }
 
     #tarteaucitronBack {
@@ -10,13 +10,13 @@
 
     .tarteaucitronH1 {
         font-weight   : 600;
-        color         : var(--color-title);
+        color         : var(--title);
         margin-bottom : 10px;
         text-align    : left;
     }
 
     .tarteaucitronH2 {
-        color       : var(--color-title);
+        color       : var(--title);
     }
 
     .tarteaucitronH3 {
@@ -27,7 +27,7 @@
 
     #tarteaucitron {
         a {
-            color : var(--color-grey-md);
+            color : var(--grey-md);
         }
         #tarteaucitronServices {
             padding      : 30px;
@@ -37,7 +37,7 @@
             margin        : 0;
 
             #tarteaucitronMainLineOffset {
-                background-color : var(--color-body);
+                background-color : var(--body);
                 border           : none;
                 padding-bottom   : 20px;
 
@@ -47,12 +47,12 @@
                     font-size   : 16px;
                     font-weight : 400;
                     min-width   : 100%;
-                    color       : var(--color-text);
+                    color       : var(--text);
 
                     #tarteaucitronPrivacyUrlDialog {
                         padding     : 0 0 0 13px;
                         margin      : 0;
-                        color       : var(--color-grey-light);
+                        color       : var(--grey-light);
                         position    : absolute;
                         bottom      : 10px;
                         white-space : nowrap;
@@ -65,7 +65,7 @@
                                 right            : 0;
                                 width            : calc(100% - 13px);
                                 height           : 1px;
-                                background-color : var(--color-grey-light);
+                                background-color : var(--grey-light);
                             }
                         }
 
@@ -98,26 +98,26 @@
 
                 .tarteaucitronAllow,
                 .tarteaucitronDeny {
-                    background-color : var(--color-grey-light);
+                    background-color : var(--grey-light);
                     width            : 100%;
                     &:hover {
-                        background-color: var(--color-primary-light);
+                        background-color: var(--primary-light);
                     }
                     &.tarteaucitronIsSelected {
-                        background-color : var(--color-primary);
+                        background-color : var(--primary);
                     }
                 }
             }
             
             #tarteaucitronServices_mandatory {
                 .tarteaucitronAllow {
-                    background-color : var(--color-primary);
+                    background-color : var(--primary);
                 }
             }
 
             .tarteaucitronDetails {
-                color            : var(--color-text);
-                background-color : var(--color-grey-xlight);
+                color            : var(--text);
+                background-color : var(--grey-xlight);
                 box-shadow       : var(--shadow-tiny);
                 padding          : 10px;
                 border-radius    : var(--rounded-sm);
@@ -128,24 +128,24 @@
         .tarteaucitronLine {
             &.tarteaucitronIsAllowed {
                 .tarteaucitronAllow {
-                    background-color : var(--color-primary);
+                    background-color : var(--primary);
                 }
                 .tarteaucitronDeny {
-                    background-color : var(--color-grey-light);
+                    background-color : var(--grey-light);
                     &:hover {
-                        background-color: var(--color-primary-light);
+                        background-color: var(--primary-light);
                     }
                 }
             }
             &.tarteaucitronIsDenied {
                 .tarteaucitronAllow {
-                    background-color : var(--color-grey-light);
+                    background-color : var(--grey-light);
                     &:hover {
-                        background-color: var(--color-primary-light);
+                        background-color: var(--primary-light);
                     }
                 }
                 .tarteaucitronDeny {
-                    background-color : var(--color-primary);
+                    background-color : var(--primary);
                 }
             }
         }
@@ -173,7 +173,7 @@
     .tarteaucitronBorder {
         padding      : 0;
         margin       : 0;
-        border-top   : 1px solid var(--color-grey-light);
+        border-top   : 1px solid var(--grey-light);
 
         .tarteaucitronLine  {
             background : white;
@@ -184,7 +184,7 @@
                 max-width : 46%;
 
                 .tarteaucitronListCookies {
-                    color      : var(--color-grey-md);
+                    color      : var(--grey-md);
                     font-style : italic;
                 }
             }
@@ -204,14 +204,14 @@
             button {
                 padding    : 0;
                 font-size  : 16px;
-                color      : var(--color-title);
+                color      : var(--title);
             }
         }
     }
 
     .tarteaucitronPlus {
         &:before {
-            color       : var(--color-title);
+            color       : var(--title);
             font-weight : 400;
         }
     }
@@ -246,7 +246,7 @@
             height        : 20px;
             border-radius : .125em;
             transform     : rotate(45deg);
-            background    : var(--color-grey);
+            background    : var(--grey);
         }
 
         &:after {
@@ -254,7 +254,7 @@
         }
 
         &:hover {
-            background: var(--color-grey-xlight);
+            background: var(--grey-xlight);
         }
     }
 }

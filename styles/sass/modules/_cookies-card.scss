@@ -20,7 +20,7 @@
             right         : 7px;
             padding       : 5px;
             border-radius : var(--rounded-full);
-            background    : var(--color-primary-xxlight);
+            background    : var(--primary-xxlight);
             cursor        : pointer;
 
             svg {
@@ -45,7 +45,7 @@
         line-height     : 18px;
         text-decoration : underline;
         &:hover {
-            color : var(--color-primary);
+            color : var(--primary);
         }
     }
 }
@@ -69,18 +69,18 @@
         padding         : 0 20px;
 
         &.btn-cookie-one {
-            color           : var(--color-body);
-            background      : var(--color-primary);
+            color           : var(--body);
+            background      : var(--primary);
         }
         &.btn-cookie-two {
-            color           : var(--color-text);
-            background      : var(--color-primary-xxlight);
+            color           : var(--text);
+            background      : var(--primary-xxlight);
         }
 
         &:hover,
         &:active {
             color      : white;
-            background : rgba(var(--color-primary-rgb), 0.8);
+            background : rgba(var(--primary-rgb), 0.8);
         }
 
         svg {

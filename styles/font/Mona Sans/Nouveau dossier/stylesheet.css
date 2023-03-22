@@ -1,0 +1,325 @@
+
+@font-face {
+    font-family: 'mona-sansblack';
+    src: url('mona-sans-black-webfont.woff2') format('woff2'),
+         url('mona-sans-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansblack_italic';
+    src: url('mona-sans-blackitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-blackitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansblack_narrow';
+    src: url('mona-sans-blacknarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-blacknarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansblack_narrow_italic';
+    src: url('mona-sans-blacknarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-blacknarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansblack_wide';
+    src: url('mona-sans-blackwide-webfont.woff2') format('woff2'),
+         url('mona-sans-blackwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansblack_wide_italic';
+    src: url('mona-sans-blackwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-blackwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansbold';
+    src: url('mona-sans-bold-webfont.woff2') format('woff2'),
+         url('mona-sans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansbold_italic';
+    src: url('mona-sans-bolditalic-webfont.woff2') format('woff2'),
+         url('mona-sans-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansbold_narrow';
+    src: url('mona-sans-boldnarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-boldnarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'mona-sansbold_narrow_italic';
+    src: url('mona-sans-boldnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-boldnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'mona-sansbold_wide_italic';
+    src: url('mona-sans-boldwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-boldwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanssemibold';
+    src: url('mona-sans-semibold-webfont.woff2') format('woff2'),
+         url('mona-sans-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanssemibold_italic';
+    src: url('mona-sans-semibolditalic-webfont.woff2') format('woff2'),
+         url('mona-sans-semibolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanssemibold_narrow';
+    src: url('mona-sans-semiboldnarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-semiboldnarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansSBdNarIt';
+    src: url('mona-sans-semiboldnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-semiboldnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanssemibold_wide';
+    src: url('mona-sans-semiboldwide-webfont.woff2') format('woff2'),
+         url('mona-sans-semiboldwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanssemibold_wide_italic';
+    src: url('mona-sans-semiboldwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-semiboldwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansultralight';
+    src: url('mona-sans-ultralight-webfont.woff2') format('woff2'),
+         url('mona-sans-ultralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansultralight_italic';
+    src: url('mona-sans-ultralightitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-ultralightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansultralight_narrow';
+    src: url('mona-sans-ultralightnarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-ultralightnarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansultraLtNarIt';
+    src: url('mona-sans-ultralightnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-ultralightnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansultralight_wide';
+    src: url('mona-sans-ultralightwide-webfont.woff2') format('woff2'),
+         url('mona-sans-ultralightwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansultraLtWdIt';
+    src: url('mona-sans-ultralightwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-ultralightwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansmedium';
+    src: url('mona-sans-medium-webfont.woff2') format('woff2'),
+         url('mona-sans-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansmedium_italic';
+    src: url('mona-sans-mediumitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-mediumitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansmedium_narrow_italic';
+    src: url('mona-sans-mediumnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-mediumnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansmedium_wide';
+    src: url('mona-sans-mediumwide-webfont.woff2') format('woff2'),
+         url('mona-sans-mediumwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansmedium_wide_italic';
+    src: url('mona-sans-mediumwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-mediumwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansregular';
+    src: url('mona-sans-regular-webfont.woff2') format('woff2'),
+         url('mona-sans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansregular_italic';
+    src: url('mona-sans-regularitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-regularitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansregular_narrow';
+    src: url('mona-sans-regularnarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-regularnarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansRgNarIt';
+    src: url('mona-sans-regularnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-regularnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansregular_wide';
+    src: url('mona-sans-regularwide-webfont.woff2') format('woff2'),
+         url('mona-sans-regularwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansregular_wide_italic';
+    src: url('mona-sans-regularwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-regularwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansextrabold';
+    src: url('mona-sans-extrabold-webfont.woff2') format('woff2'),
+         url('mona-sans-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansextrabold_italic';
+    src: url('mona-sans-extrabolditalic-webfont.woff2') format('woff2'),
+         url('mona-sans-extrabolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansextrabold_narrow';
+    src: url('mona-sans-extraboldnarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-extraboldnarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansXBdNarIt';
+    src: url('mona-sans-extraboldnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-extraboldnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansextrabold_wide';
+    src: url('mona-sans-extraboldwide-webfont.woff2') format('woff2'),
+         url('mona-sans-extraboldwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sansXBdWdIt';
+    src: url('mona-sans-extraboldwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-extraboldwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanslight';
+    src: url('mona-sans-light-webfont.woff2') format('woff2'),
+         url('mona-sans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanslight_italic';
+    src: url('mona-sans-lightitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanslight_narrow';
+    src: url('mona-sans-lightnarrow-webfont.woff2') format('woff2'),
+         url('mona-sans-lightnarrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanslight_narrow_italic';
+    src: url('mona-sans-lightnarrowitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-lightnarrowitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanslight_wide';
+    src: url('mona-sans-lightwide-webfont.woff2') format('woff2'),
+         url('mona-sans-lightwide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mona-sanslight_wide_italic';
+    src: url('mona-sans-lightwideitalic-webfont.woff2') format('woff2'),
+         url('mona-sans-lightwideitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

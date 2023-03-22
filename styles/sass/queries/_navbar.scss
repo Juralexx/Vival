@@ -2,7 +2,7 @@
     header {
         box-shadow : var(--shadow-x-smooth);
         height     : 70px;
-        background : var(--color-body);
+        background : var(--body);
 
         &.active {
             &:before {
@@ -40,7 +40,7 @@
                 transition : .7s ease;
                 display    : block;
                 text-align : center;
-                background : var(--color-body);
+                background : var(--body);
                 overflow   : hidden;
 
                 &.active {
@@ -100,8 +100,8 @@
                                     font-weight : 600;
 
                                     &:hover, &:focus, &.active {
-                                        color       : var(--color-primary);
-                                        border-left : 4px solid var(--color-primary);
+                                        color       : var(--primary);
+                                        border-left : 4px solid var(--primary);
                                     }
                                 }
                             }
@@ -185,13 +185,13 @@
 
             &:hover, &.active {
                 padding    : 10px 15px 10px 30px;
-                color      : var(--color-primary);
+                color      : var(--primary);
                 transition : .3s ease;
 
                 &:before {
                     width      : 20px;
                     left       : 5px;
-                    background : var(--color-primary);
+                    background : var(--primary);
                     transition : .3s ease;
                 }
 

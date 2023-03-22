@@ -1,8 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
-import variables from './variables';
+import variablesColors from './variablesColors';
+import variablesConfig from './variablesConfig';
+import { TarteAuCitronCard, TarteAuCitronPanel } from './TarteAuCitron';
+import { Loaders } from './Loader';
+import { CKEditor } from './CKEditor';
+import { Gallery } from './Gallery';
 
 const GlobalStyles = createGlobalStyle`
-    ${variables}
+    ${variablesColors}
+    ${variablesConfig}
+    ${TarteAuCitronCard}
+    ${TarteAuCitronPanel}
+    ${Loaders}
+    ${CKEditor}
+    ${Gallery}
+
     html {
         position        : relative;
         margin          : 0;
@@ -18,13 +30,69 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        width           : 100%;
-        margin          : 0;
-        padding         : 0;
-        font-family     : 'Mulish', ui-sans-serif, Arial, sans-serif;
-        scroll-behavior : smooth;
-        overflow        : hidden;
+        width            : 100%;
+        margin           : 0;
+        padding          : 0;
+        background-color : var(--body);
+        font-family      : var(--font-fam1), var(--font-fam-list);
+        scroll-behavior  : smooth;
+        overflow         : hidden;
     }
+
+    ::selection {
+        background-color : rgba(var(--primary-rgb), 0.2);
+        color            : var(--primary);
+    }
+
+    :focus {
+        outline        : 2px dashed var(--primary);
+        outline-offset : 3px;
+    }
+
+    :focus-visible {
+        outline        : 2px dashed var(--primary);
+        outline-offset : 3px;
+    }
+
+    :focus:not(:focus-visible) {
+        outline        : none;
+        outline-offset : 0px;
+    }
+
+    ::-webkit-scrollbar {
+        width  : 8px;
+        height : 10px;
+    }
+    ::-webkit-scrollbar-button {
+        width  : 0px;
+        height : 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background    : #c1c1c1;
+        border        : 31px none #c1c1c1;
+        border-radius : 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background : var(--primary-light);
+    }
+    ::-webkit-scrollbar-thumb:active {
+        background : var(--primary-light);
+    }
+    ::-webkit-scrollbar-track {
+        background    : var(--body);
+        border        : 1px solid var(--body);
+        border-radius : 5px;
+        width         : 5px;
+    }
+    ::-webkit-scrollbar-track:hover {
+        background : transparent;
+    }
+    ::-webkit-scrollbar-track:active {
+        background : transparent;
+    }
+    ::-webkit-scrollbar-corner {
+        background : transparent;
+    }  
 
     .main {
         position : relative;
@@ -33,7 +101,7 @@ const GlobalStyles = createGlobalStyle`
         top      : 0;
     }
 
-    .not-main {
+    .unmain {
         h1 {
             text-align : center;
         }
@@ -43,40 +111,34 @@ const GlobalStyles = createGlobalStyle`
     ul,
     li {
         list-style : none;
+        color      : var(--text);
+    }
+
+    p {
+        color       : var(--text);
+        line-height : 1.5rem;
+        font-size   : 16px;
+    }
+
+    a {
+        text-decoration : none;
+        font-size       : 16px;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        color          : var(--color-title);
-        font-family    : 'Mulish', ui-sans-serif, Arial, sans-serif;
+        color          : var(--title);
         letter-spacing : -1px;
-    }
+        font-stretch   : 108%;
 
-    h2 {
-        &.lined {
-            &:before {
-                display    : inline-block;
-                margin     : 0 20px 8px 0;
-                height     : 3px;
-                content    : " ";
-                background : var(--color-primary-light);
-                width      : 17%;
-            }
-
-            &:after {
-                display    : inline-block;
-                margin     : 0 0 8px 20px;
-                height     : 3px;
-                content    : " ";
-                background : var(--color-primary-light);
-                width      : 17%;
-            }
-        }
-
-        span {
-            color : var(--color-primary);
+        * {
+            font-size      : inherit;
+            line-height    : inherit;
+            color          : inherit;
+            font-stretch   : inherit;
+            letter-spacing : inherit;
         }
     }
 
@@ -96,31 +158,62 @@ const GlobalStyles = createGlobalStyle`
     h3 {
         font-weight : 400;
         font-size   : 27px;
+        line-height : 29px;
     }
 
     h4 {
         font-weight : 300;
         font-size   : 22px;
+        font-size   : 24px;
     }
 
-    p {
-        color       : var(--color-text);
-        line-height : 1.5rem;
-        font-size   : 16px;
-    }
-
-    a {
-        text-decoration : none;
-        font-size       : 16px;
-    }
-
-    @media(max-width:576px) {
+    @media(max-width: 768px) {
         h1 {
-            font-size : 36px !important;
+            font-size : 32px;
         }
 
         h2 {
-            font-size : 30px !important;
+            font-size : 28px;
+        }
+    }
+
+    .list-styled {
+        color      : var(--text);
+        list-style : unset;
+        li {
+            list-style : unset;
+        }
+    }
+
+    .highlight {
+        color : var(--primary);
+    }
+
+    .no-results-big {
+        display         : flex;
+        flex-direction  : column;
+        justify-content : center;
+        align-items     : center;
+        padding         : 40px 0;
+        font-size       : 16px;
+
+        svg {
+            width            : 50px;
+            height           : auto;
+            padding          : 10px;
+            border-radius    : var(--rounded-md);
+            color            : var(--primary);
+            background-color : rgba(var(--primary-rgb), 0.1);
+            margin-bottom    : 20px;
+        }
+
+        span {
+            font-size   : 24px;
+            font-weight : 600;
+        }
+
+        button {
+            margin-top : 20px;
         }
     }
 `;

@@ -1,7 +1,7 @@
 /*global tarteaucitron */
 tarteaucitron.lang = {
 
-    "middleBarHead": "☝ 🍪",
+    "middleBarHead": "Notre site utilise des cookies",
     "adblock": "Bonjour! Ce site joue la transparence et vous donne le choix des services tiers à activer.",
     "adblock_call": "Merci de désactiver votre adblocker pour commencer la personnalisation.",
     "reload": "Recharger la page",
@@ -23,7 +23,7 @@ tarteaucitron.lang = {
     "info": "Protection de votre vie privée",
     "disclaimer": "En autorisant ces services tiers, vous acceptez le dépôt et la lecture de cookies et l'utilisation de technologies de suivi nécessaires à leur bon fonctionnement.",
     "allow": "Autoriser",
-    "deny": "Interdire",
+    "deny": "Refuser",
     "noCookie": "Ce service ne dépose aucun cookie.",
     "useCookie": "Ce service peut déposer",
     "useCookieCurrent": "Ce service a déposé",

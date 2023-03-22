@@ -17,7 +17,7 @@
     h2 {
         text-align    : center;
         font-weight   : 600;
-        color         : var(--color-title);
+        color         : var(--title);
         transition    : .5s ease;
         margin-bottom : 30px;
 
@@ -26,13 +26,13 @@
             margin     : 0 20px 8px 0;
             height     : 2px;
             content    : "";
-            background : var(--color-primary-light);
+            background : var(--primary-light);
             width      : 7%;
             transition : .5s ease;
         }
 
         &:hover {
-            color        : var(--color-primary);
+            color        : var(--primary);
             transition   : .5s ease;
             margin-right : 20px;
 
@@ -81,12 +81,12 @@
     }
 
     a {
-        color       : var(--color-text) !important;
+        color       : var(--text) !important;
         font-weight : 500;
         white-space : nowrap;
 
         &:hover {
-            color : var(--color-primary) !important;
+            color : var(--primary) !important;
         }
     }
 }

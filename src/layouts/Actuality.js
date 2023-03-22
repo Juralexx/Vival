@@ -1,22 +1,23 @@
 import React from "react"
-import Brands from "../components/Brands"
-import HeaderSlim from "../components/HeaderSlim"
-import Map from "../components/Map"
-import Numbers from "../components/Numbers"
-import Parallax from "../components/Parallax"
+import Brands from "components/Brands"
+import Map from "components/map/Map"
+import Parallax from "components/Parallax"
+import ContactBar from "components/ContactBar"
 
-export default function Actuality({ children, image }) {
-
+const ActualityLayout = ({ children, datas }) => {
     return (
-        <>
-            <HeaderSlim image={image ? image : ''} />
-            <div className="actualites-page-container container" id="actualites-page-container">
-                {children}
-            </div>
-            <Numbers />
+        datas &&
+        <React.Fragment>
+            {children}
+            <ContactBar
+                datas={datas}
+            />
             <Parallax />
             <Brands />
-            <Map />
-        </>
+            <Map
+                datas={datas}
+            />
+        </React.Fragment>
     )
 }
+export default ActualityLayout

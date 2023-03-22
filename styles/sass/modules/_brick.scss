@@ -4,7 +4,7 @@
     width      : 100%;
     min-height : 200px;
     padding    : 50px 0;
-    background : var(--color-primary-xxlight);
+    background : var(--primary-xxlight);
 
     .bricks-container {
         position    : relative;
@@ -23,7 +23,7 @@
                 content       : '';
                 left          : 0;
                 top           : 0;
-                background    : rgba(var(--color-primary-xlight-rgb), 0.4);
+                background    : rgba(var(--primary-xlight-rgb), 0.4);
                 height        : 100px;
                 width         : 100px;
                 border-radius : 10px;
@@ -34,7 +34,7 @@
                 content       : '';
                 right         : 0;
                 bottom        : 0;
-                background    : rgba(var(--color-primary-xlight-rgb), 0.3);
+                background    : rgba(var(--primary-xlight-rgb), 0.3);
                 height        : 120px;
                 width         : 120px;
                 border-radius : 10px;
@@ -53,7 +53,7 @@
                     margin     : 0 10px 8px 0;
                     height     : 2px;
                     content    : " ";
-                    background : var(--color-primary-light);
+                    background : var(--primary-light);
                     width      : 20px;
                 }
             }
@@ -72,7 +72,7 @@
             }
 
             .swiper-pagination-bullet-active {
-                background : var(--color-primary);
+                background : var(--primary);
             }
         }
 
@@ -86,7 +86,7 @@
                 width         : 300px;
                 padding       : 20px;
                 margin        : 0 auto;
-                background    : var(--color-body);
+                background    : var(--body);
                 border-radius : var(--rounded-lg);
                 transition    : 0.7s ease;
                 box-shadow    : var(--shadow-tiny);
@@ -109,31 +109,31 @@
                         padding         : 20px;
                         width           : 110px;
                         height          : 110px;
-                        background      : var(--color-primary-xlight);
+                        background      : var(--primary-xlight);
                         border-radius   : var(--rounded-full);
                         margin          : 10px auto;
                         transition      : 0.5s ease-in-out;
 
                         svg {
                             font-size  : 55px;
-                            color      : var(--color-text);
+                            color      : var(--text);
                             transition : 0.5s ease-in-out;
                         }
 
                         &:hover {
-                            background : var(--color-primary-dark);
+                            background : var(--primary-dark);
                             border     : none;
                             transition : 0.5s ease-in-out;
 
                             svg {
-                                color      : var(--color-primary-xlight);
+                                color      : var(--primary-xlight);
                                 transition : 0.5s ease-in-out;
                             }
                         }
                     }
 
                     span {
-                        color       : var(--color-dark);
+                        color       : var(--dark);
                         font-size   : 22px;
                         font-weight : 600;
                         text-align  : center;
@@ -143,7 +143,7 @@
 
                 p {
                     text-align : center;
-                    color      : var(--color-text);
+                    color      : var(--text);
                 }
             }
         }

@@ -29,7 +29,7 @@
             height           : 0;
             width            : 0;
             font-size        : 20px;
-            color            : var(--color-primary);
+            color            : var(--primary);
             background-color : white;
             border-radius    : var(--rounded-full);
             margin           : 5px 0;
@@ -66,7 +66,7 @@
         top          : 50%;
         transform    : translateY(-50%) rotate(180deg);
         width        : auto;
-        color        : var(--color-title);
+        color        : var(--title);
         font-style   : italic;
         writing-mode : vertical-rl;
         font-weight  : bold;

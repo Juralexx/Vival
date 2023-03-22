@@ -2,8 +2,8 @@
     .slider-slim {
         &:before {
             background :
-                linear-gradient(to top, rgba(var(--color-body-rgb), 1) 0%, rgba(var(--color-body-rgb), 0) 100%),
-                linear-gradient(to right, rgba(var(--color-body-rgb), 1) 25%, rgba(var(--color-body-rgb), 0) 100%),
+                linear-gradient(to top, rgba(var(--body-rgb), 1) 0%, rgba(var(--body-rgb), 0) 100%),
+                linear-gradient(to right, rgba(var(--body-rgb), 1) 25%, rgba(var(--body-rgb), 0) 100%),
                 url('../../public/img/slider-not-main.jpg');
         }
     }

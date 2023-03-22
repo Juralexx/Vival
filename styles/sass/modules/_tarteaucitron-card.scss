@@ -13,7 +13,7 @@
         background    : white;
         border-radius : var(--rounded-md) !important;
         box-shadow    : var(--shadow-smooth) !important;
-        color         : var(--color-text);
+        color         : var(--text);
         padding       : 20px !important;
         animation     : 1s ease-out 0s cookies-card-left;
         box-sizing    : border-box !important;
@@ -23,13 +23,13 @@
             content     : 'Notre site utilise des cookies';
             font-size   : 22px;
             font-weight : bold;
-            color       : var(--color-title);
+            color       : var(--title);
         }
 
         #tarteaucitronDisclaimerAlert {
             font-size   : 16px;
             line-height : 20px;
-            color       : var(--color-text);
+            color       : var(--text);
             text-align  : left;
             padding     : 5px 0 45px;
             margin      : 0;
@@ -37,7 +37,7 @@
 
         #tarteaucitronPrivacyUrl {
             position     : absolute;
-            color        : var(--color-grey-light);
+            color        : var(--grey-light);
             font-size    : 14px;
             bottom       : 83px;
             height       : 20px;
@@ -53,7 +53,7 @@
                     right            : 0;
                     width            : calc(100% - 13px);
                     height           : 1px;
-                    background-color : var(--color-grey-light);
+                    background-color : var(--grey-light);
                 }
             }
 
@@ -80,24 +80,24 @@
             float           : right;
 
             &.tarteaucitronAllow {
-                background : var(--color-primary);
+                background : var(--primary);
                 &:hover {
-                    background-color: var(--color-primary-light);
+                    background-color: var(--primary-light);
                 }
             }
 
             &#tarteaucitronCloseAlert,
             &.tarteaucitronDeny {
-                color      : var(--color-text);
-                background : var(--color-primary-xxlight);
+                color      : var(--text);
+                background : var(--primary-xxlight);
                 &:hover {
-                    background-color: var(--color-primary-xlight);
+                    background-color: var(--primary-xlight);
                 }
             }
 
             &.tarteaucitronDeny {
-                color      : var(--color-text);
-                background : var(--color-primary-xxlight);
+                color      : var(--text);
+                background : var(--primary-xxlight);
             }
 
             svg {
@@ -118,7 +118,7 @@
             color         : rgba(255, 255, 255, 0) !important;
 
             &:hover {
-                background-color : var(--color-primary-xxlight);
+                background-color : var(--primary-xxlight);
             }
 
             &:before {
@@ -140,7 +140,7 @@
                 height        : 20px;
                 border-radius : .125em;
                 transform     : rotate(45deg);
-                background    : var(--color-grey);
+                background    : var(--grey);
             }
 
             &:after {

@@ -34,7 +34,6 @@ span.tarteaucitronReadmoreSeparator {
 /** 09052021 **/
 .tarteaucitronName .tacCurrentStatus,
 .tarteaucitronName .tarteaucitronReadmoreSeparator {
-    color: #333 !important;
     font-size: 12px !important;
     text-transform: capitalize;
 }
@@ -47,7 +46,6 @@ button.tarteaucitron-toggle-group {
 }
 
 #tarteaucitron #tarteaucitronServices_mandatory .tarteaucitronH3 {
-    font-size: 14px;
     margin-top: 7px;
 }
 
@@ -241,11 +239,6 @@ button.tarteaucitron-toggle-group {
     display: block;
 }
 
-#tarteaucitronRoot ol,
-#tarteaucitronRoot ul {
-    list-style: none;
-}
-
 #tarteaucitronRoot blockquote,
 #tarteaucitronRoot q {
     quotes: none;
@@ -262,11 +255,6 @@ button.tarteaucitron-toggle-group {
 #tarteaucitronRoot table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-#tarteaucitronRoot a:focus-visible,
-#tarteaucitronRoot button:focus-visible {
-    outline: 3px dashed #3d86d8;
 }
 
 /***
@@ -372,10 +360,6 @@ div#tarteaucitronMainLineOffset {
     text-decoration: none;
 }
 
-#tarteaucitronRoot button {
-    border: 0;
-}
-
 #tarteaucitronAlertSmall strong,
 #tarteaucitronAlertBig a,
 #tarteaucitronAlertSmall a {
@@ -385,10 +369,6 @@ div#tarteaucitronMainLineOffset {
 #tarteaucitron strong {
     font-size: 22px;
     font-weight: 500;
-}
-
-#tarteaucitron ul {
-    padding: 0;
 }
 
 #tarteaucitron .tarteaucitronH1,
@@ -422,10 +402,6 @@ div#tarteaucitronMainLineOffset {
     font-size: 14px;
     line-height: normal;
     vertical-align: initial;
-}
-
-#tarteaucitronRoot .tarteaucitronH1 {
-    font-size: 1.5em;
 }
 
 #tarteaucitronRoot .tarteaucitronH2 {
@@ -498,7 +474,6 @@ div#tarteaucitronMainLineOffset {
 #tarteaucitron #tarteaucitronServices .tarteaucitronDetails {
     display: inline-block;
     font-weight: 700;
-    margin: 20px 0px 0px;
     text-align: left;
     width: auto;
 }
@@ -529,13 +504,8 @@ div#tarteaucitronMainLineOffset {
 
 #tarteaucitron #tarteaucitronInfo,
 #tarteaucitron #tarteaucitronServices .tarteaucitronDetails {
-    display: none;
-    font-size: 12px;
-    font-weight: 500;
     margin-top: 0;
     max-width: 270px;
-    position: absolute;
-    z-index: 2147483647;
 }
 
 #tarteaucitron #tarteaucitronInfo a {
@@ -544,42 +514,20 @@ div#tarteaucitronMainLineOffset {
 }
 
 #tarteaucitron #tarteaucitronServices .tarteaucitronLine {
-    border-left: 5px solid transparent;
     margin: 0;
     overflow: hidden;
 }
 
 #tarteaucitron #tarteaucitronServices .tarteaucitronMainLine {
-    background: #333;
-    border: 3px solid #333;
-    border-left: 9px solid #333;
-    border-top: 5px solid #333;
-    margin-bottom: 0;
-    margin-top: 21px;
     position: relative;
-}
-
-#tarteaucitron #tarteaucitronServices .tarteaucitronMainLine:hover {
-    background: #333;
-}
-
-#tarteaucitron #tarteaucitronServices .tarteaucitronMainLine .tarteaucitronName {
-    margin-left: 15px;
-    margin-top: 2px;
 }
 
 #tarteaucitron #tarteaucitronServices .tarteaucitronMainLine .tarteaucitronName button {
     color: #fff;
 }
 
-#tarteaucitron #tarteaucitronServices .tarteaucitronMainLine .tarteaucitronAsk {
-    margin-top: 0px !important;
-}
-
 #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName {
     display: inline-block;
-    float: left;
-    margin-left: 10px;
     text-align: left;
     width: 50%;
 }
@@ -589,9 +537,7 @@ div#tarteaucitronMainLineOffset {
 }
 
 #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk {
-    display: inline-block;
     float: right;
-    margin: 7px 15px 0;
     text-align: right;
 }
 
@@ -605,13 +551,11 @@ div#tarteaucitronMainLineOffset {
 }
 
 #tarteaucitron #tarteaucitronServices #tarteaucitronAllAllowed.tarteaucitronIsSelected {
-    background-color: #1B870B;
     opacity: 1;
 }
 
 #tarteaucitron #tarteaucitronServices #tarteaucitronAllDenied.tarteaucitronIsSelected,
 #tarteaucitron #tarteaucitronServices #tarteaucitronAllDenied2.tarteaucitronIsSelected {
-    background-color: #9C1A1A;
     opacity: 1;
 }
 
@@ -629,36 +573,12 @@ div#tarteaucitronMainLineOffset {
     font-size: 14px;
 }
 
-span#tarteaucitronDisclaimerAlert {
-    padding: 0 10px;
-    display: inline-block;
-}
-
 /***
  * Big alert
  */
-.tarteaucitronAlertBigTop {
-    top: 0;
-}
 
 .tarteaucitronAlertBigBottom {
     bottom: 0;
-}
-
-#tarteaucitronRoot #tarteaucitronAlertBig {
-    display: none;
-    font-size: 15px !important;
-    position: fixed;
-    box-sizing: content-box;
-    z-index: 2147483645;
-    margin: auto;
-}
-
-#tarteaucitronAlertBig #tarteaucitronPrivacyUrl,
-#tarteaucitronAlertBig #tarteaucitronPrivacyUrlDialog,
-#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert,
-#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert strong {
-    color: #fff;
 }
 
 #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert strong {
@@ -677,23 +597,7 @@ span#tarteaucitronDisclaimerAlert {
 #tarteaucitron #tarteaucitronPrivacyUrl,
 #tarteaucitronRoot .tarteaucitronDeny,
 #tarteaucitronRoot .tarteaucitronAllow {
-    background: #008300;
     color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px !important;
-    line-height: 1.2;
-    text-decoration: none;
-}
-
-#tarteaucitronAlertBig #tarteaucitronCloseAlert,
-#tarteaucitron #tarteaucitronPrivacyUrl {
-    background: #fff;
-    color: #333;
-    font-size: 13px;
-    margin-bottom: 3px;
-    margin-left: 7px;
-    padding: 5px 10px;
 }
 
 #tarteaucitronPercentage {
@@ -837,16 +741,8 @@ span#tarteaucitronDisclaimerAlert {
     width: 0%;
 }
 
-#tarteaucitronAlertSmall #tarteaucitronManager #tarteaucitronDot #tarteaucitronDotGreen {
-    background-color: #1B870B;
-}
-
 #tarteaucitronAlertSmall #tarteaucitronManager #tarteaucitronDot #tarteaucitronDotYellow {
     background-color: #FBDA26;
-}
-
-#tarteaucitronAlertSmall #tarteaucitronManager #tarteaucitronDot #tarteaucitronDotRed {
-    background-color: #9C1A1A;
 }
 
 #tarteaucitronAlertSmall #tarteaucitronCookiesNumber {
@@ -957,7 +853,6 @@ span#tarteaucitronDisclaimerAlert {
 }
 
 .tac_activate .tac_float .tarteaucitronAllow {
-    background-color: #1B870B;
     display: inline-block;
 }
 
@@ -974,17 +869,6 @@ div.amazon_product {
     width: 120px;
 }
 
-#tarteaucitronServices_mandatory button.tarteaucitronAllow {
-    opacity: 1;
-}
-
-div#tarteaucitronInfo {
-    display: block !important;
-    position: relative !important;
-    padding: 15px 0 !important;
-    margin: -10px auto 40px !important;
-}
-
 a.tarteaucitronSelfLink {
     position: absolute;
     left: 0;
@@ -996,17 +880,7 @@ a.tarteaucitronSelfLink {
 }
 
 .tarteaucitronMainLine .tarteaucitronH2 {
-    font-size: 1.2em !important;
     margin-top: 4px !important;
-}
-
-#tarteaucitronCloseCross {
-    position: absolute;
-    color: #FFFF;
-    font-size: 1.8rem;
-    cursor: pointer;
-    top: 10px;
-    right: 26px
 }
 
 .tarteaucitron-spacer-20 {

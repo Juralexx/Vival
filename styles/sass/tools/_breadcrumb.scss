@@ -6,7 +6,7 @@
 
     a, p {
         font-size   : 13px;
-        color       : var(--color-text-light);
+        color       : var(--text-light);
         display     : flex;
         align-items : center;
 
@@ -21,7 +21,7 @@
 
     a {
         &:hover {
-            color : var(--color-primary);
+            color : var(--primary);
         }
     }
 }

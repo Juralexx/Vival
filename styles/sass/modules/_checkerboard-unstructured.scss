@@ -75,7 +75,7 @@
                 height        : 370px;
                 right         : 10px;
                 bottom        : 10px;
-                background    : rgba(var(--color-primary-light-rgb), 0.5);
+                background    : rgba(var(--primary-light-rgb), 0.5);
                 z-index       : -1;
                 border-radius : var(--rounded-xl);
             }
@@ -84,7 +84,7 @@
                 height        : 210px;
                 left          : -150px;
                 top           : -30px;
-                background    : var(--color-primary-xxlight);
+                background    : var(--primary-xxlight);
                 z-index       : -1;
                 border-radius : var(--rounded-xl);
             }
@@ -119,13 +119,13 @@
                     margin     : 0 20px 8px 0;
                     height     : 2px;
                     content    : " ";
-                    background : var(--color-primary-light);
+                    background : var(--primary-light);
                     width      : 17%;
                     transition : .5s ease;
                 }
 
                 &:hover {
-                    color        : var(--color-primary);
+                    color        : var(--primary);
                     transition   : .5s ease;
                     margin-right : 20px;
 
@@ -155,7 +155,7 @@
                 height        : 257px;
                 right         : -180px;
                 bottom        : -50px;
-                background    : rgba(var(--color-primary-xlight-rgb), 0.4);
+                background    : rgba(var(--primary-xlight-rgb), 0.4);
                 z-index       : -1;
                 border-radius : var(--rounded-xl);
             }
@@ -164,7 +164,7 @@
                 height        : 200px;
                 right         : -30px;
                 top           : -100px;
-                background    : var(--color-primary-xxlight);
+                background    : var(--primary-xxlight);
                 z-index       : 0;
                 border-radius : var(--rounded-xl);
             }
@@ -175,7 +175,7 @@
                 height     : 500px;
                 right      : 100px;
                 bottom     : 00px;
-                background : rgba(var(--color-primary-light), 0.5);
+                background : rgba(var(--primary-light), 0.5);
                 z-index    : 0;
             }
             img {
@@ -197,13 +197,13 @@
                     margin     : 0 0 8px 20px;
                     height     : 2px;
                     content    : " ";
-                    background : var(--color-primary-light);
+                    background : var(--primary-light);
                     width      : 17%;
                     transition : .5s ease;
                 }
 
                 &:hover {
-                    color       : var(--color-primary);
+                    color       : var(--primary);
                     transition  : .5s ease;
                     margin-left : 20px;
                     transition  : .5s ease;
@@ -233,7 +233,7 @@
                 height        : 200px;
                 right         : 10px;
                 top           : 0;
-                background    : rgba(var(--color-primary-light-rgb), 0.5);
+                background    : rgba(var(--primary-light-rgb), 0.5);
                 z-index       : -1;
                 border-radius : var(--rounded-xl);
             }
@@ -243,7 +243,7 @@
                 height     : 200px;
                 left       : -300px;
                 bottom     : -20px;
-                background : var(--color-primary-xxlight);
+                background : var(--primary-xxlight);
                 z-index    : -2;
                 border-radius : var(--rounded-xl);
             }
@@ -268,13 +268,13 @@
                     margin     : 0 20px 8px 0;
                     height     : 2px;
                     content    : " ";
-                    background : var(--color-primary-light);
+                    background : var(--primary-light);
                     width      : 17%;
                     transition : .5s ease;
                 }
 
                 &:hover {
-                    color        : var(--color-primary);
+                    color        : var(--primary);
                     transition   : .5s ease;
                     margin-right : 20px;
 

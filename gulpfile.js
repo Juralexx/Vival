@@ -31,3 +31,11 @@ function watchTask() {
 }
 
 export default series(styleCompiler, watchTask)
+
+// "type": "module",
+// "gulp": "^4.0.2",
+// "gulp-autoprefixer": "^8.0.0",
+// "gulp-rename": "^2.0.0",
+// "gulp-minify": "^5.1.0",
+// "gulp-sass": "^5.1.0",
+// "sass": "^1.48.0",

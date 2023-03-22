@@ -26,7 +26,7 @@
         transition       : 0.4s ease-in-out;
         box-shadow       : var(--shadow-smooth);
         border-radius    : var(--rounded-full);
-        background-color : var(--color-body);
+        background-color : var(--body);
     }
 
     &:before {
@@ -46,7 +46,7 @@
         padding-left  : 24px;
         padding-right : 90px;
         transition    : 0.4s ease-in-out;
-        color         : var(--color-primary);
+        color         : var(--primary);
 
         &:after {
             width : 100%;
@@ -72,6 +72,6 @@
     border-radius   : var(--rounded-md);
     margin          : 20px auto 0;
     padding         : 0 20px;
-    color           : var(--color-text);
-    background      : var(--color-primary-xxlight);
+    color           : var(--text);
+    background      : var(--primary-xxlight);
 }

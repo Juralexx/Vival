@@ -1,47 +1,167 @@
 import React from "react";
-import { FaFacebook } from 'react-icons/fa'
-import { BsTelephoneFill, BsFillClockFill } from 'react-icons/bs'
-import { FaMapMarkerAlt } from 'react-icons/fa'
-import datas from '../../data/datas.json'
-import { Revealer } from '../tools/animations'
+import styled from "styled-components";
+import { Revealer } from 'tools/Revealer'
+import Icon from "icons/Icon";
+import FacebookCard from "./FacebookCard";
 
-const ContactBar = () => {
+const ContactBar = ({ datas }) => {
     return (
-        <div className="contact-bar" id="contact-bar">
+        <ContactBarContainer id="contact-bar">
             <h2>Nous contacter</h2>
-            <ul className="row">
-                <li className="col-12 col-md-6 col-lg-6 col-xl-4">
-                    <Revealer>
+            <div className="__grid container-lg">
+                <Revealer>
+                    <div className="infos adress">
                         <h3>Adresse</h3>
-                        <a href={datas.googlemap} target="_blank" className="contact-link"><FaMapMarkerAlt className="contact-link-svg" />{datas.street}<br />{datas.postcode} {datas.city}</a>
-                        <h3 className="mt-7">Contact</h3>
-                        <a href={"tel:" + datas.phone} className="contact-link"><BsTelephoneFill className="contact-link-svg" />{datas.phone}</a>
-                    </Revealer>
-                </li>
-                <li className="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <a href={datas.googlemap} target="_blank" rel="noreferrer">
+                            <Icon name="Map" /> {datas.street}<br />{datas.postcode} {datas.city}
+                        </a>
+                    </div>
+                    <div className="infos phone">
+                        <h3>Contact</h3>
+                        <a href={"tel:" + datas.phone}>
+                            <Icon name="Phone" /> {datas.phone}
+                        </a>
+                    </div>
+                </Revealer>
+                <Revealer delay={300}>
                     <h3>Horaires</h3>
-                    <Revealer delay={300} className="flex">
-                        <BsFillClockFill className="contact-link-svg" />
-                        <div>
-                            {datas.opening.map((el, key) => {
-                                return (
-                                    <p className="text-center" key={key}>
-                                        <span className="font-bold">{el.day ? el.day : ''} : </span>{el.hours ? el.hours : ''}
-                                    </p>
-                                )
-                            })}
-                        </div>
-                    </Revealer>
-                </li>
-                <li className="col-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-0 md:mt-10 xl:mt-0">
-                    <Revealer delay={400} className="socials-barre">
-                        <a href={"https://www.facebook.com/" + datas.facebook} target="_blank"><FaFacebook /></a>
-                        <a href={"https://www.facebook.com/" + datas.facebook} target="_blank">Suivez-nous sur<br /> <span>Facebook</span> !</a>
-                    </Revealer>
-                </li>
-            </ul>
-        </div>
+                    <div>
+                        {datas.opening.map((el, key) => {
+                            return (
+                                <p className="opening" key={key}>
+                                    <span>{el.day ? el.day : ''}</span><div className="divider"></div>{el.range ? el.range : ''}
+                                </p>
+                            )
+                        })}
+                    </div>
+                </Revealer>
+                <Revealer delay={400} className="socials-bar">
+                    <FacebookCard datas={datas} />
+                </Revealer>
+            </div>
+        </ContactBarContainer>
     )
 }
 
 export default ContactBar
+
+const ContactBarContainer = styled.div`
+    position   : relative;
+    width      : 100%;
+    padding    : 50px 0;
+    clear      : both;
+    background : rgba(var(--primary-rgb), 0.07);
+
+    &:after {
+        position   : absolute;
+        content    : "";
+        bottom     : -100px;
+        left       : 0;
+        right      : 0;
+        height     : 100px;
+        width      : 100%;
+        z-index    : -1;
+        background : rgba(var(--primary-rgb), 0.07);
+        clip-path  : polygon(0 0, 0% 100%, 100% 0);
+    }
+
+    h2 {
+        margin-bottom : 40px;
+        text-align    : center;
+    }
+
+    .__grid {
+        display               : grid;
+        grid-template-columns : 1fr 1fr 1fr;
+        grid-gap              : 20px;
+        max-width             : 1400px;
+        margin                : 0 auto;
+
+        @media(max-width: 992px) {
+            grid-template-columns : 1fr;
+
+            .socials-bar {
+                margin-top : 20px;
+            }
+        }
+
+        .socials-bar {
+            display        : flex;
+            flex-direction : column;
+            align-items    : center;
+        }
+
+        > div:not(.socials-bar) {
+            position       : relative;
+            text-align     : left;
+            display        : flex;
+            flex-direction : column;
+            align-items    : center;
+
+            @media(max-width: 768px) {
+                margin-bottom : 30px;
+            }
+
+            h3 {
+                font-weight   : 600;
+                margin-bottom : 15px;
+            }
+
+            svg {
+                position   : absolute;
+                width      : 18px;
+                height     : 18px;
+                color      : var(--text);
+                margin-top : -2px;
+            }
+
+            .phone {
+                margin-top : 30px;
+                svg {
+                    left : -23px;
+                    top  : 6px;
+                }
+            }
+            .adress {
+                svg {
+                    left : -18px;
+                    top  : 6px;
+                }
+            }
+
+            div,
+            a {
+                position   : relative;
+                display    : inline-block;
+                text-align : left;
+                text-align : center;
+                font-size  : 20px;
+            }
+
+            p {
+                text-align : left;
+                width      : 100%;
+            }
+
+            .opening {
+                margin-bottom   : 6px;
+                display         : flex;
+                align-items     : center;
+                justify-content : space-between;
+
+                .divider {
+                    flex-grow     : 1;
+                    border-bottom : 1px solid var(--light-border);
+                    margin        : 10px;
+                    min-width     : 5px;
+                }
+
+                span {
+                    font-weight : 600;
+                    color       : var(--dark);
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+`

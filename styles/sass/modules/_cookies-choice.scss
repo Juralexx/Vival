@@ -55,7 +55,7 @@
         right         : 10px;
         padding       : 5px;
         border-radius : var(--rounded-full);
-        background    : var(--color-primary-xxlight);
+        background    : var(--primary-xxlight);
         cursor        : pointer;
 
         svg {
@@ -71,7 +71,7 @@
         margin          : 20px auto 0;
 
         a {
-            color           : var(--color-grey);
+            color           : var(--grey);
             font-size       : 14px;
             text-decoration : underline;
             margin-right    : 15px;
@@ -114,21 +114,21 @@
             font-size     : 18px;
             line-height   : 18px;
             font-weight   : bold;
-            color         : var(--color-title);
+            color         : var(--title);
         }
 
         .name {
-            color       : var(--color-title);
+            color       : var(--title);
         }
 
         a {
             font-size     : 12px;
             line-height   : 12px;
-            color         : var(--color-grey);
+            color         : var(--grey);
 
             &:hover {
-                color         : var(--color-primary);
-                border-bottom : 1px solid var(--color-primary);
+                color         : var(--primary);
+                border-bottom : 1px solid var(--primary);
             }
         }
 
