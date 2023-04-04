@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Icon from "./icons/Icon";
 import useScrollDirection from './hooks/useScrollDirection'
@@ -6,8 +6,8 @@ import { addClass } from "../../../functions/utils";
 
 const ScrolltoTop = () => {
     const scrollDirection = useScrollDirection('down');
-    const [scrolled, setScrolled] = useState(false);
-    const [active, setActive] = useState(false)
+    const [scrolled, setScrolled] = React.useState(false);
+    const [active, setActive] = React.useState(false)
 
     const handleScroll = () => {
         if (window.pageYOffset > 1000)
@@ -15,12 +15,12 @@ const ScrolltoTop = () => {
         else setScrolled(false)
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (scrolled && scrollDirection === 'up')
             setActive(true)
         else if (scrolled && scrollDirection === 'down')
@@ -52,8 +52,8 @@ const ScrollToTop = styled.div`
     height     : 0;
 
     &.active {
-        height     : 50px;
-        width      : 50px;
+        height     : 40px;
+        width      : 40px;
         visibility : visible;
         opacity    : 1;
         transform  : scale(1);
@@ -61,9 +61,9 @@ const ScrollToTop = styled.div`
         margin-top : 10px;
 
         svg {
-            width         : 50px;
-            height        : 50px;
-            padding       : 10px;
+            width         : 40px;
+            height        : 40px;
+            padding       : 7px;
             color         : white;
             background    : var(--primary);
             border-radius : var(--rounded-full);
