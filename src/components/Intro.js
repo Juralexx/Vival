@@ -26,9 +26,8 @@ const Intro = ({ datas, introduction }) => {
 export default Intro
 
 const Presentation = styled.div`
-    width      : 100%;
-    padding    : 100px 0;
-    background : linear-gradient(to bottom, rgba(var(--primary-xxlight-rgb), 1) 10%, rgba(var(--primary-xxlight-rgb), 0) 60%);
+    width   : 100%;
+    padding : 70px 0 100px;
 
     .presentation-container {
         display         : flex;
