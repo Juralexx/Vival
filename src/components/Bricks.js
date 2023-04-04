@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from "next/link";
+import Image from 'next/image';
 import styled from 'styled-components';
 import { Revealer } from 'tools/Revealer'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,8 +8,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Icon from 'icons/Icon';
-import Image from 'next/image';
 
 const Bricks = ({ datas }) => {
     return (
@@ -77,7 +76,8 @@ const BricksContainer = styled.div`
     width      : 100%;
     min-height : 200px;
     padding    : 50px 0;
-    background : var(--primary-xxlight);
+    background : var(--body);
+    /* background : var(--primary-xxlight); */
 
     .bricks-container {
         position      : relative;
@@ -97,31 +97,31 @@ const BricksContainer = styled.div`
     }
 
     .brick-text {
-        margin      : auto;
-        padding     : 20px 15px 20px 0;
-        width       : 100%;
-        flex-shrink : 0;
+        margin          : auto;
+        padding         : 20px 15px 20px 0;
+        width           : 100%;
+        flex-shrink     : 0;
+        transform-style : preserve-3d;
 
         &:before {
-            position      : absolute;
-            content       : '';
-            left          : 0;
-            top           : 0;
-            background    : rgba(var(--primary-xlight-rgb), 0.4);
-            height        : 100px;
-            width         : 100px;
-            border-radius : 10px;
+            position   : absolute;
+            content    : '';
+            left       : -30px;
+            top        : -20px;
+            background : rgba(var(--primary-xlight-rgb), 0.4);
+            height     : 100px;
+            width      : 100px;
         }
 
         &:after {
-            position      : absolute;
-            content       : '';
-            right         : 0;
-            bottom        : 0;
-            background    : rgba(var(--primary-xlight-rgb), 0.3);
-            height        : 120px;
-            width         : 120px;
-            border-radius : 10px;
+            position   : absolute;
+            content    : '';
+            right      : 0;
+            bottom     : -20px;
+            background : rgba(var(--primary-xlight-rgb), 0.3);
+            height     : 120px;
+            width      : 120px;
+            transform  : translateZ(-1px);
         }
 
         h2 {
@@ -159,20 +159,38 @@ const BricksContainer = styled.div`
         width     : auto;
         max-width : 300px;
 
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(7),
+        &:nth-child(10) {
+            .inner-brick {
+                background-color : var(--bg-one);
+            }
+        }
+        &:nth-child(2),
+        &:nth-child(5),
+        &:nth-child(8),
+        &:nth-child(11) {
+            .inner-brick {
+                background-color : var(--bg-two);
+            }
+        }
+        &:nth-child(3),
+        &:nth-child(6),
+        &:nth-child(9),
+        &:nth-child(12) {
+            .inner-brick {
+                background-color : var(--green);
+            }
+        }
+
         .inner-brick {
             width         : 100%;
             margin        : 0 auto;
             background    : var(--body);
-            border        : 1px solid var(--light-border);
-            border-radius : var(--rounded-3xl);
+            border-radius : var(--rounded-md);
             transition    : 0.7s ease;
-            box-shadow    : var(--shadow-bottom);
             overflow      : hidden;
-
-            &:hover {
-                transform  : scale(1.05);
-                transition : 0.3s ease;
-            }
 
             a {
                 display        : flex;
@@ -196,9 +214,8 @@ const BricksContainer = styled.div`
                 text-align : center;
 
                 .title {
-                    font-size      : 22px;
-                    font-weight    : 600;
-                    padding-bottom : 10px;
+                    font-size   : 22px;
+                    font-weight : 600;
                 }
             }
         }
