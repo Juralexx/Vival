@@ -43,7 +43,6 @@ export const CKEditor = css`
         font-weight   : 400;
     }
     .ck-content p {
-        font-size     : 1em;
         line-height   : 1.6em;
         padding-top   : 0.2em;
         margin-bottom : 1.2em;
