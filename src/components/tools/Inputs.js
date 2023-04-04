@@ -30,6 +30,132 @@ const inputProps = (props) => {
     })
 }
 
+export const DynamicInput = (props) => {
+    const { className, text, startIcon, endIcon, endIconClick } = props
+    return (
+        <Input className={`${className ? 'dynamic-input ' + className : 'dynamic-input'}`}>
+            <input
+                {...inputProps(props)}
+            />
+            <label>{text}</label>
+            {startIcon &&
+                <div className="start_icon">
+                    {startIcon}
+                </div>
+            }
+            {endIcon &&
+                <dbutton aria-label="end-icon" className="end-icon" onClick={endIconClick}>
+                    {endIcon}
+                </dbutton>
+            }
+        </Input>
+    )
+}
+
+const Input = styled.div`
+    position         : relative;
+    display          : flex;
+    align-items      : center;
+    width            : 100%;
+    background-color : var(--body);
+
+     input {
+        display       : block;
+        height        : 48px;
+        padding       : 18px 10px 2px;
+        flex-grow     : 1;
+        color         : var(--input-text);
+        outline       : none;
+        background    : transparent;
+        z-index       : 1;
+        border        : none;
+        border-bottom : 2px solid var(--light-border);
+
+        &::placeholder {
+            opacity : 0;
+        }
+
+        &:placeholder-shown {
+            + label {
+                font-size  : 14px;
+                transform  : translateY(-42%);
+                color      : var(--placeholder);
+                transition : .2s ease;
+            }
+        }
+
+        &:focus {
+            border-bottom : 2px solid var(--primary-light);
+            box-shadow    : none;
+
+            + label {
+                position   : absolute;
+                left       : 10px;
+                top        : 50%;
+                color      : var(--primary-light);
+                transform  : translateY(-125%);
+                font-size  : 11px;
+                z-index    : 0;
+                transition : .2s ease;
+            }
+        }
+    }
+    
+    label {
+        position    : absolute;
+        left        : 10px;
+        top         : 50%;
+        color       : var(--placeholder);
+        transform   : translateY(-125%);
+        font-size   : 11px;
+        z-index     : 0;
+        transition  : .2s ease;
+    }
+
+    .end-icon {
+        position  : absolute;
+        right     : 20px;
+        top       : 55%;
+        transform : translateY(-50%);
+        z-index   : 2;
+        cursor    : pointer;
+
+        svg {
+            color  : var(--placeholder);
+            height : 20px;
+            width  : 20px;
+        }
+    }
+
+    &.success {
+        background : rgba(var(--success-rgb), 0.1);
+        input {
+            background    : rgba(var(--success-rgb), 0.1);
+            border-bottom : 2px solid var(--success);
+            + label {
+                color : var(--success);
+            }
+        }
+
+        .end-icon {
+            display : none;
+        }
+    }
+    &.err {
+        background : rgba(var(--danger-rgb), 0.1);
+        input {
+            border-bottom : 2px solid var(--danger);
+            + label {
+                color : var(--danger);
+            }
+        }
+
+        .end-icon {
+            display : none;
+        }
+    }
+`;
+
 export const IconInput = (props) => {
     const { useRef, value, className, icon, endIcon, cross, onClean, endIconClick } = props
     return (
@@ -73,14 +199,14 @@ const InputIcon = styled.div`
     height        : 40px;
     color         : var(--input-text);
     background    : var(--input);
-    border-radius : var(--rounded-sm);
+    border-radius : var(--rounded-md);
 
     input {
         display       : block;
         width         : 100%;
         height        : 100%;
-        padding       : 8px 12px 6px 20px;
-        border-radius : var(--rounded-sm);
+        padding       : 8px 12px 6px 12px;
+        border-radius : var(--rounded-md);
         outline       : none;
         background    : transparent;
         z-index       : 1;
@@ -238,7 +364,7 @@ const InputDropdown = styled.div`
     height        : 40px;
     background    : var(--content);
     border        : 1px solid var(--light-border);
-    border-radius : var(--rounded-sm);
+    border-radius : var(--rounded-md);
     z-index       : 100;
     cursor        : pointer;
 
@@ -246,7 +372,7 @@ const InputDropdown = styled.div`
         padding            : 10px;
         color              : var(--input-text);
         background         : var(--input);
-        border-radius      : var(--rounded-sm);
+        border-radius      : var(--rounded-md);
         outline            : none;
         cursor             : pointer;
         width              : 85%;
@@ -312,7 +438,7 @@ const InputDropdown = styled.div`
         overflow-y       : auto;
         margin-top       : 2px;
         background-color : var(--content);
-        border-radius    : var(--rounded-sm);
+        border-radius    : var(--rounded-md);
         border           : 1px solid var(--light-border);
         box-shadow       : var(--shadow-bottom);
         visibility       : hidden;
@@ -404,3 +530,147 @@ const InputDropdown = styled.div`
         }
     }
 `
+
+export const Textarea = (props) => {
+    const { text, className } = props
+    return (
+        <TextareaInput className={`${className ? "textarea " + className : "textarea"}`}>
+            <textarea
+                {...inputProps(props)}
+            />
+            <label>{text}</label>
+        </TextareaInput>
+    )
+}
+
+const TextareaInput = styled.div`
+    position         : relative;
+    display          : flex;
+    align-items      : center;
+    flex-grow        : 1;
+    background-color : var(--body);
+
+    textarea {
+        display       : block;
+        min-height    : 68px;
+        height        : 120px;
+        max-height    : 300px;
+        max-width     : 100%;
+        padding       : 20px 10px 2px;
+        flex-grow     : 1;
+        font-size     : 18px;
+        line-height   : 22px;
+        outline       : none;
+        background    : transparent;
+        z-index       : 1;
+        border-bottom : 2px solid var(--light-border);
+        resize        : vertical;
+
+        &::placeholder {
+            opacity : 0;
+        }
+
+        &:placeholder-shown {
+            + label {
+                font-size        : 14px;
+                top              : 15px;
+                color            : var(--placeholder);
+                background-color : none;
+                width            : unset;
+                transition       : .2s ease;
+            }
+        }
+
+        &:focus {
+            border-bottom : 2px solid var(--primary-light);
+            box-shadow    : none;
+
+            + label {
+                position   : absolute;
+                left       : 10px;
+                top        : 0;
+                height     : 20px;
+                color      : var(--primary-light);
+                font-size  : 11px;
+                transition : .2s ease;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width : 4px;
+        }
+
+        &::-webkit-resizer {
+            border-color : var(--body);
+            margin-left  : 10px;
+        }
+    }
+
+    &::after {
+        content    : "↓";
+        font-size  : 18px;
+        position   : absolute;
+        height     : 22px;
+        width      : 20px;
+        text-align : center;
+        bottom     : 5px;
+        right      : -1px;
+        color      : var(--primary);
+    }
+    
+    label {
+        position         : absolute;
+        left             : 10px;
+        top              : 0;
+        padding          : 0 0 3px;
+        color            : var(--placeholder);
+        background-color : var(--body);
+        width            : calc(100% - 25px);
+        font-size        : 11px;
+        z-index          : 1;
+        transition       : .2s ease;
+    }
+
+    .end-icon {
+        position  : absolute;
+        right     : 20px;
+        top       : 55%;
+        transform : translateY(-50%);
+        z-index   : 2;
+        cursor    : pointer;
+
+        svg {
+            color  : var(--placeholder);
+            height : 20px;
+            width  : 20px;
+        }
+    }
+
+    &.succes {
+        background : rgba(var(--green-rgb), 0.1);
+        textarea {
+            border-bottom : 2px solid var(--green);
+            + label {
+                color : var(--green);
+            }
+        }
+
+        .end-icon {
+            display : none;
+        }
+    }
+    &.err {
+        background : rgba(var(--danger-rgb), 0.2);
+        textarea {
+            border-bottom : 2px solid var(--danger);
+            + label {
+                color : var(--danger);
+                background : transparent;
+            }
+        }
+
+        .end-icon {
+            display : none;
+        }
+    }
+`;
