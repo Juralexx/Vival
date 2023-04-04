@@ -20,11 +20,10 @@ export default NavbarToggle
  */
 
 const Toggle = styled.div`
-    display    : none;
-    right      : 0;
-    top        : 0;
-    background : var(--body);
-    cursor     : pointer;
+    display : none;
+    right   : 0;
+    top     : 0;
+    cursor  : pointer;
 
     svg {
         width  : 54px;
