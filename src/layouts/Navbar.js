@@ -6,7 +6,6 @@ import Icon from 'icons/Icon';
 import NavbarToggle from 'tools/NabvarToggle'
 import useScrollDirection from 'hooks/useScrollDirection'
 import useClickOutside from 'hooks/useClickOutside'
-import useMediaQuery from 'hooks/useMediaQuery'
 import { addActive, addClass } from 'functions/utils'
 import { LinkToolsButton } from 'components/tools/Buttons';
 
@@ -17,17 +16,14 @@ const Navbar = ({ datas }) => {
     const navref = React.useRef()
     useClickOutside(navref, () => setNavbar({ open: false, submenu: null }))
 
-    const md = useMediaQuery('(min-width: 993px)')
     const scrollDirection = useScrollDirection('down');
     const [scrolledToTop, setScrolledToTop] = React.useState(true);
 
     React.useEffect(() => {
-        if (md) {
-            const handleScroll = () => setScrolledToTop(window.pageYOffset < 50)
-            window.addEventListener('scroll', handleScroll);
-            return () => window.removeEventListener('scroll', handleScroll);
-        }
-    }, [md])
+        const handleScroll = () => setScrolledToTop(window.pageYOffset < 50)
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
 
     const isSubmenuActive = (tabs, key) => {
         const tabsUrls = tabs.map(tab => { return tab.url })
@@ -38,6 +34,7 @@ const Navbar = ({ datas }) => {
 
     return (
         <NavbarContainer
+            id='navbar'
             className={addActive(navbar.open)}
             scrollDirection={scrollDirection}
             scrolledToTop={scrolledToTop}
@@ -45,7 +42,7 @@ const Navbar = ({ datas }) => {
             <nav ref={navref}>
                 <div className="navbar-logo">
                     <Link href="/">
-                        <img className="logo" src="/./img/logo.png" alt="" />
+                        <img className="logo" src="/img/logo.png" alt="" />
                     </Link>
                 </div>
 
@@ -95,12 +92,17 @@ const Navbar = ({ datas }) => {
                 </ul>
 
                 {datas.phone &&
-                    <LinkToolsButton href={'tel:' + datas.phone} small>
+                    <LinkToolsButton href={'tel:' + datas.phone} small='true'>
                         <Icon name="Phone" />
                     </LinkToolsButton>
                 }
+                {datas.googlemap &&
+                    <LinkToolsButton href={datas.googlemap} target="_blank" small='true' >
+                        <Icon name="Map" />
+                    </LinkToolsButton>
+                }
                 {datas.facebook &&
-                    <LinkToolsButton href={'https://www.facebook.com/' + datas.facebook} target="_blank" small>
+                    <LinkToolsButton href={'https://www.facebook.com/' + datas.facebook} target="_blank" small='true' className='last-btn'>
                         <Icon name="Facebook" />
                     </LinkToolsButton>
                 }
@@ -120,35 +122,56 @@ const NavbarContainer = styled.header`
     height     : 95px;
     position   : fixed;
     transition : 0.5s ease;
-    background : linear-gradient(to left, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 75%);
+    background : linear-gradient(to left, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0) 75%);
     z-index    : 1000;
 
-    @media(min-width: 993px) and (max-width: 1400px) {
-        background : linear-gradient(to left, rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 0) 85%);
-    }
-
     @media(min-width: 993px) {
-        padding : 20px 50px;
+        padding : 20px 20px;
 
         ${props =>
         props.scrollDirection === 'up' &&
         !props.scrolledToTop &&
         css`
-                height     : 55px;
-                padding    : 0px 50px;
-                background : var(--body);
-                box-shadow : var(--shadow-colored);
-                opacity    : 1;
-                visibility : visible;
+            height     : 55px;
+            padding    : 0px 50px;
+            background : var(--body);
+            box-shadow : var(--shadow-colored);
+            opacity    : 1;
+            visibility : visible;
         `};
         ${props =>
         props.scrollDirection === 'down' &&
         !props.scrolledToTop &&
         css`
-                transform  : translateY(-95px);
-                opacity    : 0;
-                visibility : hidden;
+            transform  : translateY(-95px);
+            opacity    : 0;
+            visibility : hidden;
         `};
+    }
+
+    @media(max-width: 992px) {
+        ${props =>
+        props.scrollDirection === 'up' &&
+        !props.scrolledToTop &&
+        css`
+            background : var(--body);
+            box-shadow : var(--shadow-colored);
+        `};
+        ${props =>
+        props.scrollDirection === 'down' &&
+        !props.scrolledToTop &&
+        css`
+            background : var(--body);
+            box-shadow : var(--shadow-colored);
+        `};
+    }
+
+    @media(min-width: 1201px) {
+        padding : 20px 50px;
+    }
+
+    a, li {
+        font-size : 16px;
     }
 
     nav { 
@@ -165,22 +188,18 @@ const NavbarContainer = styled.header`
         z-index         : 1000;
 
         .navbar-logo {
-            width   : auto;
-            height  : 100%;
-            margin  : 0 auto 0 0;
-            padding : 7px 5px;
+            width      : auto;
+            min-height : 100%;
+            margin     : 0 auto 0 0;
+            padding    : 7px 5px;
             
             .logo {
                 display    : block;
                 width      : auto;
                 height     : 100%;
-                max-height : 45px;
+                max-height : 42px;
                 transition : 0.5s ease-in-out;
                 cursor     : pointer;
-
-                &.active {
-                    display : none;
-                }
 
                 &:hover {
                     transform : scale(1.1);
@@ -200,7 +219,8 @@ const NavbarContainer = styled.header`
                     position    : relative;
                     display     : flex;
                     align-items : center;
-                    color       : var(--text);
+                    color       : var(--title);
+                    font-size   : 16px;
                     font-weight : 600;
                     height      : 40px;
                     padding     : 0 20px;
@@ -220,13 +240,22 @@ const NavbarContainer = styled.header`
                         transition : .3s ease;
                     }
 
-                    &:hover,
-                    &.active {
+                    &:hover {
                         color : var(--primary);
 
                         &:before {
                             width      : 25px;
                             background : var(--primary);
+                            transition : .3s ease;
+                        }
+                    }
+
+                    &.active {
+                        color : var(--secondary);
+
+                        &:before {
+                            width      : 25px;
+                            background : var(--secondary);
                             transition : .3s ease;
                         }
                     }
@@ -249,11 +278,12 @@ const NavbarContainer = styled.header`
     }
 
     @media (max-width: 992px) {
-        height     : 60px;
-        background : var(--body);
-        box-shadow : var(--shadow-x-smooth);
+        height : 60px;
+        /* background : var(--body);
+        box-shadow : var(--shadow-x-smooth); */
 
         &.active {
+            background : var(--body);
             &:before {
                 content          : '';
                 position         : absolute;
@@ -333,6 +363,10 @@ const NavbarContainer = styled.header`
                     }
                 }
             }
+
+            .last-btn {
+                margin : 0;
+            }
         }
 
         .menu-small-displayer {
@@ -355,7 +389,7 @@ const SubMenu = styled.div`
     position      : absolute;
     top           : 80px;
     transform     : translateX(-15%);
-    width         : 220px;
+    width         : 280px;
     transition    : 0.5s ease;
     background    : var(--body);
     box-shadow    : var(--shadow-colored);
