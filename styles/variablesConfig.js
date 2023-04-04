@@ -35,7 +35,7 @@ const variablesConfig = css`
 
         --font-fam-list : system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         --font-fam1     : 'Mona Sans', var(--font-fam-list);
-        --font-fam2     : 'Mona Sans', var(--font-fam-list);
+        --font-fam2     : 'Philosopher', var(--font-fam-list);
 
         --easing     : cubic-bezier(0.645, 0.045, 0.355, 1);
         --transition : all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
