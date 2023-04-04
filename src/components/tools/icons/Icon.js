@@ -17,6 +17,7 @@ import Filter from './general/Filter';
 import Calendar from './general/Calendar';
 import Grid from './general/Grid';
 import Row from './general/Row';
+import Truck from './general/Truck';
 
 import ArrowLeft from './navigation/ArrowLeft';
 import ArrowRight from './navigation/ArrowRight';
@@ -67,6 +68,12 @@ import LinkedinSquareOutline from './networks/LinkedinSquareOutline';
 import Whatsapp from './networks/Whatsapp';
 import WhatsappSquare from './networks/WhatsappSquare';
 import WhatsappOutline from './networks/WhatsappOutline';
+import Trophy from './general/Trophy';
+import CreditCard from './general/CreditCard';
+import Money from './general/Money';
+import Mastercard from './general/Mastercard';
+import CB from './general/Cb';
+import Visa from './general/Visa';
 
 const Icon = (props) => {
     switch (props.name) {
@@ -206,6 +213,20 @@ const Icon = (props) => {
             return <Grid {...props} />;
         case 'Row':
             return <Row {...props} />;
+        case 'Truck':
+            return <Truck {...props} />;
+        case 'Trophy':
+            return <Trophy {...props} />;
+        case 'CreditCard':
+            return <CreditCard {...props} />;
+        case 'Money':
+            return <Money {...props} />;
+        case 'Mastercard':
+            return <Mastercard {...props} />;
+        case 'CB':
+            return <CB {...props} />;
+        case 'Visa':
+            return <Visa {...props} />;
 
         default:
             return <ShoppingBasket {...props} />;
