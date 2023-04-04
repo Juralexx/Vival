@@ -19,11 +19,11 @@ const Card = styled.div`
     position         : relative;
     width            : 330px;
     background-color : var(--body);
-    border           : 1px solid var(--light-border);
-    border-radius    : var(--rounded-2xl);
-    box-shadow       : var(--shadow-colored);
+    border-radius    : var(--rounded-md);
+    box-shadow       : var(--shadow-tiny);
     margin           : auto;
     overflow         : hidden;
+    transition       : all .2s ease;
 
     svg {
         position : absolute;
@@ -32,14 +32,14 @@ const Card = styled.div`
         width    : 100px;
         height   : 100px;
         color    : var(--primary);
-        opacity  : 0.4;
+        opacity  : 1;
     }
 
     a {
         display     : block;
         height      : 100%;
         width       : 100%;
-        color       : var(--primary-dark);
+        color       : var(--primary);
         padding     : 15px 15px 15px 90px;
         font-size   : 26px;
         line-height : 30px;
