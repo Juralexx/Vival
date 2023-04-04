@@ -11,11 +11,22 @@ import { DropdownInput, IconInput } from 'components/tools/Inputs'
 import { Button, LinkStyledButton } from 'components/tools/Buttons'
 import Pagination from 'components/tools/Pagination'
 import useGrid from 'functions/useGrid'
-import { fetchSiteDatas } from 'api/site'
+import { fetchSiteDatas, getImages } from 'api/site'
 import { getActualities } from 'api/actuality'
 import { dateParser, divideArrayIntoSizedParts, escapeRegexp, fetcher, highlightSearchResults, isHTML, multiplyArray, removeAccents, shuffleArray, sortByOld, sortByRecent, timeBetween } from 'functions/utils'
 
-export default function Actualities({ datas, actualities, router }) {
+const getContentToDisplay = (actu) => {
+    if (actu.content) {
+        return actu.content
+    } else {
+        if (actu.components.length > 0) {
+            const el = actu.components.find(el => el.content)
+            return el.content ? el.content : ""
+        }
+    }
+}
+
+export default function Actualities({ datas, actualities, router, brands, partners }) {
     const { data: siteDatas } = useSWR(process.env.SITE_API_ROUTE, fetcher, { initialData: datas })
     const { data } = useSWR(`${process.env.ACTUALITIES_API_ROUTE}`, fetcher, { initialData: actualities })
     const title = 'Nos actualités'
@@ -130,24 +141,17 @@ export default function Actualities({ datas, actualities, router }) {
      * 
      */
 
-    const getContentToDisplay = (actu) => {
-        if (actu.content) {
-            return actu.content
-        } else {
-            if (actu.components.length > 0) {
-                const el = actu.components.find(el => el.content)
-                return el.content ? el.content : ""
-            }
-        }
-    }
-
     return (
         actus && siteDatas &&
         <Layout
             datas={siteDatas}
             title={title}
         >
-            <Actuality datas={siteDatas}>
+            <Actuality
+                datas={siteDatas}
+                brands={brands}
+                partners={partners}
+            >
                 <ActualitiesPage className='container-lg'>
                     <NextBreadcrumbs
                         denomination={siteDatas.denomination}
@@ -265,16 +269,21 @@ export default function Actualities({ datas, actualities, router }) {
 export async function getStaticProps() {
     const { siteDatas } = await fetchSiteDatas()
     const { actualities } = await getActualities()
+    const { files: brands } = await getImages({ folder: 'img/brands' })
+    const { files: partners } = await getImages({ folder: 'img/partners' })
 
     return {
         props: {
             datas: siteDatas,
-            actualities: actualities
+            actualities: actualities,
+            brands: brands,
+            partners: partners
         },
     };
 }
 
 const ActualitiesPage = styled.div`
+    padding-top    : 30px;
     padding-bottom : 50px;
 
     h1 {
@@ -292,7 +301,7 @@ const ActualitiesPage = styled.div`
 
         .icon-input {
             box-shadow    : var(--shadow-xtiny);
-            border-radius : var(--rounded-sm);
+            border-radius : var(--rounded-md);
             input {
                 font-size : 14px;
             }
@@ -302,7 +311,7 @@ const ActualitiesPage = styled.div`
             margin-left   : 5px;
             width         : 155px;
             box-shadow    : var(--shadow-xtiny);
-            border-radius : var(--rounded-sm);
+            border-radius : var(--rounded-md);
             input,
             .dropdown-input-choices {
                 font-size : 14px;
@@ -319,7 +328,7 @@ const ActualitiesPage = styled.div`
             margin-left   : 5px;
             color         : var(--placeholder);
             box-shadow    : var(--shadow-tiny);
-            border-radius : var(--rounded-sm);
+            border-radius : var(--rounded-md);
             cursor        : pointer;
 
             svg {
@@ -418,8 +427,11 @@ const ActualitiesContainer = styled.div`
 
                 .text {
                     order         : 1;
-                    align-items   : flex-end;
                     padding-right : 30px;
+
+                    @media(min-width: 769px) {
+                        align-items : flex-end;
+                    }
 
                     .content {
                         margin-left : auto;
@@ -475,7 +487,7 @@ const ActualitiesContainer = styled.div`
         }
 
         @media(max-width: 992px) {
-            padding : 50px 15px;
+            padding : 50px 0;
         }
 
         @media(max-width: 768px) {
@@ -485,8 +497,8 @@ const ActualitiesContainer = styled.div`
                 &:nth-child(even),
                 &:nth-child(odd) {
                     .text {
-                        padding : 20px 0;
-                        margin  : 0;
+                        padding    : 20px 0;
+                        margin     : 0;
                     }
                 }
 
@@ -524,7 +536,7 @@ const ActualitiesContainer = styled.div`
             width         : 100%;
             max-width     : 560px;
             border        : 1px solid var(--light-border);
-            border-radius : var(--rounded-xl);
+            border-radius : var(--rounded-md);
             box-shadow    : var(--shadow-x-smooth);
             overflow      : hidden;
 
