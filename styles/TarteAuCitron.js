@@ -65,7 +65,7 @@ export const TarteAuCitronCard = css`
                     left             : 0;
                     width            : 14px;
                     height           : 14px;
-                    background-image : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24px' height='24px' viewBox='0 0 24 24' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cmask fill='white'%3E%3Cuse /%3E%3C/mask%3E%3Cg /%3E%3Cpath d='M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z' fill='%2378807a' /%3E%3C/g%3E%3C/svg%3E");                                background-position : center;
+                    background-image : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24px' height='24px' viewBox='0 0 24 24' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fillRule='evenodd'%3E%3Cmask fill='white'%3E%3Cuse /%3E%3C/mask%3E%3Cg /%3E%3Cpath d='M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z' fill='%2378807a' /%3E%3C/g%3E%3C/svg%3E");                                background-position : center;
                     background-size  : cover;
                 }
             }
@@ -73,7 +73,7 @@ export const TarteAuCitronCard = css`
             button {
                 width         : 32.33%;
                 height        : 44px;
-                border-radius : var(--rounded-sm);
+                border-radius : var(--rounded-md);
                 margin        : 0 .5% !important;
                 padding       : 0;
                 float         : right;
@@ -288,7 +288,7 @@ export const TarteAuCitronPanel = css`
                                 left             : 0;
                                 width            : 14px;
                                 height           : 14px;
-                                background-image : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24px' height='24px' viewBox='0 0 24 24' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cmask fill='white'%3E%3Cuse /%3E%3C/mask%3E%3Cg /%3E%3Cpath d='M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z' fill='%2378807a' /%3E%3C/g%3E%3C/svg%3E");                                background-position : center;
+                                background-image : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24px' height='24px' viewBox='0 0 24 24' version='1.1'%3E%3Cg stroke='none' stroke-width='1' fill='none' fillRule='evenodd'%3E%3Cmask fill='white'%3E%3Cuse /%3E%3C/mask%3E%3Cg /%3E%3Cpath d='M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z' fill='%2378807a' /%3E%3C/g%3E%3C/svg%3E");                                background-position : center;
                                 background-size  : cover;
                             }
                         }
@@ -314,11 +314,12 @@ export const TarteAuCitronPanel = css`
                 }
 
                 .tarteaucitronDetails {
+                    font-size        : 14px;
                     color            : var(--text);
                     background-color : var(--grey-xlight);
                     box-shadow       : var(--shadow-tiny);
                     padding          : 10px;
-                    border-radius    : var(--rounded-sm);
+                    border-radius    : var(--rounded-md);
                     left             : .5px
                 }
             }
