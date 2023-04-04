@@ -45,7 +45,7 @@ export async function getServices() {
 export async function getService({ url }) {
     let data = []
     try {
-        await axios.get(`${process.env.SERVICE_API_ROUTE}?url=${url}`)
+        await axios.get(`${process.env.SERVICE_API_ROUTE}?url=/${url}`)
             .then(res => { return data = res.data })
             .catch(err => console.log(err))
     } catch (err) {
