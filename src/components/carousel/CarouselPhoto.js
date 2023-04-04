@@ -8,7 +8,7 @@ import 'swiper/css';
 import Icon from 'components/tools/icons/Icon';
 import { fullImage } from 'functions/utils';
 
-const CarouselPhoto = ({ datas, actu, carousel }) => {
+const CarouselPhoto = ({ datas, page, carousel }) => {
     const { images, title, content, autoplay } = carousel
     const [lightbox, setLightbox] = React.useState({ open: false, image: null, title: '' })
     const getUrl = (url) => { return `${process.env.SERVER_URL}${url}` }
@@ -50,7 +50,7 @@ const CarouselPhoto = ({ datas, actu, carousel }) => {
                                 <Image
                                     className="gallery-img"
                                     src={getUrl(img.url)}
-                                    alt={img.alternativeText || `${datas.denomination} - ${actu.title}`}
+                                    alt={img.alternativeText || `${datas.denomination} - ${page.title}`}
                                     title={img.alternativeText}
                                     unoptimized={true}
                                     style={{ width: 'auto' }}
