@@ -45,11 +45,12 @@ const Btn = styled(defaultButton)`
     line-height      : 18px;
     background-color : ${props => props.color === 'secondary' ? 'var(--secondary)' : 'var(--primary-light)'};
     color            : var(--white);
-    border-radius    : var(--rounded-full);
+    border-radius    : var(--rounded-md);
     transition       : 0.3s ease-out;
 
     &:hover {
-        box-shadow : ${props => props.color === 'secondary' ? '0px 0px 0 6px rgba(var(--secondary-rgb), 0.4)' : '0px 0px 0 6px rgba(var(--primary-rgb), 0.4)'};
+        background-color : ${props => props.color === 'secondary' ? 'var(--secondary)' : 'var(--primary)'};
+        box-shadow       : ${props => props.color === 'secondary' ? '0px 0px 0 6px rgba(var(--secondary-rgb), 0.4)' : '0px 0px 0 6px rgba(var(--primary-rgb), 0.4)'};
     }
 `
 
@@ -69,7 +70,7 @@ const LinkBtn = styled(defaultButton)`
     max-width        : 360px;
     height           : ${props => !props.small ? '44px' : '32px'};
     background-color : ${props => props.color === 'secondary' ? 'var(--secondary)' : 'var(--primary-light)'};
-    border-radius    : var(--rounded-full);
+    border-radius    : var(--rounded-md);
     transition       : 0.3s ease-in-out;
     align-self       : ${props => !props.small ? '' : 'flex-start'};
 
@@ -81,8 +82,8 @@ const LinkBtn = styled(defaultButton)`
         height          : 100%;
         margin-top      : ${props => !props.small ? '0' : '2px'};
         padding         : ${props => !props.small ? '0 40px' : '0 20px'};
-        font-size       : ${props => !props.small ? '18px' : '16px'};
-        line-height     : ${props => !props.small ? '18px' : '15px'};
+        font-size       : 18px;
+        line-height     : 18px;
         color           : var(--white);
     }
 
@@ -94,7 +95,8 @@ const LinkBtn = styled(defaultButton)`
     }
 
     &:hover {
-        box-shadow : ${props => props.color === 'secondary' ? '0px 0px 0 6px rgba(var(--secondary-rgb), 0.4)' : '0px 0px 0 6px rgba(var(--primary-rgb), 0.4)'};
+        background-color : ${props => props.color === 'secondary' ? 'var(--secondary)' : 'var(--primary)'};
+        box-shadow       : ${props => props.color === 'secondary' ? '0px 0px 0 6px rgba(var(--secondary-rgb), 0.4)' : '0px 0px 0 6px rgba(var(--primary-rgb), 0.4)'};
     }
 `
 
@@ -116,9 +118,9 @@ const StyledBtn = styled(defaultButton)`
     align-items   : center;
     height        : 50px;
     padding-right : 70px;
-    font-size     : 18px;
-    line-height   : 18px;
-    border-radius : var(--rounded-xl);
+    font-size     : 20px;
+    line-height   : 20px;
+    border-radius : var(--rounded-lg);
     overflow      : visible;
 
     &:after {
@@ -130,7 +132,7 @@ const StyledBtn = styled(defaultButton)`
         z-index          : -1;
         transition       : 0.4s ease-in-out;
         box-shadow       : var(--shadow-smooth);
-        border-radius    : var(--rounded-xl);
+        border-radius    : var(--rounded-lg);
         background-color : var(--body);
     }
 
@@ -181,7 +183,7 @@ export const LinkStyledButton = (props) => {
 const LinkStyledBtn = styled(defaultButton)`
     max-width     : 360px;
     height        : 50px;
-    border-radius : var(--rounded-xl);
+    border-radius : var(--rounded-lg);
     overflow      : visible;
 
     a {
@@ -190,8 +192,8 @@ const LinkStyledBtn = styled(defaultButton)`
         align-items   : center;
         height        : 50px;
         padding-right : 70px;
-        font-size     : 18px;
-        line-height   : 18px;
+        font-size     : 20px;
+        line-height   : 20px;
         transition    : 0.4s ease-in-out;
     }
 
@@ -204,7 +206,7 @@ const LinkStyledBtn = styled(defaultButton)`
         z-index          : -1;
         transition       : 0.4s ease-in-out;
         box-shadow       : var(--shadow-smooth);
-        border-radius    : var(--rounded-xl);
+        border-radius    : var(--rounded-lg);
         background-color : var(--body);
     }
 
