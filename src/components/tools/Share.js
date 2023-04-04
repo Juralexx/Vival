@@ -61,8 +61,8 @@ const Share = () => {
 export default Share
 
 const ShareButtons = styled.div`
-    height           : 50px;
-    width            : 50px;
+    height           : 40px;
+    width            : 40px;
     display          : flex;
     align-items      : center;
     justify-content  : center;
@@ -124,11 +124,12 @@ const ShareButtons = styled.div`
 
     .title {
         position     : absolute;
-        left         : -20px;
+        left         : -16px;
         top          : 50%;
         transform    : translateY(-50%) rotate(180deg);
         width        : auto;
         color        : var(--title);
+        font-size    : 16px;
         font-style   : italic;
         writing-mode : vertical-rl;
         font-weight  : bold;
@@ -155,12 +156,12 @@ const ShareButtons = styled.div`
             visibility       : visible;
             overflow         : visible;
             max-height       : 500px;
-            width            : 50px;
+            width            : 40px;
             transition       : .3s ease;
 
             button {
-                height     : 40px;
-                width      : 40px;
+                height     : 36px;
+                width      : 36px;
                 transition : .3s ease;
 
                 &[aria-label='facebook'] {
@@ -205,8 +206,8 @@ const ShareButtons = styled.div`
                     position      : absolute;
                     top           : 0;
                     left          : 0;
-                    height        : 40px;
-                    width         : 40px;
+                    height        : 36px;
+                    width         : 36px;
                     border-radius : var(--rounded-full);
                     opacity       : 0;
                     z-index       : -1;
@@ -217,17 +218,17 @@ const ShareButtons = styled.div`
                     &:after {
                         left       : -5px;
                         top        : -5px;
-                        height     : 50px;
-                        width      : 50px;
-                        opacity    : 0.3;
+                        height     : 46px;
+                        width      : 46px;
+                        opacity    : 0.5;
                         transition : .3s ease;
                     }
                 }
             }
 
             .closer {
-                height           : 40px;
-                width            : 40px;
+                height           : 36px;
+                width            : 36px;
                 transition       : .3s ease;
                 transition-delay : .2s;
             }
@@ -260,9 +261,9 @@ const ShareHandler = styled.div`
 
     svg {
         position         : relative;
-        height           : 50px;
-        width            : 50px;
-        padding          : 12px;
+        height           : 40px;
+        width            : 40px;
+        padding          : 8px;
         color            : var(--twitter);
         background-color : white;
         border-radius    : var(--rounded-full);
@@ -275,8 +276,8 @@ const ShareHandler = styled.div`
         position         : absolute;
         left             : 0;
         top              : 0;
-        height           : 50px;
-        width            : 50px;
+        height           : 40px;
+        width            : 40px;
         background-color : var(--twitter);
         border-radius    : var(--rounded-full);
         opacity          : .3;
@@ -286,10 +287,10 @@ const ShareHandler = styled.div`
 
     &:hover {
         &:after {
-            left       : -10px;
-            top        : -10px;
-            height     : 70px;
-            width      : 70px;
+            left       : -7px;
+            top        : -7px;
+            height     : 54px;
+            width      : 54px;
             transition : .3s ease;
         }
     }
