@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Image from 'next/image'
 import styled from 'styled-components'
 import Modal from 'tools/Modal'
 import Icon from 'icons/Icon'
+import Opening from 'components/Opening'
 import { Revealer } from 'tools/Revealer'
-import { LinkButton, ToolsButton } from '../components/tools/Buttons'
+import { LinkButton, LinkToolsButton, ToolsButton } from '../components/tools/Buttons'
+import useMediaQuery from 'components/tools/hooks/useMediaQuery'
 
 const Header = ({ datas }) => {
-    const [openHours, setOpenHours] = useState(false)
+    const [openHours, setOpenHours] = React.useState(false)
+    const sm = useMediaQuery('(max-width: 768px)')
 
     return (
         <HeaderContainer id="header">
             <div className="__slider-container">
                 <div className="__slider-encart">
-                    {/* <Revealer delay={500} origin='left'>
-                        <div className="__slider-before">
-                            Depuis {datas.creation_date}
-                        </div>
-                    </Revealer> */}
                     <Revealer delay={0}>
                         <div className="__slogan">
                             {datas.job}<br />à&nbsp;<span>{datas.city}</span>
@@ -28,27 +27,30 @@ const Header = ({ datas }) => {
                         </div>
                     </Revealer>
                     <Revealer delay={200}>
-                        <a className="__slider-infos" href={datas.googlemap} target="_blank" rel="noreferrer">
-                            <Icon name="Map" /> {datas.adress}
-                        </a>
-                    </Revealer>
-                    <Revealer delay={300}>
-                        <a className="__slider-infos" href={"tel:" + datas.phone}>
-                            <Icon name="Phone" /> {datas.phone}
-                        </a>
+                        <div className='__slider-infos-container'>
+                            <a className="__slider-infos address" href={datas.googlemap} target="_blank" rel="noreferrer">
+                                {datas.adress}
+                            </a>
+                            <a className="__slider-infos phone" href={"tel:" + datas.phone}>
+                                {datas.phone}
+                            </a>
+                        </div>
                     </Revealer>
                     <Revealer delay={400}>
                         <BtnsContainer>
-                            <LinkButton href="https://www.mescoursesdeproximite.com/courses-en-ligne/vival-meillonnas-01370/E0926" color="secondary">
-                                Courses en ligne
+                            <LinkButton href='#form'>
+                                Nous contacter
                             </LinkButton>
-                            <ToolsButton href={"mailto:" + datas.mail}>
-                                <Icon name="Mail" />
-                            </ToolsButton>
                             <ToolsButton onClick={() => setOpenHours(!openHours)}>
                                 <Icon name="Clock" />
                             </ToolsButton>
+                            <LinkToolsButton href={datas.googlemap} target="_blank">
+                                <Icon name="Map" />
+                            </LinkToolsButton>
                         </BtnsContainer>
+                    </Revealer>
+                    <Revealer delay={500}>
+                        <Opening datas={datas} />
                     </Revealer>
                 </div>
             </div>
@@ -62,6 +64,16 @@ const Header = ({ datas }) => {
                     )
                 })}
             </Modal>
+            <div className='main-image-container'>
+                <Image
+                    className='main-image'
+                    src={!sm ? '/img/vival-meillonnas.jpg' : '/img/vival-meillonnas-mob.jpg'}
+                    alt='Vival Meillonnas'
+                    width={500}
+                    height={370}
+                    priority={true}
+                />
+            </div>
         </HeaderContainer>
     )
 }
@@ -69,16 +81,19 @@ const Header = ({ datas }) => {
 export default Header
 
 const HeaderContainer = styled.div`
-    width      : 100vw;
-    height     : 100vh;
-    max-height : 1080px;
-    padding    : 50px;
-    background : linear-gradient(to top, rgba(var(--primary-xxlight-rgb), 1) 0%, rgba(var(--primary-xxlight-rgb), 0) 100%),
-                linear-gradient(to right, rgba(var(--primary-xxlight-rgb), 1) 10%, rgba(var(--primary-xxlight-rgb), 0) 100%), 
-                url('/img/slider.jpg');
+    position            : relative;
+    width               : 100vw;
+    height              : 100vh;
+    max-height          : 1080px;
+    padding             : 50px;
+    background          : url('/img/slider.jpg');
     background-position : center;
     background-repeat   : no-repeat;
     background-size     : cover;
+
+    @media(max-width: 768px) {
+        background : url('/img/slider-tab.jpg');
+    }
     
     .__slider-container {
         width     : 100%;
@@ -93,42 +108,13 @@ const HeaderContainer = styled.div`
             transform : translateY(-50%);
             height    : auto;
             width     : auto;
-
-            .__slider-before {
-                position                : relative;
-                display                 : inline-block;
-                font-size               : clamp(18px, 3vw, 26px);
-                line-height             : 1.1;
-                font-weight             : 700;
-                letter-spacing          : 1px;
-                background-image        : linear-gradient(to right, var(--primary-dark), rgba(var(--primary-rgb), 0.8));
-                background-clip         : text;
-                -webkit-background-clip : text;
-                -webkit-text-fill-color : transparent;
-                -moz-background-clip    : text;
-                -moz-text-fill-color    : transparent;
-                padding-left            : 60px;
-                margin-bottom           : 10px;
-
-                &:before {
-                    content    : "";
-                    position   : absolute;
-                    display    : block;
-                    top        : 50%;
-                    left       : 0;
-                    transform  : translateY(-50%);
-                    height     : 1px;
-                    width      : 50px;
-                    background : var(--primary);
-                }
-            }
+            z-index   : 1;
 
             .__slogan {
-                font-size   : clamp(26px, 7vw, 60px);
+                font-size   : clamp(26px, 7vw, 70px);
                 font-weight : 700;
                 line-height : 1.1;
-                font-weight : 800;
-                color       : var(--title);
+                color       : var(--green-title);
 
                 span {
                     color : var(--primary);
@@ -139,19 +125,33 @@ const HeaderContainer = styled.div`
                 position    : relative;
                 display     : inline-block;
                 margin      : 5px 0 10px;
-                font-size   : clamp(20px, 5vw, 32px);
+                font-size   : clamp(20px, 6vw, 32px);
                 line-height : 1.1;
                 font-weight : 500;
+                color       : var(--title);
+                font-family : var(--font-fam2);
+            }
+
+            .__slider-infos-container {
+                display : inline-flex;
+                padding : 5px 0;
             }
 
             .__slider-infos {
-                padding     : 5px 0;
                 display     : inline-flex;
                 align-items : center;
                 font-size   : 20px;
-                line-height : 20px;
+                line-height : 24px;
                 font-weight : 500;
-                color       : var(--dark);
+                color       : var(--title);
+
+                &.address {
+                    padding-right : 10px;
+                    border-right : 1px solid var(--title);
+                }
+                &.phone {
+                    padding-left : 10px;
+                }
         
                 &:hover {
                     color : var(--secondary);
@@ -166,10 +166,42 @@ const HeaderContainer = styled.div`
         }
     }
 
-    @media(max-width:1024px) {
+    .main-image-container {
+        display                : inline-block;
+        position               : absolute;
+        right                  : 0;
+        bottom                 : 0;
+        width                  : 50%;
+        height                 : auto;
+        border-top-left-radius : 100%;
+        padding                : 7px 0 0 7px;
+        overflow               : hidden;
+        border-top             : 3px dashed var(--primary);
+        border-left            : 3px dashed var(--primary);
+    }
+
+    .main-image {
+        display                : block;
+        width                  : 100%;
+        height                 : auto;
+        border-top-left-radius : 100%;
+        z-index                : 0;
+    }
+
+    @media(min-width: 1400px) {
+        .main-image-container {
+            width : 55%;
+        }
+    }
+
+    @media(max-width: 1200px) {
         .__slider-container {
-            background : linear-gradient(to top, rgba(var(--primary-xxlight), 1) 10%, rgba(var(--primary-xxlight), 0) 100%),
-                        linear-gradient(to right, rgba(var(--primary-xxlight), 1) 10%, rgba(var(--primary-xxlight), 0) 100%);
+            .__slider-encart {
+                top : 40%;
+            }
+        }
+        .main-image-container {
+            width : 60%;
         }
     }
 
@@ -180,30 +212,66 @@ const HeaderContainer = styled.div`
                 position  : relative;
             }
         }
+        .main-image-container {
+            width : 90%;
+        }
     }
 
     @media(max-width:576px) {
-        padding : 20px;
+        height  : 700px;
+        padding : 15px;
         .__slider-container {
             .__slider-encart {
+                .__slider-infos-container {
+                    flex-direction : column;
+                }
                 .__slider-infos {
-                    font-size : 16px;
+                    font-size : 18px;
+                    &.address {
+                        padding-right  : 0;
+                        padding-bottom : 5px;
+                        border-right   : 0;
+                    }
+                    &.phone {
+                        padding-left : 0;
+                    }
                 }
                 .__slogan {
                     font-size   : clamp(26px, 7.4vw, 60px);
                     line-height : 1.25;
                 }
+                .__subslogan {
+                    margin : 5px 0;
+                }
             }
+        }
+        .main-image-container {
+            width : 94%;
+        }
+    }
+
+    @media(max-width: 440px) {
+        height : 600px;
+        .main-image-container {
+            width : 100%;
         }
     }
 `
 
 export const BtnsContainer = styled.div`
-    display    : flex;
-    max-width  : 320px;
-    margin-top : 15px;
+    display     : flex;
+    align-items : center;
+    max-width   : 360px;
+    margin-top  : 15px;
 
     button {
         margin-right : 10px;
+    }
+
+    @media(max-width:576px) {
+        max-width : 100%;
+        button a {
+            font-size : 16px;
+        }
     }
 `
