@@ -7,7 +7,7 @@ import { Navigation, Autoplay, EffectCoverflow } from 'swiper';
 import 'swiper/css';
 import Icon from 'components/tools/icons/Icon';
 
-const CarouselClassic = ({ datas, actu, carousel }) => {
+const CarouselClassic = ({ datas, page, carousel }) => {
     const { images, title, content } = carousel
     const [lightbox, setLightbox] = React.useState({ open: false, image: null, title: '' })
     const [caption, setCaption] = React.useState(images[0].alternativeText)
@@ -54,7 +54,7 @@ const CarouselClassic = ({ datas, actu, carousel }) => {
                             <SwiperSlide className="carousel-slide" key={key}>
                                 <Image
                                     src={getUrl(img.url)}
-                                    alt={img.alternativeText || `${datas.denomination} - ${actu.title}`}
+                                    alt={img.alternativeText || `${datas.denomination} - ${page.title}`}
                                     title={img.alternativeText}
                                     unoptimized={true}
                                     style={{ width: 'auto' }}
@@ -140,24 +140,3 @@ const CarouselContainer = styled.div`
         text-align : center;
     }
 `
-
-// .carousel-slide {
-//     width           : 500px;
-//     display         : flex;
-//     align-items     : center;
-//     justify-content : center;
-//     border-radius   : var(--rounded-sm);
-
-//     @media(max-width: 768px) {
-//         max-width : 350px;
-//     }
-
-//     img {
-//         height        : 100%;
-//         width         : auto;
-//         margin        : 0 auto;
-//         object-fit    : cover;
-//         border-radius : var(--rounded-sm);
-//         box-shadow    : var(--shadow-smooth);
-//     }
-// }
