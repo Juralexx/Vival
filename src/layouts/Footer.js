@@ -9,8 +9,8 @@ const Footer = ({ datas }) => {
     const router = useRouter()
 
     return (
-        <FooterContainer id="footer">
-            <div className="container container-top">
+        <FooterContainer id="footer" pathname={router.pathname}>
+            <div className="container-lg container-top">
                 <div className="footer-top">
                     <img src="/././img/logo-white.png" alt={datas.denomination} />
                     <div className="socials">
@@ -27,13 +27,13 @@ const Footer = ({ datas }) => {
                         <div className="footer-hours">
                             <div className="adress">
                                 <Icon name="Map" />
-                                <a href={datas.googlemap} target="_blank" color="secondary" small>
+                                <a href={datas.googlemap} target="_blank" color="secondary" small='true'>
                                     {datas.adress}
                                 </a>
                             </div>
                             <div className="phone">
                                 <Icon name="Phone" />
-                                <a href={"tel:" + datas.phone} color="secondary" small>
+                                <a href={"tel:" + datas.phone} color="secondary" small='true'>
                                     {datas.phone}
                                 </a>
                             </div>
@@ -41,7 +41,7 @@ const Footer = ({ datas }) => {
                                 <h5>Horaires</h5>
                                 {datas.opening.map((el, key) => {
                                     return (
-                                        <p className="opening" key={key}>
+                                        <p className="open-hours" key={key}>
                                             <span className="font-bold">{el.day ? el.day : ''} : </span>{el.range ? el.range : ''}
                                         </p>
                                     )
@@ -80,8 +80,24 @@ const Footer = ({ datas }) => {
                     </div>
                 </div>
             </div>
+            <div className="container-lg">
+                <div className="footer-legals__alcohol-notice">
+                    <img alt="Icone république française" src="/img/republique-francaise.png" />
+                    <div className="footer-legals__alcohol-content">
+                        <div className="footer-legals__alcohol-heading">
+                            Interdiction de vente de boissons alcooliques aux mineurs de moins de 18 ans
+                        </div>
+                        <div className="footer-legals__alcohol-infos">
+                            La preuve de majorité de l’acheteur est exigée au moment de la vente en ligne.
+                        </div>
+                        <div className="footer-legals__alcohol-footer">
+                            CODE DE LA SANTÉ PUBLIQUE : ART. L. 3342-1. L. 3342-3
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="footer-bottom">
-                <div className="container">
+                <div className="container-lg">
                     <a href="https://www.alexandrevurbier.com/" target="_blank" rel="noreferrer">
                         © 2023 Alexandre Vurbier. Tout droits réservés.
                     </a>
@@ -98,32 +114,23 @@ const FooterContainer = styled.footer`
     width      : 100%;
     color      : #E0E9ED;
     background : var(--primary);
-    margin-top : 50px;
 
-    &:before {
-        position    : absolute;
-        content     : "";
-        top         : -99px;
-        left        : 0;
-        right       : 0;
-        background : var(--primary);
-        height      : 100px;
-        width       : 100%;
-        z-index     : -1;
-        clip-path   : polygon(0 0, 100% 100%, 0% 100%);
+    a,
+    p {
+        font-size : 16px;
     }
 
-    .container {
+    .container-lg {
         position  : relative;
-        width     : 85%;
-        max-width : 1700px;
+        /* width     : 85%;
+        max-width : 1700px; */
 
         @media(max-width: 768px) {
             width : 100%;
         }
 
         &.container-top {
-            padding : 30px 20px;
+            padding : 50px 20px;
         }
     
         h4 {
@@ -165,11 +172,10 @@ const FooterContainer = styled.footer`
             justify-content : center;
 
             .social-btn {
-                height        : 32px;
-                width         : 32px;
-                margin        : 0 10px 0 0;
-                border-radius : var(--rounded-lg);
-                cursor        : pointer;
+                height : 32px;
+                width  : 32px;
+                margin : 0 10px 0 0;
+                cursor : pointer;
             
                 svg {
                     height : 32px;
@@ -231,7 +237,7 @@ const FooterContainer = styled.footer`
             }
         }
 
-        .opening {
+        .open-hours {
             margin-bottom : 0px;
             display       : flex;
             align-items   : center;
@@ -270,7 +276,7 @@ const FooterContainer = styled.footer`
             .adress,
             .phone,
             .hours {
-                margin     : 5px auto;
+                margin : 5px auto;
             }
             .opening {
                 justify-content : center;
@@ -280,4 +286,77 @@ const FooterContainer = styled.footer`
             margin : 0 auto;
         }
     }
+
+    .footer-legals__alcohol-notice {
+        display          : flex;
+        flex-wrap        : wrap;
+        justify-content  : flex-start;
+        align-items      : center;
+        background-color : #fff;
+        padding          : 14px;
+        border           : 3px solid #000;
+        max-width        : 771px;
+        margin           : 0 0 0 auto;
+
+        @media (max-width: 992px) {
+            flex-direction : column;
+            align-items    : center;
+            text-align     : center;
+            margin         : 0 auto;
+        }
+    
+        @media (min-width: 768px) {
+            padding : 28px
+        }
+
+        * {
+            color : #000
+        }
+
+        img {
+            padding-bottom : 20px;
+    
+            @media (min-width: 993px) {
+                padding-bottom : 0;
+                padding-right  : 28px
+            }
+        }
+    }
+    
+    .footer-legals__alcohol-heading {
+        font-size   : 16px;
+        font-weight : 700;
+        text-align  : left;
+        width       : 100%;
+
+        @media (max-width: 992px) {
+            text-align : center;
+        }
+    }
+    .footer-legals__alcohol-infos {
+        font-size     : 14px;
+        margin-bottom : 10px;
+        text-align    : left;
+        width         : 100%;
+
+        @media (max-width: 992px) {
+            text-align : center;
+        }
+    }
+    .footer-legals__alcohol-footer {
+        font-size  : 16px;
+        text-align : right;
+        width      : 100%;
+
+        @media (max-width: 992px) {
+            text-align : center;
+        }
+    }
+    .footer-legals__alcohol-content {
+        align-items     : start;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : start
+    }
+
 `
