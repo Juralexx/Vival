@@ -4,6 +4,17 @@ import styled from 'styled-components'
 import Icon from 'icons/Icon'
 import { dateParser } from 'functions/utils'
 
+const getContentToDisplay = (actu) => {
+    if (actu.content) {
+        return actu.content
+    } else {
+        if (actu.components.length > 0) {
+            const el = actu.components.find(el => el.content)
+            return el.content ? el.content : ""
+        }
+    }
+}
+
 const CardVertical = ({ actuality, className }) => {
     return (
         <Card className={className}>
@@ -25,7 +36,7 @@ const CardVertical = ({ actuality, className }) => {
                 </p>
                 <div
                     className="text"
-                    dangerouslySetInnerHTML={{ __html: actuality?.content }}
+                    dangerouslySetInnerHTML={{ __html: getContentToDisplay(actuality) }}
                 />
                 <div className='btn-container'>
                     <Link href={`/actualites/${actuality?.url}`} className="more" passHref>
@@ -42,9 +53,8 @@ export default CardVertical
 const Card = styled.div`
     height        : 100%;
     margin        : 0 auto;
-    border        : 1px solid var(--light-border);
-    border-radius : var(--rounded-3xl);
-    box-shadow    : var(--shadow-colored);
+    border-radius : var(--rounded-md);
+    box-shadow    : var(--shadow-smooth);
     overflow      : hidden;
 
     .image {
