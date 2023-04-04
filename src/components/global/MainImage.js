@@ -69,7 +69,7 @@ const ImgContainer = styled.div`
         max-width     : 100%;
         height        : auto;
         object-fit    : cover;
-        border-radius : var(--rounded-lg);
+        border-radius : var(--rounded-md);
         transition    : .3s ease;
     }
 
