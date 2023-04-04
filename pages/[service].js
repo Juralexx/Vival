@@ -3,16 +3,16 @@ import useSWR from 'swr'
 import { fetcher } from 'functions/utils'
 import styled from 'styled-components'
 import Layout from 'layouts/Layout'
-import { fetchSiteDatas } from 'api/site'
+import { fetchSiteDatas, getImages } from 'api/site'
 import { getService, getServicesPaths } from 'api/services'
 import NextBreadcrumbs from 'tools/Breadcrumb'
 import ServiceLayout from 'layouts/Service'
 import { Billboard, Cards, Carousel, Checkerboard, Content, Embed, Gallery, Img, MainImage } from 'components/global'
 
-export default function Services({ content, datas, router }) {
+export default function Services({ content, datas, router, brands, partners }) {
     const { service } = router.query
     const { data: siteDatas } = useSWR(process.env.SITE_API_ROUTE, fetcher, { initialData: datas })
-    const { data: pageDatas } = useSWR(`${process.env.SERVICE_API_ROUTE}?url=${service}`, fetcher, { initialData: content })
+    const { data: pageDatas } = useSWR(`${process.env.SERVICE_API_ROUTE}?url=/${service}`, fetcher, { initialData: content })
 
     return (
         siteDatas && pageDatas && (
@@ -21,7 +21,11 @@ export default function Services({ content, datas, router }) {
                 title={pageDatas.title}
                 headerImg={(pageDatas.image?.url && pageDatas.imagedisplay) && pageDatas.image?.url}
             >
-                <ServiceLayout datas={siteDatas}>
+                <ServiceLayout
+                    datas={siteDatas}
+                    brands={brands}
+                    partners={partners}
+                >
                     <ServiceContainer className="container">
                         <NextBreadcrumbs
                             denomination={siteDatas.denomination}
@@ -86,6 +90,8 @@ export default function Services({ content, datas, router }) {
                                             }
                                             {component.__component === 'general.carrousel-d-images' &&
                                                 <Carousel
+                                                    datas={siteDatas}
+                                                    page={pageDatas}
                                                     carousel={component}
                                                 />
                                             }
@@ -116,13 +122,17 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps({ params }) {
     const { service } = params
-    const { data } = await getService({ service: service })
+    const { data } = await getService({ url: service })
     const { siteDatas } = await fetchSiteDatas()
+    const { files: brands } = await getImages({ folder: 'img/brands' })
+    const { files: partners } = await getImages({ folder: 'img/partners' })
 
     return {
         props: {
             content: data,
-            datas: siteDatas
+            datas: siteDatas,
+            brands: brands,
+            partners: partners
         },
         revalidate: 1
     }
@@ -134,6 +144,7 @@ export async function getStaticProps({ params }) {
 
 const ServiceContainer = styled.div`
     max-width     : 1170px;
+    padding-top   : 30px;
     margin-bottom : 50px;
 
     + * {
