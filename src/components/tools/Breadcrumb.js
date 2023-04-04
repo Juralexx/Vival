@@ -28,7 +28,7 @@ const NextBreadcrumbs = ({ denomination }) => {
 
     React.useEffect(() => {
         if (isBrowser) {
-            let title = document.title?.split('-')[0]
+            let title = document.title?.split(' - ')[0]
             if (title)
                 setCurrent(title)
             else setCurrent(document.title)
@@ -54,7 +54,7 @@ const NextBreadcrumbs = ({ denomination }) => {
     const breadcrumbs = generateBreadcrumbs()
 
     return (
-        <Breadcrumb aria-label="breadcrumb">
+        <Breadcrumb aria-label="breadcrumb" className='breadcrumb'>
             {breadcrumbs.map((crumb, key) => (
                 <Crumb {...crumb} key={key} last={key === breadcrumbs.length - 1} />
             ))}
@@ -65,7 +65,8 @@ const NextBreadcrumbs = ({ denomination }) => {
 export default NextBreadcrumbs
 
 const Breadcrumb = styled.div`
-    margin      : 0 auto 30px;
+    padding     : 10px 0;
+    margin      : 0 auto 10px;
     white-space : nowrap;
     text-align  : center;
 
@@ -73,7 +74,6 @@ const Breadcrumb = styled.div`
         display        : inline;
         font-size      : 13px;
         color          : var(--text-light);
-        font-family    : var(--font-fam2);
         white-space    : break-spaces;
         line-height    : 13px;
         vertical-align : middle;
