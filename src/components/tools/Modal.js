@@ -34,18 +34,18 @@ const Modal = (props) => {
 export default Modal
 
 const ModalWrapper = styled.div`
-    position    : fixed;
-    top         : 0;
-    right       : 0;
-    bottom      : 0;
-    left        : 0;
-    display     : flex;
-    align-items : center;
-    padding     : 100px 0 30px;
-    overflow-x  : hidden;
-    overflow-y  : auto;
-    visibility  : visible;
-    z-index     : 100000000000;
+    position        : fixed;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    display         : flex;
+    align-items     : center;
+    padding         : 100px 0 30px;
+    overflow-x      : hidden;
+    overflow-y      : auto;
+    visibility      : visible;
+    z-index         : 100000000000;
 
     &.hide_wrapper {
         visibility : hidden;
@@ -125,14 +125,15 @@ const ModalWrapper = styled.div`
     }
 `
 const ModalCover = styled.div`
-    display    : none;
-    position   : fixed;
-    top        : 0;
-    bottom     : 0;
-    left       : 0;
-    right      : 0;
-    background : var(--modal-cover);
-    z-index    : 100000;
+    display         : none;
+    position        : fixed;
+    top             : 0;
+    bottom          : 0;
+    left            : 0;
+    right           : 0;
+    background      : var(--modal-cover);
+    backdrop-filter : blur(3px);
+    z-index         : 100000;
 
     &.modal_cover-active {
         display : block;
