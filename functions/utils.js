@@ -195,7 +195,7 @@ export const sanitize = (string) => {
 
 export const onlyLettersSpacesAndDashes = (string) => {
     // eslint-disable-next-line
-    const regexp = new RegExp(/^[A-Za-z\s\-]+$/)
+    const regexp = new RegExp(/^[A-Za-z\s\-']+$/)
     if (regexp.test(string)) return true
     else return false
 }
@@ -1066,7 +1066,6 @@ export const returnURLsInText = (text) => {
     let arr = []
     while (regexp.test(txt)) {
         let matched = regexp.exec(txt)[0]
-        console.log(matched)
         arr.push(matched)
         txt = txt.replace(matched, '')
     }
@@ -1153,7 +1152,6 @@ export const getDifference = (one, two) => {
 
 export const convertStringToURL = (str) => {
     let URL = str.toLowerCase();
-    URL = URL.charAt(0).toUpperCase() + URL.slice(1);
     URL = URL.replace(/[&#,+()$~%^.'":*?!;<>{}/\\\\]/g, " ")
     URL = URL.replace(/ +/g, " ")
     URL = URL.trim()
