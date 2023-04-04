@@ -21,6 +21,7 @@ const GlobalStyles = createGlobalStyle`
         padding         : 0;
         overflow-x      : hidden;
         scroll-behavior : smooth;
+        font-size       : 18px;
     }
 
     * {
@@ -31,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         width            : 100%;
+        min-height       : 100vh;
         margin           : 0;
         padding          : 0;
         background-color : var(--body);
@@ -92,18 +94,40 @@ const GlobalStyles = createGlobalStyle`
     }
     ::-webkit-scrollbar-corner {
         background : transparent;
-    }  
+    }
 
-    .main {
+    input {
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus {
+            transition: background-color 600000s 0s, color 600000s 0s;
+        }
+    }
+
+    .main,
+    .unmain {
+        min-height     : 100vh;
+        display        : flex;
+        flex-direction : column;
+    }
+
+    main {
+        flex     : 1;
         position : relative;
-        height   : auto;
-        width    : 100%;
-        top      : 0;
     }
 
     .unmain {
         h1 {
             text-align : center;
+        }
+
+        #navbar {
+            @media(min-width :1201px) {
+                background : var(--body);
+                /* background : linear-gradient(to left, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 0) 75%); */
+            }
+            @media(max-width : 1200px) {
+                background : var(--body);
+            }
         }
     }
 
@@ -116,13 +140,40 @@ const GlobalStyles = createGlobalStyle`
 
     p {
         color       : var(--text);
-        line-height : 1.5rem;
-        font-size   : 16px;
+        font-size   : 18px;
+        line-height : 1.5;
     }
 
     a {
         text-decoration : none;
-        font-size       : 16px;
+        font-size       : 18px;
+
+        &.custom-link {
+            position : relative;
+            color    : var(--primary);
+            &:hover {
+                &:before {
+                    content    : '';
+                    position   : absolute;
+                    bottom     : -2px;
+                    width      : 100%;
+                    height     : 2px;
+                    background : var(--primary-light);
+                }
+            }
+        }
+    }
+
+    @media(max-width: 768px) {
+        a, p {
+            font-size : 16px;
+        }
+    }
+
+    small {
+        color       : var(--text);
+        font-size   : 13px;
+        line-height : 1.2;
     }
 
     h1,
@@ -131,7 +182,6 @@ const GlobalStyles = createGlobalStyle`
     h4 {
         color          : var(--title);
         letter-spacing : -1px;
-        font-stretch   : 108%;
 
         * {
             font-size      : inherit;
@@ -144,27 +194,29 @@ const GlobalStyles = createGlobalStyle`
 
     h1 {
         font-weight   : 600;
-        font-size     : 40px;
+        font-size     : 2.4rem;
+        line-height   : 1.4;
         margin-bottom : 30px;
     }
 
     h2 {
         font-weight : 600;
         position    : relative;
-        font-size   : 36px;
-        line-height : 38px;
+        line-height : 1.4;
+        font-size   : 2.1rem;
     }
 
     h3 {
         font-weight : 400;
-        font-size   : 27px;
-        line-height : 29px;
+        font-size   : 1.8rem;
+        line-height : 1.6;
     }
 
     h4 {
         font-weight : 300;
         font-size   : 22px;
         font-size   : 24px;
+        line-height : 1.6;
     }
 
     @media(max-width: 768px) {
@@ -174,6 +226,10 @@ const GlobalStyles = createGlobalStyle`
 
         h2 {
             font-size : 28px;
+        }
+
+        h3 {
+            font-size : 24px;
         }
     }
 
@@ -195,7 +251,7 @@ const GlobalStyles = createGlobalStyle`
         justify-content : center;
         align-items     : center;
         padding         : 40px 0;
-        font-size       : 16px;
+        font-size       : 18px;
 
         svg {
             width            : 50px;
@@ -214,6 +270,25 @@ const GlobalStyles = createGlobalStyle`
 
         button {
             margin-top : 20px;
+        }
+    }
+
+    .opening {
+        margin-bottom   : 6px;
+        display         : flex;
+        align-items     : center;
+        justify-content : space-between;
+
+        .divider {
+            flex-grow     : 1;
+            border-bottom : 1px solid var(--light-border);
+            margin        : 10px;
+            min-width     : 5px;
+        }
+
+        span {
+            font-weight : 600;
+            color       : var(--dark);
         }
     }
 `;
