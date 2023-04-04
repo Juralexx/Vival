@@ -4,6 +4,17 @@ import styled from 'styled-components'
 import Icon from 'icons/Icon'
 import { dateParser } from 'functions/utils'
 
+const getContentToDisplay = (actu) => {
+    if (actu.content) {
+        return actu.content
+    } else {
+        if (actu.components.length > 0) {
+            const el = actu.components.find(el => el.content)
+            return el.content ? el.content : ""
+        }
+    }
+}
+
 const CardHorizontal = ({ actuality, className }) => {
     return (
         <Card className={className}>
@@ -23,7 +34,7 @@ const CardHorizontal = ({ actuality, className }) => {
                 <p className="date">{dateParser(actuality?.date)}</p>
                 <div
                     className="text"
-                    dangerouslySetInnerHTML={{ __html: actuality?.content }}
+                    dangerouslySetInnerHTML={{ __html: getContentToDisplay(actuality) }}
                 />
                 <div className='btn-container'>
                     <Link href={`/actualites/${actuality?.url}`} className="more" passHref>
@@ -41,19 +52,19 @@ const Card = styled.div`
     display       : grid;
     margin        : 0 auto;
     min-height    : 229px;
-    border-radius : var(--rounded-3xl);
-    box-shadow    : var(--shadow-colored);
-    border        : 1px solid var(--light-border);
+    max-height    : 247px;
+    border-radius : var(--rounded-md);
+    box-shadow    : var(--shadow-smooth);
     overflow      : hidden;
 
     .image {
-        padding    : 0;
-        order      : 1;
-        max-height : 238px;
+        padding : 0;
+        order   : 1;
+        height  : 100%;
         img {
-            object-fit    : cover;
-            height        : 100%;
-            width         : 100%;
+            object-fit : cover;
+            height     : 100%;
+            width      : 100%;
         }
     }
 
@@ -112,6 +123,7 @@ const Card = styled.div`
     }
 
     @media(max-width:576px) {
+        max-height : unset;
         &.__to-left {
             grid-template-columns : 1fr;
             .image {
