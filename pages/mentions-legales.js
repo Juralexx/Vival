@@ -50,7 +50,7 @@ export default function MentionsLégales({ datas }) {
                     <p>
                         <b>Organisme représenté</b>&nbsp;: {datas?.raison_social}<br />
                         <b>Siège social</b>&nbsp;: {datas?.adresse_siege}<br />
-                        <b>Immatriculée au RCS</b> de {datas?.ville_RCS}<br />xz
+                        <b>Immatriculée au RCS</b> de {datas?.ville_RCS}<br />
                         <b>N° de SIRET</b>&nbsp;: {datas?.SIRET}<br />
                         <b>Téléphone</b>&nbsp;: {datas?.phone}<br />
                         <u><i>Ci-après l'Organisme représenté</i></u>
