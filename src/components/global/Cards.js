@@ -81,7 +81,7 @@ const Card = styled.div`
     width         : 100%;
     max-width     : 560px;
     border        : 1px solid var(--light-border);
-    border-radius : var(--rounded-xl);
+    border-radius : var(--rounded-md);
     box-shadow    : var(--shadow-x-smooth);
     overflow      : hidden;
 
@@ -126,8 +126,8 @@ const Card = styled.div`
         transform        : translateX(-50%);
         padding          : 14px 50px 12px;
         text-align       : center;
-        font-size        : 16px;
-        line-height      : 16px;
+        font-size        : 18px;
+        line-height      : 18px;
         font-weight      : 500;
         border-radius    : 4px;
         color            : var(--white);
