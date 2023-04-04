@@ -2,14 +2,14 @@ import React from "react";
 import useSWR from 'swr'
 import styled from "styled-components";
 import { getActualitiesPaths, getActuality } from "api/actuality";
-import { fetchSiteDatas } from "api/site";
+import { fetchSiteDatas, getImages } from "api/site";
 import Layout from "layouts/Layout";
 import ActualityLayout from "layouts/Actuality";
 import NextBreadcrumbs from "tools/Breadcrumb";
 import { dateParser, fetcher } from "functions/utils";
 import { Billboard, Cards, Carousel, Checkerboard, Content, Embed, Gallery, Img, MainImage } from "components/global";
 
-export default function Actuality({ datas, router, actu }) {
+export default function Actuality({ datas, router, actu, brands, partners }) {
     const { date, actuality } = router.query;
     const { data: siteDatas } = useSWR(process.env.SITE_API_ROUTE, fetcher, { initialData: datas })
     const { data: actuDatas } = useSWR(`${process.env.ACTUALITY_API_ROUTE}?date=${date}&title=${actuality}`, fetcher, { initialData: actu })
@@ -19,9 +19,13 @@ export default function Actuality({ datas, router, actu }) {
             <Layout
                 datas={siteDatas}
                 title={actuDatas.title}
-                headerImg={(actuDatas.image?.url && actuDatas.imagedisplay) && actuDatas.image?.url}
+                headerImg={(actuDatas.image?.url && actuDatas.image_display) && actuDatas.image?.url}
             >
-                <ActualityLayout datas={siteDatas}>
+                <ActualityLayout
+                    datas={siteDatas}
+                    brands={brands}
+                    partners={partners}
+                >
                     <ActualityContainer className="container">
                         <NextBreadcrumbs
                             denomination={siteDatas.denomination}
@@ -89,6 +93,8 @@ export default function Actuality({ datas, router, actu }) {
                                             }
                                             {component.__component === 'general.carrousel-d-images' &&
                                                 <Carousel
+                                                    datas={siteDatas}
+                                                    page={actuDatas}
                                                     carousel={component}
                                                 />
                                             }
@@ -121,11 +127,15 @@ export async function getStaticProps({ params }) {
     const { date, actuality } = params
     const { data } = await getActuality({ date: date, title: actuality })
     const { siteDatas } = await fetchSiteDatas()
+    const { files: brands } = await getImages({ folder: 'img/brands' })
+    const { files: partners } = await getImages({ folder: 'img/partners' })
 
     return {
         props: {
             actu: data,
-            datas: siteDatas
+            datas: siteDatas,
+            brands: brands,
+            partners: partners
         },
         revalidate: 1
     }
@@ -137,6 +147,7 @@ export async function getStaticProps({ params }) {
 
 const ActualityContainer = styled.div`
     max-width     : 1170px;
+    padding-top   : 30px;
     margin-bottom : 50px;
 
     + * {
@@ -163,8 +174,7 @@ const ActualityContainer = styled.div`
     }
 
     .actu-inner-container {
-        padding  : 50px 0 40px;
-        overflow : hidden;
+        padding : 50px 0 40px;
     }
 
     .title {
