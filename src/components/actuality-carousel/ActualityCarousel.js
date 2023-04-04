@@ -10,7 +10,7 @@ const ActualityCarousel = ({ actualities }) => {
     const [state, setState] = React.useState(0)
 
     React.useEffect(() => {
-        if (actualities.length > 3) {
+        if (actualities.length > 5) {
             if (state === 0) {
                 const timer = setTimeout(() => {
                     setActus(actualities.slice(3, 6))
@@ -32,7 +32,7 @@ const ActualityCarousel = ({ actualities }) => {
         <ActualityCarouselContainer className="container-lg" id="actuality-carousel">
             <h2>À la une</h2>
             {actus?.length > 2 ? (
-                <div className="__grid">
+                <div className={`__grid ${actualities.length > 5 && 'animated'}`}>
                     <Revealer>
                         <CardVertical actuality={actus[0]} className='animated-to-left' />
                     </Revealer>
@@ -96,25 +96,27 @@ const ActualityCarouselContainer = styled.div`
         }
     }
 
-    .animated-to-left,
-    .animated-to-right,
-    .animated-to-bottom {
-        animation-duration : 10.4s;
-        animation-timing-function : ease;
-        animation-iteration-count : infinite;
-    }
+    .animated {
+        .animated-to-left,
+        .animated-to-right,
+        .animated-to-bottom {
+            animation-duration : 10.4s;
+            animation-timing-function : ease;
+            animation-iteration-count : infinite;
+        }
 
-    .animated-to-left {
-        animation-name : animated-to-left;
-        animation-delay : 9.2s;
-    }
-    .animated-to-right {
-        animation-name : animated-to-right;
-        animation-delay : 9.3s;
-    }
-    .animated-to-bottom {
-        animation-name : animated-to-bottom;
-        animation-delay : 9.4s;
+        .animated-to-left {
+            animation-name : animated-to-left;
+            animation-delay : 9.2s;
+        }
+        .animated-to-right {
+            animation-name : animated-to-right;
+            animation-delay : 9.3s;
+        }
+        .animated-to-bottom {
+            animation-name : animated-to-bottom;
+            animation-delay : 9.4s;
+        }
     }
 
     @keyframes animated-to-left {
