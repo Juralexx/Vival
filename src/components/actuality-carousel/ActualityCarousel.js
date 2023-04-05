@@ -53,15 +53,21 @@ const ActualityCarousel = ({ actualities }) => {
                     </div>
                 </div>
             ) : (
-                <div className="__grid-both">
-                    {actus?.slice(0, 2).map((actu, key) => {
-                        return (
-                            <Revealer key={key}>
-                                <CardVertical actuality={actu} />
-                            </Revealer>
-                        )
-                    })}
-                </div>
+                actus?.length > 1 ? (
+                    <div className="__grid-both">
+                        {actus?.slice(0, 2).map((actu, key) => {
+                            return (
+                                <Revealer key={key}>
+                                    <CardVertical actuality={actu} />
+                                </Revealer>
+                            )
+                        })}
+                    </div>
+                ) : (
+                    <Revealer>
+                        <CardVertical actuality={actus[0]} />
+                    </Revealer>
+                )
             )}
             <LinkStyledButton href="/actualites" className="more-btn">
                 Voir toute l'actualité
