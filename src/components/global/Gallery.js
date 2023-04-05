@@ -53,7 +53,7 @@ const Gallery = (props) => {
                         onCloseRequest={() => setLightbox({ module: null, open: false, image: null })}
                         onMovePrevRequest={() => setLightbox(prev => ({ ...prev, image: (lightbox.image + images.length - 1) % images.length }))}
                         onMoveNextRequest={() => setLightbox(prev => ({ ...prev, image: (lightbox.image + 1) % images.length }))}
-                        imageTitle={images[lightbox.image].caption}
+                        imageTitle={images[lightbox.image].alternativeText}
                         imageLoadErrorMessage="Une erreur est survenu... L'image ne peut pas être chargée."
                     />
                 }
