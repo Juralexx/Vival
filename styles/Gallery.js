@@ -27,6 +27,7 @@ export const Gallery = css`
             width              : 100%;
             height             : auto;
             padding            : 5px;
+            text-align         : center;
             text-overflow      : ellipsis;
             overflow           : hidden;
             width              : 100%;
