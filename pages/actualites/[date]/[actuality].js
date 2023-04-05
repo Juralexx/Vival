@@ -19,7 +19,7 @@ export default function Actuality({ datas, router, actu, brands, partners }) {
             <Layout
                 datas={siteDatas}
                 title={actuDatas.title}
-                headerImg={(actuDatas.image?.url && actuDatas.image_display) && actuDatas.image?.url}
+            // headerImg={(actuDatas.image?.url && actuDatas.image_display) && actuDatas.image?.url}
             >
                 <ActualityLayout
                     datas={siteDatas}
@@ -37,18 +37,20 @@ export default function Actuality({ datas, router, actu, brands, partners }) {
                             </div>
                         </div>
                         <div className="actu-inner-container">
-                            {actuDatas.image &&
-                                <MainImage
-                                    datas={siteDatas}
-                                    page={actuDatas}
-                                />
-                            }
-                            {actuDatas.content &&
-                                <div
-                                    className="actu-txt ck-content"
-                                    dangerouslySetInnerHTML={{ __html: actuDatas.content }}
-                                />
-                            }
+                            <div className="actu-inner">
+                                {actuDatas.image &&
+                                    <MainImage
+                                        datas={siteDatas}
+                                        page={actuDatas}
+                                    />
+                                }
+                                {actuDatas.content &&
+                                    <div
+                                        className="actu-txt ck-content"
+                                        dangerouslySetInnerHTML={{ __html: actuDatas.content }}
+                                    />
+                                }
+                            </div>
 
                             {actuDatas?.components?.length > 0 && (
                                 actuDatas.components.map((component, i) => {
@@ -147,8 +149,9 @@ export async function getStaticProps({ params }) {
 
 const ActualityContainer = styled.div`
     max-width     : 1170px;
-    padding-top   : 30px;
-    margin-bottom : 50px;
+    padding-top   : 15px;
+    margin-bottom : 100px;
+    overflow      : hidden;
 
     + * {
         clear   : both;
@@ -164,7 +167,15 @@ const ActualityContainer = styled.div`
     ul {
         display : inline-block;
         li {
-            list-style : disc;
+            &::before {
+                content       : "➜"; //➤
+                font-size     : 14px;
+                color         : var(--primary);
+                display       : inline-block;
+                margin-left   : -1em;
+                margin-right  : 7px;
+                margin-bottom : 2px;
+            }
         }
     }
 
@@ -175,6 +186,10 @@ const ActualityContainer = styled.div`
 
     .actu-inner-container {
         padding : 50px 0 40px;
+    }
+
+    .actu-inner {
+        overflow : hidden;
     }
 
     .title {
