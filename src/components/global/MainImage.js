@@ -40,7 +40,7 @@ export default MainImage
 const ImgContainer = styled.div`
     display       : block;
     position      : relative;
-    max-width     : 368px;
+    max-width     : 370px;
     border-radius : var(--rounded-md);
     cursor        : pointer;
     overflow      : hidden;
@@ -49,15 +49,11 @@ const ImgContainer = styled.div`
 
     ${props => props.imageSide === 'Gauche' && css`
         float  : left;
-        margin : 0 35px 25px 0;
+        margin : 0 25px 15px 0;
     `};
     ${props => props.imageSide === 'Droite' && css`
         float  : right;
-        margin : 0 0 25px 35px;
-    `};
-    ${props => props.imageSide === 'Haut' && css`
-        float  : none;
-        margin : 0px auto 30px;
+        margin : 0 0 15px 25px;
     `};
     ${props => props.imageSide === 'Haut' && css`
         float  : none;
