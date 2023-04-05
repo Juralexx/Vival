@@ -52,6 +52,7 @@ export default CardVertical
 
 const Card = styled.div`
     height        : 100%;
+    max-width     : 450px;
     margin        : 0 auto;
     border-radius : var(--rounded-md);
     box-shadow    : var(--shadow-smooth);
@@ -70,13 +71,15 @@ const Card = styled.div`
     }
 
     .content {
-        padding : 20px;
-        height  : calc(100% - 200px);
+        position : relative;
+        padding  : 20px;
+        height   : calc(100% - 200px);
 
         .date {
             margin-bottom : 15px;
+            margin-top    : 5px;
             color         : var(--text-light);
-            font-size     : 14px;
+            font-size     : 16px;
         }
         .text {
             text-overflow      : ellipsis;
