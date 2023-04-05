@@ -34,18 +34,20 @@ export default function Services({ content, datas, router, brands, partners }) {
                             <h1>{pageDatas.title}</h1>
                         </div>
                         <div className="service-inner-container">
-                            {pageDatas.image &&
-                                <MainImage
-                                    datas={siteDatas}
-                                    page={pageDatas}
-                                />
-                            }
-                            {pageDatas.content &&
-                                <div
-                                    className="service-txt ck-content"
-                                    dangerouslySetInnerHTML={{ __html: pageDatas.content }}
-                                />
-                            }
+                            <div className="service-inner">
+                                {pageDatas.image &&
+                                    <MainImage
+                                        datas={siteDatas}
+                                        page={pageDatas}
+                                    />
+                                }
+                                {pageDatas.content &&
+                                    <div
+                                        className="service-txt ck-content"
+                                        dangerouslySetInnerHTML={{ __html: pageDatas.content }}
+                                    />
+                                }
+                            </div>
 
                             {pageDatas?.components?.length > 0 && (
                                 pageDatas.components.map((component, i) => {
@@ -144,7 +146,7 @@ export async function getStaticProps({ params }) {
 
 const ServiceContainer = styled.div`
     max-width     : 1170px;
-    padding-top   : 30px;
+    padding-top   : 15px;
     margin-bottom : 50px;
 
     + * {
@@ -161,7 +163,15 @@ const ServiceContainer = styled.div`
     ul {
         display : inline-block;
         li {
-            list-style : disc;
+            &::before {
+                content       : "➜"; //➤
+                font-size     : 14px;
+                color         : var(--primary);
+                display       : inline-block;
+                margin-left   : -1em;
+                margin-right  : 7px;
+                margin-bottom : 2px;
+            }
         }
     }
 
@@ -172,6 +182,10 @@ const ServiceContainer = styled.div`
 
     .service-inner-container {
         padding  : 50px 0 40px;
+        overflow : hidden;
+    }
+
+    .service-inner {
         overflow : hidden;
     }
 
