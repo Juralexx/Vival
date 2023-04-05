@@ -283,7 +283,7 @@ export async function getStaticProps() {
 }
 
 const ActualitiesPage = styled.div`
-    padding-top    : 30px;
+    padding-top    : 15px;
     padding-bottom : 50px;
 
     h1 {
@@ -386,8 +386,8 @@ const ActualitiesContainer = styled.div`
                 overflow      : hidden;
 
                 img {
-                    min-width  : 100%;
-                    min-height : 100%;
+                    width      : 100%;
+                    height     : 100%;
                     object-fit : cover;
                 }
             }
