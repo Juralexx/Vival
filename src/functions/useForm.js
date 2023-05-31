@@ -16,7 +16,6 @@ const useForm = () => {
     })
 
     const handleServerResponse = (ok) => {
-        console.log(ok);
         if (ok) {
             setForm({ name: '', lastname: '', email: '', phone: '', subject: '', message: '' })
             if (err.includes('server')) {
@@ -121,7 +120,6 @@ const useForm = () => {
                                     })
                                         .then(res => {
                                             handleServerResponse(true)
-                                            console.log(res);
                                         })
                                         .catch(() => handleServerResponse(false))
                                 }
