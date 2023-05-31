@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
@@ -12,8 +12,8 @@ const icon = new L.divIcon({
 });
 
 const MyMarker = (props) => {
-    const leafletRef = useRef();
-    useEffect(() => {
+    const leafletRef = React.useRef();
+    React.useEffect(() => {
         leafletRef.current.openPopup();
     }, [])
     return <Marker ref={leafletRef} {...props} />
@@ -60,6 +60,10 @@ const Leaflet = styled.div`
         width  : 100%;
     }
 
+    .leaflet-map {
+        height : 100%;
+    }
+
     .leaflet-top {
         display : none;
     }
@@ -69,8 +73,8 @@ const Leaflet = styled.div`
     }
 
     .leaflet-popup-content-wrapper {
-        border-radius : var(--rounded-md);
-        box-shadow    : var(--shadow-one);
+        border-radius : var(--rounded-lg);
+        box-shadow    : var(--shadow-2xl);
     }
 
     .leaflet-attribution-flag {

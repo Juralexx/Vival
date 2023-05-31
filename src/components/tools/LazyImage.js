@@ -60,9 +60,7 @@ const LazyImage = (props) => {
                         blurDataURL={blurDataURL}
                         style={{
                             ...style.image,
-                            ...css.fullSize,
-                            width: 'auto',
-                            height: 'auto'
+                            ...css.fullSize
                         }}
                         unoptimized={true}
                         onClick={onClick}

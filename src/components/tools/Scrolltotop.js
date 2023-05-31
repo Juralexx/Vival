@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Icon from "./icons/Icon";
+import Icon from "../icons/Icon";
 import useScrollDirection from './hooks/useScrollDirection'
-import { addClass } from "../../../functions/utils";
+import { addClass } from "functions/utils";
 
 const ScrolltoTop = () => {
     const scrollDirection = useScrollDirection('down');
@@ -67,7 +67,7 @@ const ScrollToTop = styled.div`
             color         : white;
             background    : var(--primary);
             border-radius : var(--rounded-full);
-            box-shadow    : var(--shadow-tiny);
+            box-shadow    : var(--shadow-md);
             opacity       : 1;
             visibility    : visible;
             transition    : .3s;

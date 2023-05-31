@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Icon from './icons/Icon'
+import Icon from '../icons/Icon'
 
 const Warning = (props) => {
     const { open, setOpen, css, title, text, onClose } = props
@@ -53,7 +53,7 @@ const WarningWrapper = styled.div`
         color            : var(--text);
         background-color : var(--body);
         border-radius    : var(--rounded-md);
-        box-shadow       : var(--shadow-relief), var(--shadow-two);
+        box-shadow       : var(--shadow-relief), var(--shadow-xl);
         z-index          : 100000000000;
 
         @media(max-width: 768px) {

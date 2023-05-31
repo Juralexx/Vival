@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Icon from './icons/Icon'
+import Icon from '../icons/Icon'
 import useClickOutside from 'tools/hooks/useClickOutside'
 
 const Modal = (props) => {
@@ -57,8 +57,8 @@ const ModalWrapper = styled.div`
         padding          : 25px 15px;
         color            : var(--text);
         background-color : var(--body);
-        border-radius    : var(--rounded-md);
-        box-shadow       : var(--shadow-smooth);
+        border-radius    : var(--rounded-xl);
+        box-shadow       : var(--shadow-lg-colored);
         z-index          : 100000000000;
     
         h2 {

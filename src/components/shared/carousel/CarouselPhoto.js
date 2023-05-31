@@ -5,7 +5,7 @@ import Lightbox from 'react-18-image-lightbox'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Controller } from 'swiper';
 import 'swiper/css';
-import Icon from 'components/tools/icons/Icon';
+import Icon from 'components/icons/Icon';
 import { fullImage } from 'functions/utils';
 
 const CarouselPhoto = ({ datas, page, carousel }) => {
@@ -111,7 +111,7 @@ const CarouselContainer = styled.div`
     overflow         : hidden;
     background-color : #0F0F0F; //#F6F8F9
     border-radius    : var(--rounded-md);
-    box-shadow       : inset var(--shadow-tiny);
+    box-shadow       : inset var(--shadow-md);
 
     .gallery-carousel-top {
         position : relative;
@@ -141,7 +141,7 @@ const CarouselContainer = styled.div`
         padding          : 7px;
         color            : var(--text);
         background-color : var(--body);
-        box-shadow       : var(--shadow-xtiny);
+        box-shadow       : var(--shadow-sm);
         border-radius    : var(--rounded-full);
         cursor           : pointer;
         z-index          : 1;

@@ -4,14 +4,14 @@ import useOpenState from 'functions/useOpenState'
 import { addClass } from 'functions/utils'
 
 const Opening = ({ datas }) => {
-    const { openState, convertNumberInHour } = useOpenState(datas)
+    const { openState, convertNumberInHour } = useOpenState(datas);
 
     return (
         openState &&
-        <OpeningContainer className={addClass(!openState.isOpen, 'closed')}>
+        <OpeningContainer className={`${addClass(!openState.isOpen, 'closed')}`}>
             {openState.isOpen &&
                 <React.Fragment>
-                    <span className='state'>Ouvert </span>
+                    <span className='font-semibold'>Ouvert </span>
                     <span>| Ferme</span>
                     {openState.willCloseAt.hour &&
                         <span> à {convertNumberInHour(openState.willCloseAt.hour)}</span>
@@ -20,10 +20,10 @@ const Opening = ({ datas }) => {
             }
             {!openState.isOpen &&
                 <React.Fragment>
-                    <span className='state'>Fermé </span>
+                    <span className='font-semibold'>Fermé </span>
                     <span>| Ouvre </span>
                     {openState.willOpenAt?.day &&
-                        <span className='day'>{openState.willOpenAt?.day}</span>
+                        <span className='lowercase'>{openState.willOpenAt?.day}</span>
                     }
                     {openState.willOpenAt?.hour &&
                         <span> à {convertNumberInHour(openState.willOpenAt?.hour)}</span>
@@ -39,13 +39,13 @@ export default Opening
 const OpeningContainer = styled.div`
     display          : inline-block;
     position         : relative;
-    margin-top       : 15px;
+    margin-top       : 40px;
     margin-right     : 10px;
     padding          : 8px 15px 6px 30px;
     color            : var(--success);
-    border           : 1px solid var(--success);
     background-color : var(--body);
     border-radius    : var(--rounded-md);
+    box-shadow       : var(--shadow-lg-colored);
 
     &:before {
         content          : '';
@@ -59,17 +59,8 @@ const OpeningContainer = styled.div`
         background-color : var(--success);
     }
 
-    .state {
-        font-weight : 600;
-    }
-    
-    .day {
-        text-transform : lowercase;
-    }
-
     &.closed {
-        color  : var(--danger);
-        border : 1px solid var(--danger);
+        color : var(--danger);
 
         &:before {
             background-color : var(--danger);

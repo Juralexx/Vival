@@ -1,117 +1,105 @@
 import React from 'react';
-import styled from 'styled-components';
 import useForm from 'functions/useForm';
-import Icon from 'components/tools/icons/Icon';
+import Icon from 'components/icons/Icon';
 import Warning from 'components/tools/Warning';
-import { Button } from 'components/tools/Buttons';
-import { DynamicInput, Textarea } from 'components/tools/Inputs';
-import { ErrorCard } from 'components/tools/ErrorCard';
-import CircleLoader from 'components/tools/CircleLoader';
+import { Button } from 'components/global';
+import { TextareaDynamic, InputDynamic, Alert, CircleLoader } from 'components/global';
 import { addClass } from 'functions/utils';
 
 const Form = () => {
     const { form, setForm, isLoading, err, setErr, submitted, setSubmitted, submit } = useForm()
 
     return (
-        <FormContainer>
+        <div className='relative w-full mt-7 mx-auto'>
             {!submitted && !isLoading &&
                 <>
                     <form onSubmit={submit} className="form">
-                        <InputsContainer>
-                            <div className='input__container'>
-                                <DynamicInput
-                                    className={`${addClass(err.includes('lastname'), 'err')}`}
+                        <div className='grid grid-cols-2 xs:grid-cols-1 gap-2 mt-2'>
+                            <div>
+                                <InputDynamic
+                                    className={'w-full'}
                                     type="text"
-                                    text="Nom"
+                                    name="Nom"
                                     placeholder="Nom"
                                     value={form.lastname}
                                     onChange={e => setForm(prev => ({ ...prev, lastname: e.target.value }))}
+                                    isError={addClass(err.includes('lastname'))}
                                 />
-                                <ErrorCard
-                                    text="Veuillez saisir un nom valide"
-                                    display={err.includes('lastname')}
-                                />
+                                {err.includes('lastname') &&
+                                    <Alert type="error">Veuillez saisir un nom valide</Alert>
+                                }
                             </div>
-                            <div className='input__container'>
-                                <DynamicInput
-                                    className={`${addClass(err.includes('name'), 'err')}`}
+                            <div>
+                                <InputDynamic
                                     type="text"
-                                    text="Prénom"
+                                    name="Prénom"
                                     placeholder="Prénom"
                                     value={form.name}
                                     onChange={e => setForm(prev => ({ ...prev, name: e.target.value }))}
+                                    isError={addClass(err.includes('name'))}
                                 />
-                                <ErrorCard
-                                    text="Veuillez saisir un prénom valide"
-                                    display={err.includes('name')}
-                                />
+                                {err.includes('name') &&
+                                    <Alert type="error">Veuillez saisir un prénom valide</Alert>
+                                }
                             </div>
-                        </InputsContainer>
-                        <InputsContainer>
-                            <div className='input__container'>
-                                <DynamicInput
-                                    className={`${addClass(err.includes('email'), 'err')}`}
+                        </div>
+                        <div className='grid grid-cols-2 xs:grid-cols-1 gap-2 mt-2'>
+                            <div>
+                                <InputDynamic
                                     type="text"
-                                    text="Email"
+                                    name="Email"
                                     placeholder="Email"
                                     value={form.email}
                                     onChange={e => setForm(prev => ({ ...prev, email: e.target.value }))}
+                                    isError={addClass(err.includes('email'))}
                                 />
-                                <ErrorCard
-                                    text="Veuillez saisir un email valide"
-                                    display={err.includes('email')}
-                                />
+                                {err.includes('email') &&
+                                    <Alert type="error">Veuillez saisir un email valide</Alert>
+                                }
                             </div>
-                            <div className='input__container'>
-                                <DynamicInput
-                                    className={`${addClass(err.includes('phone'), 'err')}`}
+                            <div>
+                                <InputDynamic
                                     type="text"
-                                    text="Téléphone"
+                                    name="Téléphone"
                                     placeholder="Téléphone"
                                     value={form.phone}
                                     onChange={e => setForm(prev => ({ ...prev, phone: e.target.value }))}
+                                    isError={addClass(err.includes('phone'))}
                                 />
-                                <ErrorCard
-                                    text="Numéro de téléphone invalide"
-                                    display={err.includes('phone')}
-                                />
+                                {err.includes('phone') &&
+                                    <Alert type="error">Numéro de téléphone invalide</Alert>
+                                }
                             </div>
-                        </InputsContainer>
-                        <InputsContainer>
-                            <div className='input__container full'>
-                                <DynamicInput
-                                    className={`${addClass(err.includes('subject'), 'err')}`}
-                                    type="text"
-                                    text="Sujet"
-                                    placeholder="Sujet"
-                                    value={form.subject}
-                                    onChange={e => setForm(prev => ({ ...prev, subject: e.target.value }))}
-                                />
-                                <ErrorCard
-                                    text="Veuillez saisir le sujet de votre message"
-                                    display={err.includes('subject')}
-                                />
-                            </div>
-                        </InputsContainer>
-                        <InputsContainer>
-                            <div className='input__container full'>
-                                <Textarea
-                                    className={`${addClass(err.includes('message'), 'err')}`}
-                                    type="text"
-                                    text="Message"
-                                    placeholder="Message"
-                                    value={form.message}
-                                    onChange={e => setForm(prev => ({ ...prev, message: e.target.value }))}
-                                />
-                                <ErrorCard
-                                    text="Veuillez saisir votre message"
-                                    display={err.includes('message')}
-                                />
-                            </div>
-                        </InputsContainer>
+                        </div>
+                        <div className='w-full mt-2'>
+                            <InputDynamic
+                                type="text"
+                                name="Sujet"
+                                placeholder="Sujet"
+                                value={form.subject}
+                                onChange={e => setForm(prev => ({ ...prev, subject: e.target.value }))}
+                                isError={addClass(err.includes('subject'))}
+                            />
+                            {err.includes('subject') &&
+                                <Alert type="error">Veuillez saisir le sujet de votre message</Alert>
+                            }
+                        </div>
+                        <div className='w-full mt-2'>
+                            <TextareaDynamic
+                                type="text"
+                                name="Message"
+                                placeholder="Message"
+                                value={form.message}
+                                onChange={e => setForm(prev => ({ ...prev, message: e.target.value }))}
+                                isError={addClass(err.includes('message'))}
+                            />
+                            {err.includes('message') &&
+                                <Alert type="error">Veuillez saisir votre message</Alert>
+                            }
+                        </div>
 
-                        <div className="btn__container">
-                            <Button type="submit">
+                        <div className="flex justify-center mt-6">
+                            <Button type="submit" className="v-primary fullwidth">
                                 Envoyer
                             </Button>
                         </div>
@@ -128,14 +116,14 @@ const Form = () => {
                 </>
             }
             {isLoading &&
-                <SubmissionDone>
-                    <Loader>
+                <div className='av-submission-done'>
+                    <div className='av-form-loader'>
                         <CircleLoader />
-                    </Loader>
-                </SubmissionDone>
+                    </div>
+                </div>
             }
             {submitted && !isLoading && err.length === 0 &&
-                <SubmissionDone>
+                <div className='av-submission-done'>
                     <div role="button"
                         tabIndex={0}
                         className='header'
@@ -147,143 +135,10 @@ const Form = () => {
                     <Icon name="CheckCircle" className='icon' />
                     <h3>Nous vous remercions pour votre message,<br />celui-ci a bien été envoyé.</h3>
                     <p>Nous vous répondrons dans les meilleurs délais.</p>
-                </SubmissionDone>
+                </div>
             }
-        </FormContainer>
+        </div>
     )
 }
 
-export default React.memo(Form)
-
-const FormContainer = styled.div`
-    position  : relative;
-    width     : 100%;
-    margin    : 30px auto 0;
-
-    .btn__container {
-        display         : flex;
-        justify-content : flex-end;
-        margin-top      : 20px;
-
-        button {
-            min-width : 100%;
-            margin    : 0 auto;
-            @media(max-width: 768px) {
-                min-width : 100%;
-            }
-        }
-    }
-`
-
-export const InputsContainer = styled.div`
-    position        : relative;
-    display         : flex;
-    justify-content : space-between;
-    margin-bottom   : 10px;
-
-    .input__container {
-        width   : 49.5%;
-        z-index : 1;
-        &.full {
-            width : 100%;
-        }
-        .icon-input,
-        textarea {
-            position  : relative;
-            max-width : 100%;
-        }
-
-        > label {
-            display : none;
-        }
-
-        input, textarea, label {
-            font-family : var(--font-fam2);
-        }
-    }
-
-    @media(max-width:576px) {
-        flex-direction : column;
-        margin-bottom  : 0;
-
-        .input__container {
-            width  : 100%;
-            margin : 5px auto;
-            &.full {
-                width : 100%;
-            }
-            textarea {
-                min-height : 150px;
-            }
-        }
-    }
-`;
-
-/**
- * 
- */
-
-export const SubmissionDone = styled.div`
-    padding          : 20px;
-    background-color : rgba(var(--primary-rgb), 0.05);
-    border-radius    : var(--roound-sm);
-
-    .header {
-        display     : flex;
-        align-items : center;
-        font-size   : 20px;
-        font-family : var(--font-fam2);
-        font-weight : 500;
-        cursor      : pointer;
-
-        svg {
-            width            : auto;
-            height           : 35px;
-            padding          : 7px;
-            stroke           : var(--primary);
-            background-color : rgba(var(--primary-rgb), 0.2);
-            border-radius    : var(--rounded-full);
-            margin-right     : 10px;
-            &:hover {
-                background-color : rgba(var(--primary-rgb), 0.3);
-            }
-        }
-    }
-
-    .icon {
-        display : block;
-        margin  : 0 auto;
-        width   : 60px;
-        height  : 60px;
-        color   : var(--primary);
-    }
-
-    h3 {
-        font-size   : 26px;
-        text-align  : center;
-        line-height : 1.2;
-        padding-top : 15px;
-        font-family : var(--font-fam2);
-    }
-    p {
-        text-align : center;
-        padding     : 20px 0;
-    }
-`
-
-export const Loader = styled.div`
-    padding         : 50px 0;
-    display         : flex;
-    justify-content : center;
-    
-    svg {
-        width  : 44px;
-        height : 44px;
-        circle {
-            stroke : var(--primary) !important;
-        }
-        path {
-            stroke : var(--primary) !important;
-        }
-    }
-`
+export default React.memo(Form);

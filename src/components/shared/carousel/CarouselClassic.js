@@ -5,7 +5,7 @@ import Lightbox from 'react-18-image-lightbox'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectCoverflow } from 'swiper';
 import 'swiper/css';
-import Icon from 'components/tools/icons/Icon';
+import Icon from 'components/icons/Icon';
 
 const CarouselClassic = ({ datas, page, carousel }) => {
     const { images, title, content } = carousel
@@ -25,7 +25,7 @@ const CarouselClassic = ({ datas, page, carousel }) => {
                 <Swiper
                     className='carousel'
                     modules={[Navigation, Autoplay, EffectCoverflow]}
-                    autoplay={{ delay: 500000 }}
+                    autoplay={{ delay: 5000 }}
                     slidesPerView={'auto'}
                     effect='coverflow'
                     coverflowEffect={{
@@ -126,7 +126,7 @@ const CarouselContainer = styled.div`
             margin        : 0 auto;
             object-fit    : cover;
             border-radius : var(--rounded-sm);
-            box-shadow    : var(--shadow-smooth);
+            box-shadow    : var(--shadow-lg-colored);
         }
     }
 
