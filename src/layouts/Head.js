@@ -2,14 +2,15 @@ import React from 'react'
 import Head from 'next/head'
 
 const HeadProvider = ({ datas, title, description, image }) => {
+    const root = typeof window !== 'undefined' ? window.location : ''
     const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
 
     const metadatas = {
-        site_name: typeof window !== 'undefined' ? window.location.pathname : '',
-        title: title || `${datas.denomination} - ${datas.job} à ${datas.city}`,
-        description: description || datas.denomination + ' - ' + datas.job + ' à ' + datas.city,
-        image: `${datas.site_name}/${image || datas.image}`,
-        url: `${datas.site_name}${pathname}`
+        site_name: datas.domain_name || root,
+        title: title || (`${datas.denomination} - ${datas.job} à ${datas.city}`),
+        description: description || (datas.denomination + ' - ' + datas.job + ' à ' + datas.city),
+        image: `https://${datas.domain_name}/${image || 'img/og.jpg'}`,
+        url: `${datas.domain_name}${pathname}`
     }
 
     return (

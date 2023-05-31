@@ -1,19 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import Icon from "icons/Icon";
 import { addActive } from 'functions/utils'
 
 const Footer = ({ datas }) => {
-    const router = useRouter()
+    //NextJS router
+    const router = useRouter();
 
     return (
-        <FooterContainer id="footer" pathname={router.pathname}>
+        <footer className="av-footer" id="footer">
             <div className="container-lg container-top">
-                <div className="footer-top">
+                <div className="av-footer-top">
                     <img src="/././img/logo-white.png" alt={datas.denomination} />
-                    <div className="socials">
+                    <div className="av-footer-socials">
                         {datas.facebook &&
                             <a href={'https://www.facebook.com/' + datas.facebook} target="_blank" className="social-btn" rel="noreferrer">
                                 <Icon name="FacebookCircle" />
@@ -21,35 +21,33 @@ const Footer = ({ datas }) => {
                         }
                     </div>
                 </div>
-                <div className="__grid">
+                <div className="av-footer-grid">
                     <div>
                         <h4>Informations</h4>
-                        <div className="footer-hours">
-                            <div className="adress">
+                        <div className="av-footer-infos">
+                            <div className="footer-info">
                                 <Icon name="Map" />
-                                <a href={datas.googlemap} target="_blank" color="secondary" small='true'>
+                                <a href={datas.googlemap} target="_blank" rel="noreferrer" color="secondary" small='true'>
                                     {datas.adress}
                                 </a>
                             </div>
-                            <div className="phone">
+                            <div className="footer-info">
                                 <Icon name="Phone" />
                                 <a href={"tel:" + datas.phone} color="secondary" small='true'>
                                     {datas.phone}
                                 </a>
                             </div>
-                            <div className="hours">
-                                <h5>Horaires</h5>
-                                {datas.opening.map((el, key) => {
-                                    return (
-                                        <p className="open-hours" key={key}>
-                                            <span className="font-bold">{el.day ? el.day : ''} : </span>{el.range ? el.range : ''}
-                                        </p>
-                                    )
-                                })}
-                            </div>
                         </div>
+                        <h4 className="mt-8">Horaires</h4>
+                        {datas.opening.map((el, key) => {
+                            return (
+                                <p className="footer-opening" key={key}>
+                                    <span className="font-bold">{el.day ? el.day : ''} : </span>{el.range ? el.range : ''}
+                                </p>
+                            )
+                        })}
                     </div>
-                    <div className="footer-links">
+                    <div className="av-footer-links">
                         <h4>Plan du site</h4>
                         {datas.navigation.map((tab, key) => {
                             return (
@@ -65,13 +63,13 @@ const Footer = ({ datas }) => {
                             )
                         })}
                     </div>
-                    <div className="footer-links">
+                    <div className="av-footer-links">
                         <h4>Services</h4>
                         {datas.navigation[1].links.map((tab, key) => {
                             return <Link href={tab?.link} target={tab?.target} key={key}>{tab?.name}</Link>
                         })}
                     </div>
-                    <div className="footer-links">
+                    <div className="av-footer-links">
                         <h4>Informations légales</h4>
                         {datas.informations.map((tab, key) => {
                             return <Link href={tab?.link} target={tab?.target} key={key}>{tab?.name}</Link>
@@ -96,267 +94,15 @@ const Footer = ({ datas }) => {
                     </div>
                 </div>
             </div>
-            <div className="footer-bottom">
+            <div className="av-footer-bottom">
                 <div className="container-lg">
                     <a href="https://www.alexandrevurbier.com/" target="_blank" rel="noreferrer">
                         © 2023 Alexandre Vurbier. Tout droits réservés.
                     </a>
                 </div>
             </div>
-        </FooterContainer>
+        </footer>
     )
 }
 
-export default Footer
-
-const FooterContainer = styled.footer`
-    position   : relative;
-    width      : 100%;
-    color      : #E0E9ED;
-    background : var(--primary);
-
-    a,
-    p {
-        font-size : 16px;
-    }
-
-    .container-lg {
-        position  : relative;
-        /* width     : 85%;
-        max-width : 1700px; */
-
-        @media(max-width: 768px) {
-            width : 100%;
-        }
-
-        &.container-top {
-            padding : 50px 20px;
-        }
-    
-        h4 {
-            font-weight    : 700;
-            letter-spacing : 0;
-            font-size      : 20px;
-            color          : var(--white);
-            margin-bottom  : 10px;
-        }
-
-        h5 {
-            font-weight   : 600;
-            font-size     : 18px;
-            margin-top    : 10px;
-            margin-bottom : 7px;
-            color         : var(--white);
-        }
-
-        .footer-logo {
-            max-width : 150px;
-        }
-    }
-
-    .footer-top {
-        display         : flex;
-        align-items     : flex-end;
-        justify-content : space-between;
-        padding-bottom  : 30px;
-        margin-bottom   : 30px;
-        border-bottom   : 1px solid rgba(255, 255, 255, 0.2);
-
-        img {
-            max-width    : 100px;
-            margin-right : 30px;
-        }
-
-        .socials {
-            display         : flex;
-            justify-content : center;
-
-            .social-btn {
-                height : 32px;
-                width  : 32px;
-                margin : 0 10px 0 0;
-                cursor : pointer;
-            
-                svg {
-                    height : 32px;
-                    width  : 32px;
-
-                    &:hover {
-                        opacity : 0.8;
-                    }
-                }
-            }
-        }
-    }
-
-    .footer-links {
-        a {
-            display     : block;
-            line-height : 28px;
-
-            &:hover {
-                color : white;
-            }
-        }
-    }
-
-    .__grid {
-        display               : grid;
-        grid-template-columns : 1.8fr 1fr 1fr 1fr;
-
-        @media(max-width: 992px) {
-            grid-template-columns : 1.5fr 1fr;
-
-            > div {
-                padding-bottom : 30px;
-            }
-        }
-        @media(max-width: 576px) {
-            grid-template-columns : 1fr;
-        }
-    }
-
-    .footer-hours {
-        position       : relative;
-        display        : flex;
-        flex-direction : column;
-        margin         : 0 auto;
-
-        .adress,
-        .phone,
-        .hours {
-            position : relative;
-            padding  : 5px 0;
-
-            svg {
-                display      : inline-block;
-                height       : 16px;
-                width        : 16px;
-                margin-top   : -2px;
-                margin-right : 5px;
-            }
-        }
-
-        .open-hours {
-            margin-bottom : 0px;
-            display       : flex;
-            align-items   : center;
-            max-width     : 300px;
-            color         : #E0E9ED;
-
-            span {
-                font-weight  : 600;
-                color        : var(--white);
-                margin-right : 10px;
-            }
-        }
-    } 
-
-    .footer-bottom {
-        width            : 100%;
-        text-align       : right;
-        padding          : 20px 0;
-        margin-top       : 45px;
-        background-color : var(--primary-dark);
-    
-        a {
-            display : inline-block;
-            color   : var(--white);
-
-            &:hover {
-                border-bottom : 1px solid var(--white);
-            }
-        }
-    }
-
-    @media(max-width: 576px) {
-        text-align : center;
-        .footer-hours {
-            padding-left : 0;
-            .adress,
-            .phone,
-            .hours {
-                margin : 5px auto;
-            }
-            .opening {
-                justify-content : center;
-            }
-        }
-        .footer-logo {
-            margin : 0 auto;
-        }
-    }
-
-    .footer-legals__alcohol-notice {
-        display          : flex;
-        flex-wrap        : wrap;
-        justify-content  : flex-start;
-        align-items      : center;
-        background-color : #fff;
-        padding          : 14px;
-        border           : 3px solid #000;
-        max-width        : 771px;
-        margin           : 0 0 0 auto;
-
-        @media (max-width: 992px) {
-            flex-direction : column;
-            align-items    : center;
-            text-align     : center;
-            margin         : 0 auto;
-        }
-    
-        @media (min-width: 768px) {
-            padding : 28px
-        }
-
-        * {
-            color : #000
-        }
-
-        img {
-            padding-bottom : 20px;
-    
-            @media (min-width: 993px) {
-                padding-bottom : 0;
-                padding-right  : 28px
-            }
-        }
-    }
-    
-    .footer-legals__alcohol-heading {
-        font-size   : 16px;
-        font-weight : 700;
-        text-align  : left;
-        width       : 100%;
-
-        @media (max-width: 992px) {
-            text-align : center;
-        }
-    }
-    .footer-legals__alcohol-infos {
-        font-size     : 14px;
-        margin-bottom : 10px;
-        text-align    : left;
-        width         : 100%;
-
-        @media (max-width: 992px) {
-            text-align : center;
-        }
-    }
-    .footer-legals__alcohol-footer {
-        font-size  : 16px;
-        text-align : right;
-        width      : 100%;
-
-        @media (max-width: 992px) {
-            text-align : center;
-        }
-    }
-    .footer-legals__alcohol-content {
-        align-items     : start;
-        display         : flex;
-        flex-direction  : column;
-        justify-content : start
-    }
-
-`
+export default Footer;
