@@ -1,15 +1,21 @@
-import React from 'react'
-import useSWR from 'swr'
-import styled from 'styled-components'
-import Layout from 'layouts/Layout'
-import NextBreadcrumbs from 'tools/Breadcrumb'
-import { Button } from 'components/tools/Buttons'
-import { fetchSiteDatas } from 'api/site'
-import { fetcher } from 'functions/utils'
+import React from 'react';
+import useSWR from 'swr';
+import Layout from 'layouts/Layout';
+import { fetchSiteDatas } from 'api/site';
+import { fetcher } from 'functions/utils';
+import { Button, Breadcrumb } from 'components/global';
+
+export async function getStaticProps() {
+    const { siteDatas } = await fetchSiteDatas();
+    return {
+        props: { datas: siteDatas }
+    };
+};
 
 export default function PolitiqueCookies({ datas }) {
-    const { data } = useSWR(process.env.SITE_API_ROUTE, fetcher, { initialData: datas })
-    const title = 'Politique d\'utilisation des cookies'
+    //Keep site datas up-to-date
+    const { data } = useSWR(process.env.SITE_API_ROUTE, fetcher, { initialData: datas });
+    const title = 'Politique d\'utilisation des cookies';
 
     return (
         data &&
@@ -17,20 +23,19 @@ export default function PolitiqueCookies({ datas }) {
             datas={datas}
             title={title}
         >
-            <NextBreadcrumbs
-                denomination={datas.denomination}
-            />
+            <div className="default-page container">
+                <Breadcrumb
+                    denomination={datas.denomination}
+                />
 
-            <h1>{title}</h1>
-
-            <Container className="container">
+                <h1>{title}</h1>
                 <p>
                     Cette politique s’applique aux site {datas.denomination} (ci-après le « Site »).
                     Pour donner ou retirer votre consentement concernant la pose de cookies sur le site {datas.site_name}, cliquez sur le bouton ci-dessous :
                 </p>
 
-                <div className='btn-container'>
-                    <Button>
+                <div className='btn-container py-5'>
+                    <Button className="v-primary mx-auto">
                         <a href="#cookies-manager" rel="noreferrer">Gérer mes cookies</a>
                     </Button>
                 </div>
@@ -165,60 +170,7 @@ export default function PolitiqueCookies({ datas }) {
                         <li>Dans « Confidentialité » cliquer sur « Paramètres de contenu » et cocher « Bloquer les cookies et les données de site tiers »</li>
                     </ul>
                 </div>
-            </Container>
+            </div>
         </Layout>
     )
 }
-
-export async function getStaticProps() {
-    const { siteDatas } = await fetchSiteDatas()
-    return {
-        props: {
-            datas: siteDatas
-        },
-    };
-}
-
-const Container = styled.div`
-    padding-top    : 20px;
-    padding-bottom : 70px;
-    h2 {
-        font-size   : 24px;
-        margin      : 25px 0 10px;
-        font-weight : 600;
-
-        @media(max-width: 768px) {
-            font-size   : 20px;
-            line-height : 1.2;
-        }
-    }
-    h2 {
-        font-size    : 20px;
-        margin       : 15px 0 0;
-        font-weight  : 600;
-        font-stretch : 100%;
-
-        @media(max-width: 768px) {
-            font-size   : 18px;
-            line-height : 1.2;
-        }
-    }
-    p {
-        text-align : justify;
-        padding    : 5px 0;
-        a {
-            color : var(--primary);
-        }
-    }
-    ul {
-        text-align   : justify;
-        padding-left : 25px;
-    }
-    li {
-        color           : var(--text);
-        list-style-type : disc;
-    }
-    button {
-        margin : 20px auto 30px;
-    }
-`

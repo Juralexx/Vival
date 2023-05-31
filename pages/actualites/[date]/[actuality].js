@@ -1,13 +1,44 @@
 import React from "react";
 import useSWR from 'swr'
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { getActualitiesPaths, getActuality } from "api/actuality";
 import { fetchSiteDatas, getImages } from "api/site";
 import Layout from "layouts/Layout";
 import ActualityLayout from "layouts/Actuality";
-import NextBreadcrumbs from "tools/Breadcrumb";
+import { Breadcrumb } from 'components/global';
 import { dateParser, fetcher } from "functions/utils";
-import { Billboard, Cards, Carousel, Checkerboard, Content, Embed, Gallery, Img, MainImage } from "components/global";
+import { Billboard, Cards, Carousel, Checkerboard, Content, Embed, Gallery, Img, MainImage } from "components/shared";
+
+export async function getStaticPaths() {
+    const { paths } = await getActualitiesPaths()
+    return {
+        paths,
+        fallback: 'blocking'
+    }
+}
+
+export async function getStaticProps({ params }) {
+    //Get url params
+    const { date, actuality } = params;
+    //Fetch requested actuality from date and title
+    const { data } = await getActuality({ date: date, title: actuality });
+    //Fetch site datas
+    const { siteDatas } = await fetchSiteDatas();
+    //Fetch all brands images
+    const { files: brands } = await getImages({ folder: 'img/brands' });
+    //Fetch all partners images
+    const { files: partners } = await getImages({ folder: 'img/partners' });
+
+    return {
+        props: {
+            actu: data,
+            datas: siteDatas,
+            brands,
+            partners
+        },
+        revalidate: 1
+    }
+}
 
 export default function Actuality({ datas, router, actu, brands, partners }) {
     const { date, actuality } = router.query;
@@ -26,19 +57,19 @@ export default function Actuality({ datas, router, actu, brands, partners }) {
                     brands={brands}
                     partners={partners}
                 >
-                    <ActualityContainer className="container">
-                        <NextBreadcrumbs
+                    <ActualityContainer className="container-lg pt-4 mb-12 overflow-hidden" imageSide={actuDatas.image_side}>
+                        <Breadcrumb
                             denomination={siteDatas.denomination}
                         />
-                        <div className="title">
-                            <h1>{actuDatas.title}</h1>
-                            <div className="date">
-                                {dateParser(actuDatas.date)}
-                            </div>
+                        <h1 className="m-0">
+                            {actuDatas.title}
+                        </h1>
+                        <div className="color-text-light text-center">
+                            {dateParser(actuDatas.date)}
                         </div>
-                        <div className="actu-inner-container">
-                            <div className="actu-inner">
-                                {actuDatas.image &&
+                        <div className="pt-12 pb-10 overflow-hidden md:flex md:flex-col">
+                            <div className="overflow-hidden md:flex md:flex-col">
+                                {actuDatas.image && actuDatas.image_display !== 'Bas' &&
                                     <MainImage
                                         datas={siteDatas}
                                         page={actuDatas}
@@ -46,8 +77,14 @@ export default function Actuality({ datas, router, actu, brands, partners }) {
                                 }
                                 {actuDatas.content &&
                                     <div
-                                        className="actu-txt ck-content"
+                                        className="service-txt ck-content"
                                         dangerouslySetInnerHTML={{ __html: actuDatas.content }}
+                                    />
+                                }
+                                {actuDatas.image && actuDatas.image_display === 'Bas' &&
+                                    <MainImage
+                                        datas={siteDatas}
+                                        page={actuDatas}
                                     />
                                 }
                             </div>
@@ -117,105 +154,53 @@ export default function Actuality({ datas, router, actu, brands, partners }) {
     )
 }
 
-export const getStaticPaths = async () => {
-    const { paths } = await getActualitiesPaths()
-    return {
-        paths,
-        fallback: 'blocking'
-    }
-}
-
-export async function getStaticProps({ params }) {
-    const { date, actuality } = params
-    const { data } = await getActuality({ date: date, title: actuality })
-    const { siteDatas } = await fetchSiteDatas()
-    const { files: brands } = await getImages({ folder: 'img/brands' })
-    const { files: partners } = await getImages({ folder: 'img/partners' })
-
-    return {
-        props: {
-            actu: data,
-            datas: siteDatas,
-            brands: brands,
-            partners: partners
-        },
-        revalidate: 1
-    }
-}
-
-/**
- * 
- */
-
 const ActualityContainer = styled.div`
-    max-width     : 1170px;
-    padding-top   : 15px;
-    margin-bottom : 100px;
-    overflow      : hidden;
+    max-width : 1200px;
 
     + * {
         clear   : both;
     }
 
-    @media(max-width: 1200px) {
-        width : 90%;
-    }
-    @media(max-width: 576px) {
-        width : 100%;
-    }
-
     ul {
-        display : inline-block;
         li {
+            vertical-align : middle;
             &::before {
-                content       : "➜"; //➤
-                font-size     : 14px;
-                color         : var(--primary);
-                display       : inline-block;
-                margin-left   : -1em;
-                margin-right  : 7px;
-                margin-bottom : 2px;
+                content      : "●"; //➤
+                font-size    : 14px;
+                color        : var(--primary);
+                display      : inline-block;
+                margin-right : 7px;
+                margin-left  : 12px;
+                margin-top   : 0px;
+
+                @media(max-width: 992px) {
+                    margin-left : 0;
+                }
             }
         }
     }
 
     img {
-        border-radius : var(--rounded-md);
+        border-radius : var(--rounded-lg);
         cursor        : pointer;
-    }
-
-    .actu-inner-container {
-        padding : 50px 0 40px;
-    }
-
-    .actu-inner {
-        overflow : hidden;
-    }
-
-    .title {
-        h1 {
-            margin : 0;
-        }
-
-        .date {
-            color      : var(--text);
-            text-align : center;
-        }
     }
 
     p {
         text-align : justify;
     }
 
-    @media(max-width: 768px) {
-        .actu-inner-container {
-            display        : flex;
-            flex-direction : column;
+    @media(max-width: 992px) {
+        .actu-txt {
+            margin : 0 auto;
+            ${props => (props.imageSide === 'Droite' || props.imageSide === 'Gauche') && css`
+                order : 1;
+            `};
         }
 
-        .actu-txt {
-            margin     : 0 auto;
-            text-align : justify;
+        .main-img {
+            ${props => (props.imageSide === 'Droite' || props.imageSide === 'Gauche') && css`
+                order : 2;
+            `};
         }
     }
 `

@@ -1,10 +1,16 @@
 import React from 'react'
 import useSWR from 'swr'
-import styled from 'styled-components'
 import Layout from 'layouts/Layout'
-import NextBreadcrumbs from 'tools/Breadcrumb'
 import { fetchSiteDatas } from 'api/site'
 import { fetcher } from 'functions/utils'
+import { Breadcrumb } from 'components/global';
+
+export async function getStaticProps() {
+    const { siteDatas } = await fetchSiteDatas();
+    return {
+        props: { datas: siteDatas },
+    };
+}
 
 export default function MentionsLégales({ datas }) {
     const { data } = useSWR(process.env.SITE_API_ROUTE, fetcher, { initialData: datas })
@@ -13,11 +19,10 @@ export default function MentionsLégales({ datas }) {
     return (
         data &&
         <Layout datas={datas} title={title}>
-            <NextBreadcrumbs denomination={datas?.denomination} />
+            <div className="default-page container">
+                <Breadcrumb denomination={datas?.denomination} />
 
-            <h1>{title}</h1>
-
-            <Container className="container">
+                <h1>{title}</h1>
                 <p>
                     Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique, dite L.C.E.N.,
                     il est porté à la connaissance des utilisateurs et visiteurs du site {datas?.denomination} les présentes mentions légales et conditions générales d’utilisation.
@@ -253,57 +258,7 @@ export default function MentionsLégales({ datas }) {
 
                     <p>© 2023 {datas?.denomination} ® · Tous droits réservés.</p>
                 </div>
-            </Container>
+            </div>
         </Layout>
     )
 }
-
-export async function getStaticProps() {
-    const { siteDatas } = await fetchSiteDatas()
-    return {
-        props: {
-            datas: siteDatas
-        },
-    };
-}
-
-const Container = styled.div`
-    padding-top    : 20px;
-    padding-bottom : 70px;
-    h2 {
-        font-size   : 24px;
-        margin      : 25px 0 10px;
-        font-weight : 600;
-
-        @media(max-width: 768px) {
-            font-size   : 20px;
-            line-height : 1.2;
-        }
-    }
-    h3 {
-        font-size    : 20px;
-        margin       : 15px 0 0;
-        font-weight  : 600;
-        font-stretch : 100%;
-
-        @media(max-width: 768px) {
-            font-size   : 18px;
-            line-height : 1.2;
-        }
-    }
-    a {
-        color : var(--primary);
-    }
-    p {
-        text-align : justify;
-        padding    : 5px 0;
-    }
-    ul {
-        text-align   : justify;
-        padding-left : 25px;
-    }
-    li {
-        color           : var(--text);
-        list-style-type : disc;
-    }
-`

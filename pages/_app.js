@@ -1,18 +1,24 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import 'styles/css/tail.css'
-import 'styles/css/container.css'
-import 'styles/css/cols.css'
-import 'styles/css/font.css'
-import 'styles/css/lightbox.css'
-import GlobalStyles from 'styles/GlobalStyles'
+import React from 'react';
+import Script from 'next/script';
+import { useRouter } from 'next/router';
+import GlobalStyles from 'styles/GlobalStyles';
+import 'styles/variables.colors.css';
+import 'styles/variables.config.css';
+import 'styles/css/container.css';
+import 'styles/css/cols.css';
+import 'styles/css/classes.css';
+import 'styles/css/ckeditor.css';
+import 'styles/css/tail.css';
+import 'styles/css/font.css';
+import 'styles/css/styles.css';
+import 'styles/css/lightbox.css';
 
 const App = ({ Component, pageProps }) => {
-    const router = useRouter()
+    //NextJS router
+    const router = useRouter();
 
     return (
-        <React.Fragment>
+        <div className={`__root`}>
             <GlobalStyles />
             <Script src="/././js/tarteaucitron/tarteaucitronjs/tarteaucitron.js" strategy="beforeInteractive" />
             <Script src="/././js/tarteaucitron/tarteaucitron.parameters.js" strategy="beforeInteractive" />
@@ -21,8 +27,8 @@ const App = ({ Component, pageProps }) => {
                 {...pageProps}
                 router={router}
             />
-        </React.Fragment>
+        </div>
     )
 }
 
-export default App
+export default App;

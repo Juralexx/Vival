@@ -2,16 +2,17 @@ import * as nodemailer from 'nodemailer'
 
 export default function (req, res) {
     const transporter = nodemailer.createTransport({
-        port: 465,
+        service: "gmail",
         host: "smtp.gmail.com",
+        port: 587,
+        secure: true,
         auth: {
             user: process.env.EMAIL_ROUTER,
             pass: process.env.EMAIL_ROUTER_PASSWORD,
         },
-        secure: true,
     })
     const mailData = {
-        from: process.env.SITE_DOMAIN,
+        from: process.env.EMAIL_ROUTER,
         to: process.env.SITE_MAIL,
         name: process.env.SITE_DOMAIN,
         subject: `Message de ${req.body.name} ${req.body?.lastname} via ${process.env.SITE_DOMAIN}`,
@@ -19,8 +20,9 @@ export default function (req, res) {
         html: emailTemplate(req)
     }
     transporter.sendMail(mailData, (err, info) => {
-        if (err)
-            return res.status(400).send(err);
+        if (err) {
+            console.log(err)
+        }
     })
     return res.status(200).send('Done.');
 }
