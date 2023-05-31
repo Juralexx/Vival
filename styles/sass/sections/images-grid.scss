@@ -1,0 +1,51 @@
+.av-images-grid {
+    padding : 50px 0;
+
+    h2 {
+        margin-bottom : 40px;
+        text-align    : center;
+    }
+
+    .images {
+        display         : flex;
+        justify-content : center;
+        width           : auto;
+        max-width       : 1500px;
+        height          : auto;
+        margin          : 0 auto;
+        padding         : 0;
+        flex-wrap       : wrap;
+
+        div {
+            display         : flex;
+            justify-content : center;
+            padding         : 10px;
+            min-height      : 180px;
+
+            .brand-img {
+                object-fit : contain;
+                width      : 100%;
+                max-width  : 220px;
+                height     : auto;
+                max-height : 170px;
+            }
+        }
+
+        @media(min-width:577px) and (max-width: 768px) {
+            div {
+                margin : 0 auto;
+                .brand-img {
+                    max-width : 160px;
+                }
+            }
+        }
+
+        @media(max-width:576px) {
+            div {
+                .brand-img {
+                    max-width : 220px;
+                }
+            }
+        }
+    }
+}

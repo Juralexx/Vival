@@ -1,0 +1,101 @@
+.av-delivery {
+    height           : auto;
+    padding          : 50px 0;
+    background-color : var(--primary);
+
+    .av-delivery-container {
+        position : relative;
+        display  : flex;
+        width    : 100%;
+        overflow : hidden;
+
+        @media(max-width: 1320px) {
+            border-radius : 0;
+        }
+        @media(max-width: 768px) {
+            flex-direction : column;
+            padding-left   : 0;
+            text-align     : center;
+        }
+    }
+
+    h2 {
+        font-size     : 44px;
+        margin-bottom : 20px;
+        strong {
+            font-weight : inherit;
+            color       : #d5e04f;
+        }
+        @media(max-width: 768px) {
+            font-size  : 1.9rem;
+            text-align : center;
+        }
+    }
+
+    p,
+    a {
+        font-size : 20px;
+    }
+
+    a {
+        color : var(--xyellow);
+    }
+
+    h2,
+    p {
+        color : white;
+    }
+
+    strong {
+        font-weight : 800;
+    }
+
+    .av-delivery-map-pin-group {
+        position    : absolute;
+        right       : 0;
+        top         : 0;
+        bottom      : 0;
+        flex-shrink : 0;
+        width       : auto;
+        height      : 100%;
+        z-index     : 0;
+
+        @media(max-width: 1200px) {
+            right : -150px;
+        }
+        @media(max-width: 992px) {
+            right : -220px;
+        }
+        @media(max-width: 768px) {
+            display : none;
+        }
+    }
+    .av-delivery-map-pin {
+        height : 230px;
+        width  : auto;
+        margin : auto 0;
+
+        @media(max-width: 992px) {
+            height : 150px;
+            margin : 40px auto auto;
+        }
+        @media(max-width: 768px) {
+            height     : 100px;
+            margin-top : 0;
+        }
+    }
+
+    .av-delivery-content-banner {
+        padding : 40px 320px 40px 40px;
+
+        @media(max-width: 1200px) {
+            padding : 40px 170px 40px 40px;
+        }
+        @media(max-width: 992px) {
+            padding : 40px 100px 40px 40px;
+        }
+        @media(max-width: 768px) {
+            padding : 40px 0 0;
+        }
+    }
+}

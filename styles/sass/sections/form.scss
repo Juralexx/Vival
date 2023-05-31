@@ -1,0 +1,64 @@
+.av-submission-done {
+    padding          : 20px;
+    background-color : rgba(var(--primary-rgb), 0.05);
+    border-radius    : var(--roound-sm);
+
+    .header {
+        display     : flex;
+        align-items : center;
+        font-size   : 20px;
+        font-family : var(--font-fam2);
+        font-weight : 500;
+        cursor      : pointer;
+
+        svg {
+            width            : auto;
+            height           : 35px;
+            padding          : 7px;
+            stroke           : var(--primary);
+            background-color : rgba(var(--primary-rgb), 0.2);
+            border-radius    : var(--rounded-full);
+            margin-right     : 10px;
+            &:hover {
+                background-color : rgba(var(--primary-rgb), 0.3);
+            }
+        }
+    }
+
+    .icon {
+        display : block;
+        margin  : 0 auto;
+        width   : 60px;
+        height  : 60px;
+        color   : var(--primary);
+    }
+
+    h3 {
+        font-size   : 26px;
+        text-align  : center;
+        line-height : 1.2;
+        padding-top : 15px;
+        font-family : var(--font-fam2);
+    }
+    p {
+        text-align : center;
+        padding     : 20px 0;
+    }
+}
+
+.av-form-loader {
+    padding         : 50px 0;
+    display         : flex;
+    justify-content : center;
+    
+    svg {
+        width  : 44px;
+        height : 44px;
+        circle {
+            stroke : var(--primary) !important;
+        }
+        path {
+            stroke : var(--primary) !important;
+        }
+    }
+}

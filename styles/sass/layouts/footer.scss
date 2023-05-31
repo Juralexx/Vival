@@ -1,0 +1,247 @@
+.av-footer {
+    position   : relative;
+    width      : 100%;
+    color      : #E0E9ED;
+    background : var(--primary);
+
+    a,
+    p {
+        font-size : 16px;
+    }
+
+    .container-lg {
+        position  : relative;
+
+        @media(max-width: 768px) {
+            width : 100%;
+        }
+
+        &.container-top {
+            padding : 50px 20px;
+        }
+    
+        h4 {
+            font-weight    : 700;
+            letter-spacing : 0;
+            font-size      : 20px;
+            color          : var(--white);
+            margin-bottom  : 10px;
+        }
+
+        h5 {
+            font-weight   : 600;
+            font-size     : 18px;
+            margin-top    : 10px;
+            margin-bottom : 7px;
+            color         : var(--white);
+        }
+
+        .footer-logo {
+            max-width : 150px;
+        }
+    }
+
+    .av-footer-top {
+        display         : flex;
+        align-items     : flex-end;
+        justify-content : space-between;
+        padding-bottom  : 30px;
+        margin-bottom   : 30px;
+        border-bottom   : 1px solid rgba(255, 255, 255, 0.2);
+
+        img {
+            max-width    : 100px;
+            margin-right : 30px;
+        }
+
+        .av-footer-socials {
+            display         : flex;
+            justify-content : center;
+
+            .social-btn {
+                height : 32px;
+                width  : 32px;
+                margin : 0 10px 0 0;
+                cursor : pointer;
+            
+                svg {
+                    height : 32px;
+                    width  : 32px;
+
+                    &:hover {
+                        opacity : 0.8;
+                    }
+                }
+            }
+        }
+    }
+
+    .av-footer-links {
+        a {
+            display     : block;
+            line-height : 28px;
+
+            &:hover {
+                color : white;
+            }
+        }
+    }
+
+    .av-footer-grid {
+        display               : grid;
+        grid-template-columns : 1.8fr 1fr 1fr 1fr;
+
+        @media(max-width: 992px) {
+            grid-template-columns : 1.5fr 1fr;
+
+            > div {
+                padding-bottom : 30px;
+            }
+        }
+        @media(max-width: 576px) {
+            grid-template-columns : 1fr;
+        }
+    }
+
+    .av-footer-infos {
+        position       : relative;
+        display        : flex;
+        flex-direction : column;
+        margin         : 0 auto;
+
+        .footer-info {
+            position : relative;
+            padding  : 5px 0;
+
+            svg {
+                display      : inline-block;
+                height       : 16px;
+                width        : 16px;
+                margin-top   : -2px;
+                margin-right : 5px;
+            }
+        }
+    } 
+
+    .footer-opening {
+        margin-bottom : 0px;
+        display       : flex;
+        align-items   : center;
+        max-width     : 300px;
+        color         : #E0E9ED;
+
+        span {
+            font-weight  : 600;
+            color        : var(--white);
+            margin-right : 10px;
+        }
+    }
+
+    .av-footer-bottom {
+        width            : 100%;
+        text-align       : right;
+        padding          : 20px 0;
+        margin-top       : 45px;
+        background-color : var(--primary-dark);
+    
+        a {
+            display : inline-block;
+            color   : var(--white);
+
+            &:hover {
+                border-bottom : 1px solid var(--white);
+            }
+        }
+    }
+
+    @media(max-width: 576px) {
+        text-align : center;
+
+        .av-footer-infos {
+            padding-left : 0;
+
+            .footer-info {
+                margin : 5px auto;
+            }
+        }
+        .footer-opening {
+            justify-content : center;
+            max-width       : 100%;
+        }
+        .footer-logo {
+            margin : 0 auto;
+        }
+    }
+}
+
+.footer-legals__alcohol-notice {
+    display          : flex;
+    flex-wrap        : wrap;
+    justify-content  : flex-start;
+    align-items      : center;
+    background-color : #fff;
+    padding          : 14px;
+    border           : 3px solid #000;
+    max-width        : 771px;
+    margin           : 0 0 0 auto;
+
+    @media (max-width: 992px) {
+        flex-direction : column;
+        align-items    : center;
+        text-align     : center;
+        margin         : 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        padding : 28px
+    }
+
+    * {
+        color : #000
+    }
+
+    img {
+        padding-bottom : 20px;
+
+        @media (min-width: 993px) {
+            padding-bottom : 0;
+            padding-right  : 28px
+        }
+    }
+}
+
+.footer-legals__alcohol-heading {
+    font-size   : 16px;
+    font-weight : 700;
+    text-align  : left;
+    width       : 100%;
+
+    @media (max-width: 992px) {
+        text-align : center;
+    }
+}
+.footer-legals__alcohol-infos {
+    font-size     : 14px;
+    margin-bottom : 10px;
+    text-align    : left;
+    width         : 100%;
+
+    @media (max-width: 992px) {
+        text-align : center;
+    }
+}
+.footer-legals__alcohol-footer {
+    font-size  : 16px;
+    text-align : right;
+    width      : 100%;
+
+    @media (max-width: 992px) {
+        text-align : center;
+    }
+}
+.footer-legals__alcohol-content {
+    align-items     : flex-start;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : flex-start;
+}

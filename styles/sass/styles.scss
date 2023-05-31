@@ -1,0 +1,102 @@
+@import './html';
+
+/**
+ * LAYOUTS
+ */
+
+@import './layouts/navbar';
+@import './layouts/header';
+@import './layouts/header-slim';
+@import './layouts/footer';
+
+/**
+ * SECTIONS
+ */
+
+@import './sections/actuality-carousel';
+@import './sections/bricks';
+@import './sections/checkerboards-top';
+@import './sections/checkerboards-bottom';
+@import './sections/contact';
+@import './sections/delivery';
+@import './sections/form';
+@import './sections/images-grid';
+@import './sections/informations';
+@import './sections/introduction';
+@import './sections/numbers';
+@import './sections/parallax';
+@import './sections/prestations';
+
+/**
+ * COMPONENTS
+ */
+
+// @import './components';
+
+@import './components/alert';
+
+// @import './components/badge';
+@import './components/button';
+@import './components/button-destructured';
+@import './components/breadcrumb';
+
+// @import './components/card';
+// @import './components/carousels';
+@import './components/circle-loader';
+
+@import './components/dialog';
+// @import './components/divider';
+
+// @import './components/filter-menu';
+
+@import './components/icon-button';
+// @import './components/image';
+@import './components/input';
+@import './components/input-dynamic';
+// @import './components/input-card';
+// @import './components/input-number';
+// @import './components/input-number-card';
+// @import './components/input-quantity';
+
+@import './components/navbar-toggle';
+
+@import './components/pagination-middle';
+// @import './components/pagination-side';
+// @import './components/password-checker';
+
+// @import './components/radio';
+
+@import './components/selection';
+// @import './components/selection-card';
+// @import './components/sidebar';
+// @import './components/sidemenu';
+// @import './components/stepper';
+
+// @import './components/table';
+// @import './components/tag';
+// @import './components/tag-input';
+@import './components/textarea';
+@import './components/textarea-dynamic';
+
+// @import './components/zone';
+
+/**
+ *  TARTEAUCITRON
+ */
+
+@import './tarteaucitron/tarteaucitron.card';
+@import './tarteaucitron/tarteaucitron.panel';
+
+/**
+ *  MODULES
+ */
+
+@import './modules/share';
+@import './modules/payments';
+
+/**
+ *  PAGES
+ */
+
+@import './pages/actualities';
+@import './pages/contact';

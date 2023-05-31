@@ -1,0 +1,188 @@
+.av-bricks {
+    position   : relative;
+    display    : flex;
+    width      : 100%;
+    min-height : 200px;
+    padding    : 50px 0;
+    background : var(--body);
+
+    .av-bricks-container {
+        position      : relative;
+        width         : 100%;
+        max-width     : 1440px;
+        display       : flex;
+        align-items   : center;
+        margin        : 0 auto;
+        padding-right : 0;
+    }
+
+    .av-brick-text-container {
+        display       : flex;
+        align-items   : center;
+        height        : 100%;
+        min-width     : 350px;
+    }
+
+    .av-brick-text {
+        margin          : auto;
+        padding         : 20px 15px 20px 0;
+        width           : 100%;
+        flex-shrink     : 0;
+        transform-style : preserve-3d;
+
+        &:before {
+            position      : absolute;
+            content       : '';
+            left          : -30px;
+            top           : -20px;
+            background    : rgba(var(--primary-xlight-rgb), 0.4);
+            height        : 100px;
+            width         : 100px;
+            border-radius : var(--rounded-md);
+        }
+
+        &:after {
+            position      : absolute;
+            content       : '';
+            right         : 0;
+            bottom        : -20px;
+            background    : rgba(var(--primary-xlight-rgb), 0.3);
+            height        : 120px;
+            width         : 120px;
+            transform     : translateZ(-1px);
+            border-radius : var(--rounded-md);
+        }
+
+        h2 {
+            margin-bottom : 20px;
+            font-size     : 32px;
+
+            span {
+                color : var(--primary);
+            }
+        }
+    }
+
+    .av-bricks-swiper {
+        display        : flex;
+        flex-direction : column;
+        padding        : 5px;
+        min-height     : 280px;
+
+        .swiper-pagination {
+            position   : relative;
+            margin-top : 10px;
+        }
+
+        .swiper-pagination-bullets {
+            bottom : 0;
+        }
+
+        .swiper-pagination-bullet-active {
+            background : var(--primary);
+        }
+    }
+
+    .av-brick-container {
+        position   : relative;
+        cursor     : pointer;
+        width      : auto;
+        max-width  : 300px;
+
+        // &:nth-child(1),
+        // &:nth-child(4),
+        // &:nth-child(7),
+        // &:nth-child(10),
+        // &:nth-child(13) {
+        //     .av-brick {
+        //         background-color : var(--bg-one);
+        //     }
+        // }
+        // &:nth-child(2),
+        // &:nth-child(5),
+        // &:nth-child(8),
+        // &:nth-child(11) {
+        //     .av-brick {
+        //         background-color : var(--slate-100);
+        //     }
+        // }
+        // &:nth-child(3),
+        // &:nth-child(6),
+        // &:nth-child(9),
+        // &:nth-child(12) {
+        //     .av-brick {
+        //         background-color : var(--bg-zero);
+        //     }
+        // }
+
+        .av-brick {
+            width         : 100%;
+            margin        : 0 auto;
+            background    : var(--body);
+            border        : 1px solid var(--border);
+            border-radius : var(--rounded-lg);
+            box-shadow    : var(--shadow-lg-colored);
+            transition    : 0.7s ease;
+            overflow      : hidden;
+
+            a {
+                display        : flex;
+                flex-direction : column;
+                margin         : 0 auto;
+            }
+
+            .av-brick-top {
+                width  : 100%;
+                height : 150px;
+
+                img {
+                    width      : 100%;
+                    height     : 100%;
+                    object-fit : cover;
+                }
+            }
+
+            .av-brick-content {
+                padding    : 20px 8px;
+                text-align : center;
+
+                .title {
+                    font-size   : 22px;
+                    font-weight : 600;
+                }
+            }
+        }
+    }
+
+    @media(max-width:768px) {
+        .av-bricks-container {
+            display        : flex;
+            flex-direction : column;
+            min-width      : 298px;
+
+            .av-brick {
+                min-width : 298px;
+            }
+
+            .av-brick-text-container {
+                padding : 0;
+            }
+            
+            .av-brick-text {
+                padding : 20px 0;
+            }
+
+            .av-brick-swiper {
+                min-height : 275px;
+            }
+        }
+    }
+
+    @media(max-width: 576px) {
+        .av-bricks-container {
+            .av-brick-text {
+                padding : 20px 0;
+            }
+        }
+    }
+}

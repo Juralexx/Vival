@@ -1,0 +1,15 @@
+.av-contact-form-container {
+    position         : relative;
+    width            : 100%;
+    max-width        : 760px;
+    background-color : var(--body);
+    margin-left      : auto;
+
+    @media(min-width:577px) and (max-width: 1200px) {
+        width         : 90%;
+        margin        : 0 auto;
+        padding       : 20px 30px;
+        border-radius : var(--rounded-xl);
+        box-shadow    : var(--shadow-bottom);
+    }
+}

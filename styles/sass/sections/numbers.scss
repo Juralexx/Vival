@@ -1,0 +1,114 @@
+.av-numbers-container {
+    position   : relative;
+    padding    : 50px 0;
+
+    &:after {
+        position   : absolute;
+        content    : "";
+        top        : -100px;
+        left       : 0;
+        right      : 0;
+        height     : 100px;
+        width      : 100%;
+        z-index    : -1;
+        clip-path  : polygon(100% 0, 0% 100%, 100% 100%);
+    }
+
+    .container-lg {
+        padding : 0;
+    }
+
+    h2 {
+        text-align    : center;
+        margin-bottom : 50px;
+    }
+
+    .av-numbers {
+        display         : flex;
+        justify-content : center;
+        flex-wrap       : wrap;
+
+        .av-number {
+            position      : relative;
+            padding       : 0 12px;
+            text-align    : center;
+            margin        : 30px auto;
+            min-width     : 25%;
+            width         : 100%;
+            max-width     : 330px;
+            border-radius : var(--rounded-xl);
+
+            .av-number-title {
+                color       : var(--title);
+                font-size   : 22px;
+                font-weight : 600;
+                white-space : nowrap;
+                padding     : 10px 0;
+                margin-top  : 20px;
+    
+                span {
+                    font-size   : 45px;
+                    line-height : 30px;
+                }
+            }
+            &:nth-child(2) {
+                .icon-container {
+                    color         : var(--orange-400);
+                    background    : var(--orange-50);
+                    border-radius : var(--rounded-lg);
+                }
+            }
+            &:nth-child(1) {
+                .icon-container {
+                    color         : var(--primary);
+                    background    : rgba(var(--primary-rgb), 0.1);
+                    border-radius : var(--rounded-lg);
+                }
+            }
+            &:nth-child(3) {
+                .icon-container {
+                    color         : var(--secondary);
+                    background    : rgba(var(--secondary-rgb), 0.1);
+                    border-radius : var(--rounded-lg);
+                }
+            }
+
+            .icon-container {
+                position      : relative;
+                margin        : 0 auto;
+                width         : 110px;
+                height        : 110px;
+            }
+
+            .img-container {
+                position : relative;
+                margin   : 0 auto;
+                width    : 110px;
+                height   : 110px;
+            }
+
+            svg {
+                width         : 100%;
+                height        : 100%;
+                padding       : 18px;
+                border-radius : var(--rounded-full);
+            }
+
+            img {
+                max-height    : 130px;
+                width         : auto;
+                border-radius : var(--rounded-md);
+            }
+        }
+    }
+}
+
+.not-main {
+    .av-numbers-container {
+        background-color: var(--slate-50);
+
+        &:after {
+            background-color: var(--slate-50);
+        }
+    }
+}
