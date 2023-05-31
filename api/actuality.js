@@ -5,17 +5,19 @@ import axios from "axios"
  */
 
 export async function getActualitiesPaths() {
-    let response = []
+    let response = [];
+
     await axios.get(process.env.ACTUALITIES_API_ROUTE)
         .then(res => {
             response = res.data.data
         })
         .catch(err => console.log(err))
 
-    let paths = []
+    let paths = [];
+
     response.map(item => {
-        const [date, title] = item.url.split('/')
-        return paths = [...paths, { params: { date: date, actuality: title } }]
+        const [date, title] = item.url.split('/');
+        return paths = [...paths, { params: { date: date, actuality: title } }];
     })
 
     return { paths }
@@ -26,7 +28,8 @@ export async function getActualitiesPaths() {
  */
 
 export async function getActualities() {
-    let actualities = []
+    let actualities = [];
+
     await axios.get(process.env.ACTUALITIES_API_ROUTE)
         .then(res => {
             actualities = [...res.data.data]
@@ -44,14 +47,13 @@ export async function getActualities() {
  */
 
 export async function getActuality({ date, title }) {
-    let data = []
-    try {
-        await axios.get(`${process.env.ACTUALITY_API_ROUTE}?date=${date}&title=${title}`)
-            .then(res => { return data = res.data })
-            .catch(err => console.log(err))
-    } catch (err) {
-        console.log(err);
-    }
+    let data = [];
+
+    await axios.get(`${process.env.ACTUALITY_API_ROUTE}?date=${date}&title=${title}`)
+        .then(res => {
+            return data = res.data
+        })
+        .catch(err => console.log(err))
 
     return { data }
 }

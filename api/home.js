@@ -5,12 +5,13 @@ import axios from "axios"
  */
 
 export async function getHome() {
-    let home = {}
+    let home = {};
+
     await axios.get(process.env.HOME_API_ROUTE)
         .then(res => {
-            home = res.data
+            home = res.data;
         })
         .catch(err => console.log(err))
 
-    return { home }
+    return { home };
 }

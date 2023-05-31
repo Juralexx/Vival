@@ -6,16 +6,18 @@ import { sortByAlphabetical } from "functions/utils"
  */
 
 export async function getServicesPaths() {
-    let response = []
+    let response = [];
+
     await axios.get(process.env.SERVICES_API_ROUTE)
         .then(res => {
-            response = res.data.data
+            response = res.data.data;
         })
         .catch(err => console.log(err))
 
-    let paths = []
+    let paths = [];
+
     response.map(item => {
-        return paths = [...paths, { params: { service: item.url } }]
+        return paths = [...paths, { params: { service: item.url } }];
     })
 
     return { paths }
@@ -26,14 +28,15 @@ export async function getServicesPaths() {
  */
 
 export async function getServices() {
-    let services = []
+    let services = [];
+
     await axios.get(process.env.SERVICES_API_ROUTE)
         .then(res => {
-            services = [...res.data.data]
+            services = [...res.data.data];
         })
         .catch(err => console.log(err))
 
-    const sorted = sortByAlphabetical(services, 'title')
+    const sorted = sortByAlphabetical(services, 'title');
 
     return { services: sorted }
 }
@@ -43,14 +46,11 @@ export async function getServices() {
  */
 
 export async function getService({ url }) {
-    let data = []
-    try {
-        await axios.get(`${process.env.SERVICE_API_ROUTE}?url=/${url}`)
-            .then(res => { return data = res.data })
-            .catch(err => console.log(err))
-    } catch (err) {
-        console.log(err);
-    }
+    let data = [];
+
+    await axios.get(`${process.env.SERVICE_API_ROUTE}?url=${url}`)
+        .then(res => { return data = res.data })
+        .catch(err => console.log(err))
 
     return { data }
 }
